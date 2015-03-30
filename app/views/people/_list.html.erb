@@ -1,0 +1,10 @@
+<% content_for(:sidebar) do %>
+  <%= content_tag(:details) do %>
+    <%= content_tag(:summary) do %>
+      <%= t('.linked')%>
+    <% end %>
+    <%= content_tag_for(:li, people) do |p| %>
+      <% link_to p.name, p %>
+    <% end %>
+  <% end %>
+<% end %>

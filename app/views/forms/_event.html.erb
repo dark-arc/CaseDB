@@ -1,0 +1,27 @@
+<%= render 'forms/error', :errors => @event.errors %>
+
+<%= form_for @event do |f| %>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+    
+    <%= f.label :date %>
+    <%= f.date_select :date,
+	  :start_year => Time.now.year - 500,
+	  :end_year => Time.now.year %>
+	  
+	  <% if defined? @case %>
+			<%= f.label :case_file_id %>
+			<%= f.collection_select :case_file_id, CaseFile.all, :id, :name %>
+	  <% end %>
+	  
+	  <% if defined? @link %>
+			<%= f.fields_for :person_event_links, @link do |e| %>
+				<%= e.label :person_id %>
+				<%= e.collection_select :person_id, Person.all, :id, :name %>
+				<%= e.label :event_type_id %>
+				<%= e.collection_select :event_type_id, EventType.all, :id, :name %>
+			<% end %>
+		<% end %>
+	  
+    <%= f.submit %>
+<% end %>

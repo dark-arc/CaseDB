@@ -1,0 +1,24 @@
+/*
+ * #uid=23B0u0kekbO5OxYbfkTlU8wuU3n
+ * */
+ $d1	:#000000;
+ $d2	:#062B57;
+ $b	:#134D92;
+ $l1	:#4679B6;
+ $l2	:#B3D2F6;
+ 
+html{
+  background-color:$d1;
+  background-image:image-url('bg_maze.png');
+}
+body{
+  background-color:$d2;
+  color:$l2;
+}
+a, a:hover, a:active, a:link{
+  color:$l1;
+}
+input, textarea, select{
+  background-color:$b;
+  border:$l1;
+}

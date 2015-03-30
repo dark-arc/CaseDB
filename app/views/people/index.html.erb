@@ -1,0 +1,4 @@
+<% content_for(:title, t('.title')) %>
+<%= link_to t('people.new.title'), new_person_path %>
+
+<%= render 'people/display', :people => @person %>

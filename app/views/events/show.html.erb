@@ -1,0 +1,12 @@
+<% content_for(:title, t('.title')) %>
+
+<% content_for(:sidebar) do %>
+  <%= link_to t('actions.edit'), edit_event_path(@event) %>
+  <%= link_to t('actions.delete'), @event, method: :delete, data: { confirm: "#{t('actions.delete_confirm')}" } %>
+  <%= link_to t('actions.newlink'), new_link_path(:event_id => @event) %>
+<% end %>
+<%= render 'people/list', :people => @event.people %>
+
+<%= content_tag(:article, :class => "view") do %>
+  <%= markdown @event.body %>
+<% end %>

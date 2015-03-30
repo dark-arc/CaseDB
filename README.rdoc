@@ -1,0 +1,20 @@
+== README
+=== About
+CaseDB is a site designed to organise information on (historic) criminals. This 
+is a personal project for me and my fiance, we both did forensic degrees, it 
+seemed like fun. 
+
+The code is here for my purposes, it's accessible to anyone because I'm cheap 
+and don't have a good reason to hide the code. I taught myself programming by
+reading code online, why should I stop people stealing mine (for educational 
+purposes, see licence). 
+
+I will eventually push this site to a host and have it online (I'll work on 
+some security first). Once that happens I'll put the link in here. 
+=== Work List
+ - Better localisation (I've not found a good way to do this yet, mine sucks)
+ - Test Cases (Actually write some)
+ - Improve UI (I should actually care about people who view the site)
+ - Security (Auth Gem + CanCan?)
+ - JSON API (I'm lazy and updating things sucks)
+ - Modified Markdown (Allow linking to people / locations through syntax)

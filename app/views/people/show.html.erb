@@ -1,0 +1,26 @@
+<% content_for(:title, @person.name) %>
+
+<% content_for(:sidebar) do %>
+  <%= link_to t('actions.edit'), edit_person_path(@person) %>
+  <%= link_to t('actions.delete'), @person, method: :delete, data: { confirm: "#{t('actions.delete_confirm')}" } %>
+	<%= t('person.dob') %>
+	<% if @person.getBirthEvent.new_record? %>
+		<%= link_to t('actions.addDOB'), new_link_path(:person_id => @person, :event_type_id => EventType::birth) %>
+	<% else %>
+		<%= content_tag(:date) do %>
+		<%= @person.getBirthEvent.date  %>
+		<% end %>
+	<% end %>
+	
+	<%= t('person.dod') %>
+	<% if @person.getDeathEvent.new_record? %>
+		<%= link_to t('actions.addDOD'), new_link_path(:person_id => @person, :event_type_id => EventType::death) %>
+	<% else %>
+		<%= content_tag(:date) do %>
+		<%= l @person.getDeathEvent.date  %>
+		<% end %>
+	<% end %>
+<% end %>
+
+<%= render(@person) %> 
+

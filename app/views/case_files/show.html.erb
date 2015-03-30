@@ -1,0 +1,12 @@
+<% content_for(:title, @file.name) %>
+<% content_for(:sidebar) do %>
+	<%=link_to("#{t('case_files.new.edit')}", edit_case_file_path(@file)) %>
+	<%=link_to(t('events.new.title'), new_event_path(:casefile =>@file.id) ) %>
+	<%=link_to(t('.multilink'), link_case_file_path(@file))%>
+<% end %>
+
+<%= markdown @file.brief %>
+
+<%= content_tag(:ul) do %>
+ <%= render partial: 'events/list', collection: @file.events %>
+<% end %>

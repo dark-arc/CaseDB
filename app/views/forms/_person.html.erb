@@ -1,0 +1,8 @@
+<%= render 'forms/error', :errors => @person.errors %>
+
+<%= form_for @person do |f| %>
+    <%= f.label :name %>
+    <%= f.text_area :name %>
+    
+    <%= f.submit %>
+<% end %>

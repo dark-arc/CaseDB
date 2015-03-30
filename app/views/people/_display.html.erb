@@ -1,0 +1,5 @@
+<%= content_tag(:ol, :class => "person display") do %> 
+  <%= content_tag_for(:li, people) do |person| %>
+    <%= render 'people/display_single', :person => person %>
+  <% end %>
+<% end %>
