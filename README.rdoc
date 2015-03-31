@@ -11,6 +11,20 @@ purposes, see licence).
 
 I will eventually push this site to a host and have it online (I'll work on 
 some security first). Once that happens I'll put the link in here. 
+=== GIT Structure
+The master branch will always contain the latest released code.
+
+The development branch could be in any state, but will typically have the latest merges from projects that are complete. When enough have been completed that the road map is satisfied this gets pushed into master and tagged with a version number.
+
+This branch will also have a sub-branch for every project (read: requirement/change) that is being worked on at the time. These may never make it to github (depends if I ever get someone to help program the project). The project branches can be created with ```git checkout -b req-# development```. To merge them back ```git checkout develop; git merge --no-ff req-#; git branch -d req-#``` then pushing to remote.
+
+The development branch will be committed into a staging branch. The intent of this is for non-development related tasks (like writing this file, documentation, versioning, testing) take place. A staging branch is created from the development branch and then goes off into master. ```git checkout -b staging-#.# development```. To finish a release ```git checkout master; git merge --no-ff release-#.#; git tag -a v#.# ; git checkout development; git merge --no-ff release-#.#; git branch -d release-#.#```.
+
+The fix branch structure will branch off master and be pushed into development (or staging) and onto master at the same time. This can only be used for fixing bugs which are severe enough to need an instant fix (anything else can wait).
+
+I will, when I'm used to this, make some rake tasks for doing this stuff to make it easier. 
+
+Taken from <http://nvie.com/posts/a-successful-git-branching-model/>
 === Work List
  - Better localisation (I've not found a good way to do this yet, mine sucks)
  - Test Cases (Actually write some)
