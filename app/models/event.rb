@@ -18,6 +18,15 @@ class Event < ActiveRecord::Base
   
   accepts_nested_attributes_for :person_event_links
 	attr_readonly :perpetrators, :investigators, :victims
+	
+	def tagline
+		self[:tagline] || 
+				self[:body].split('. ')[0]
+	end
+	
+	def select_line
+		"#{id.to_s.rjust(3,'0')} #{date} : #{tagline}"
+	end
   
   validates :body, 
       presence: true,
