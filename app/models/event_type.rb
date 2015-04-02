@@ -2,19 +2,9 @@ class EventType < ActiveRecord::Base
   has_many :person_event_links
   has_many :events, :through => :person_event_links
 	
-	def self.death
-		EventType.where(name: 'Death').first
-	end
-	def self.birth
-		EventType.where(name: 'Birth').first
-	end
-	def self.victim
-		EventType.where(name: 'Victim').first
-	end
-	def self.investigator
-		EventType.where(name: 'Investigator').first
-	end
-	def self.perpetrator
-		EventType.where(name: 'Perpetrator').first
-	end
+	scope :death, -> {where(name: 'Death').first}
+	scope :birth, -> {where(name: 'Birth').first}
+	scope :victim, -> {where(name: 'Victim').first}
+	scope :investigator, -> {where(name: 'Investigator').first}
+	scope :perpetrator, -> {where(name: 'Perpetrator').first}
 end
