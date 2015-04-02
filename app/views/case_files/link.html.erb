@@ -4,7 +4,7 @@
 		<%= f.collection_select :event_ids,
 			Event.all,
 			:id,
-			:body,
+			:select_line,
 			{:selected=>@file.event_ids},
 			{:multiple=>true}
 		%>
