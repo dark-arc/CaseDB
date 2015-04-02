@@ -1,5 +1,6 @@
 EventType.create(name: 'Death')
 EventType.create(name: 'Victim')
+EventType.create(name: 'Investigator')
 EventType.create(name: 'Perpetrator')
 EventType.create(name: 'Birth')
 EventType.create(name: 'Misc')

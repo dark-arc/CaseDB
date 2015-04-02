@@ -8,4 +8,13 @@ class EventType < ActiveRecord::Base
 	def self.birth
 		EventType.where(name: 'Birth').first
 	end
+	def self.victim
+		EventType.where(name: 'Victim').first
+	end
+	def self.investigator
+		EventType.where(name: 'Investigator').first
+	end
+	def self.perpetrator
+		EventType.where(name: 'Perpetrator').first
+	end
 end
