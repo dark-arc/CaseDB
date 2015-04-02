@@ -1,6 +1,9 @@
 class CaseFile < ActiveRecord::Base
 	has_many :events, -> {order('date')}, counter_cache: true, inverse_of: :case_file
-  has_many :people, -> {distinct}, :through => :events, counter_cache: true
+	has_many :people, -> {distinct}, :through => :events, counter_cache: true
+	has_many :victims, -> {distinct}, :through => :events, counter_cache: true
+	has_many :perpetrators, -> {distinct}, :through => :events, counter_cache: true
+	has_many :investigators, -> {distinct}, :through => :events, counter_cache: true
   validates :name, 
       presence:	true,
       uniqueness: true,

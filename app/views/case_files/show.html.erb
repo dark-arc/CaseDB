@@ -3,6 +3,13 @@
 	<%=link_to("#{t('case_files.new.edit')}", edit_case_file_path(@file)) %>
 	<%=link_to(t('events.new.title'), new_event_path(:casefile =>@file.id) ) %>
 	<%=link_to(t('.multilink'), link_case_file_path(@file))%>
+
+	<%= render partial: 'people/detail',
+	locals:{title: "Perpetrators", collection: @file.perpetrators} %>
+	<%= render partial: 'people/detail',
+	locals:{title: "Victims", collection: @file.victims} %>
+	<%= render partial: 'people/detail',
+	locals:{title: "Investigators", collection: @file.investigators} %>
 <% end %>
 
 <%= markdown @file.brief %>

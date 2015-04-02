@@ -3,8 +3,21 @@ class Event < ActiveRecord::Base
   has_many :person_event_links
   has_many :people, :through => :person_event_links, counter_cache: true
   has_many :event_types, :through => :person_event_links
+	has_many :victims,
+			->{where 'person_event_links.event_type_id' => [EventType.death, EventType.victim]}, 
+			:through => :person_event_links, 
+			:source => :person
+	has_many :investigators,
+			->{where 'person_event_links.event_type_id' => EventType.investigator}, 
+			:through => :person_event_links, 
+			:source => :person
+	has_many :perpetrators,
+			->{where 'person_event_links.event_type_id' => EventType.perpetrator}, 
+			:through => :person_event_links, 
+			:source => :person
   
   accepts_nested_attributes_for :person_event_links
+	attr_readonly :perpetrators, :investigators, :victims
   
   validates :body, 
       presence: true,

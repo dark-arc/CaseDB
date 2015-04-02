@@ -1,0 +1,6 @@
+	<%= content_tag(:details) do %>
+		<%= content_tag(:summary, title) %>
+		<% collection.each do |p| %>
+			<%= render p %>
+		<% end %>
+	<% end %>
