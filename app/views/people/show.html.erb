@@ -4,20 +4,20 @@
   <%= link_to t('actions.edit'), edit_person_path(@person) %>
   <%= link_to t('actions.delete'), @person, method: :delete, data: { confirm: "#{t('actions.delete_confirm')}" } %>
 	<%= t('person.dob') %>
-	<% if @person.getBirthEvent.new_record? %>
-		<%= link_to t('actions.addDOB'), new_link_path(:person_id => @person, :event_type_id => EventType::birth) %>
+	<% if @person.birth.empty? %>
+		<%= link_to t('actions.addDOB'), new_link_path(:person_id => @person, :event_type => :birth) %>
 	<% else %>
 		<%= content_tag(:date) do %>
-		<%= @person.getBirthEvent.date  %>
+		<%= @person.birth.first.date  %>
 		<% end %>
 	<% end %>
 	
 	<%= t('person.dod') %>
-	<% if @person.getDeathEvent.new_record? %>
-		<%= link_to t('actions.addDOD'), new_link_path(:person_id => @person, :event_type_id => EventType::death) %>
+	<% if @person.death.empty? %>
+		<%= link_to t('actions.addDOD'), new_link_path(:person_id => @person, :event_type => :death) %>
 	<% else %>
 		<%= content_tag(:date) do %>
-		<%= l @person.getDeathEvent.date  %>
+		<%= l @person.death.first.date  %>
 		<% end %>
 	<% end %>
 <% end %>

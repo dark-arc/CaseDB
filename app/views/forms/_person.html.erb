@@ -2,7 +2,42 @@
 
 <%= form_for @person do |f| %>
     <%= f.label :name %>
-    <%= f.text_area :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :gender %>
+    <%= f.select(:gender,
+	Person.genders.keys.map {
+	|g| [g.titleize,g]}) %>
+    
+    <%= f.label :eye %>
+    <%= f.select(:eye,
+	Person.eyes.keys.map {
+	|g| [g.titleize,g]}) %>
+ 
+    <%= f.label :hair_colour %>
+    <%= f.select(:hair_colour,
+	Person.hair_colours.keys.map {
+	|g| [g.titleize,g]}) %>
+
+    <%= f.label :hair_length %>
+    <%= f.select(:hair_length,
+	Person.hair_lengths.keys.map {
+	|g| [g.titleize,g]}) %>
+
+    <%= f.label :moustache %>
+    <%= f.select(:moustache,
+	Person.moustaches.keys.map {
+	|g| [g.titleize,g]}) %>
+   
+    <%= f.label :beard %>
+    <%= f.select(:beard,
+	Person.beards.keys.map {
+	|g| [g.titleize,g]}) %>
+
+    <%= f.label :ic %>
+    <%= f.select(:ic,
+	Person.ics.keys.map {
+	|g| [g.titleize,g]}) %>
     
     <%= f.submit %>
 <% end %>

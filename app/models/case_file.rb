@@ -1,23 +1,15 @@
 class CaseFile < ActiveRecord::Base
-	has_many :events, -> {order('date')}, counter_cache: true, inverse_of: :case_file
-	has_many :people, -> {distinct}, :through => :events, counter_cache: true
-	has_many :victims, -> {distinct}, :through => :events, counter_cache: true
-	has_many :perpetrators, -> {distinct}, :through => :events, counter_cache: true
-	has_many :investigators, -> {distinct}, :through => :events, counter_cache: true
-  validates :name, 
-      presence:	true,
-      uniqueness: true,
-      format: {with: /\A[a-zA-Z0-9 ]+\z/, message: I18n.t(:validation_alnum) },
-      length: {minimum: 5}
-  validates :brief, 
-      presence: true, 
-      length: {minimum: 2}
-
-	accepts_nested_attributes_for :events
+  has_many :events,
+           -> {order('date')}
+  has_many :event_people,
+           :through => :events
+  has_many :people,
+           :through => :event_people
   
-  def self.search(criteria)
-    criteria = "%"+criteria.to_s+"%"
-    where('name LIKE ?', criteria)
+  EventPerson.categories.each do |type|
+  has_many type[0].pluralize.to_sym,
+           -> {where 'event_people.category' => type[0].to_sym},
+           :through => :event_people,
+           :source => :person
   end
 end
-

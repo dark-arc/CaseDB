@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727184737) do
+ActiveRecord::Schema.define(version: 20150727202653) do
 
   create_table "case_files", force: :cascade do |t|
     t.string   "name"
@@ -20,10 +20,14 @@ ActiveRecord::Schema.define(version: 20150727184737) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "event_person", id: false, force: :cascade do |t|
-    t.integer "event_id",   null: false
-    t.integer "person_id",  null: false
-    t.integer "event_type"
+  create_table "event_people", force: :cascade do |t|
+    t.integer  "person_id"
+    t.integer  "event_id"
+    t.integer  "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_people_on_event_id"
+    t.index ["person_id"], name: "index_event_people_on_person_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -36,10 +40,14 @@ ActiveRecord::Schema.define(version: 20150727184737) do
     t.index ["case_file_id"], name: "index_events_on_case_file_id"
   end
 
-  create_table "mark_person", id: false, force: :cascade do |t|
-    t.integer "mark_id",   null: false
-    t.integer "person_id", null: false
-    t.integer "location"
+  create_table "mark_people", force: :cascade do |t|
+    t.integer  "mark_id"
+    t.integer  "person_id"
+    t.integer  "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mark_id"], name: "index_mark_people_on_mark_id"
+    t.index ["person_id"], name: "index_mark_people_on_person_id"
   end
 
   create_table "marks", force: :cascade do |t|

@@ -1,15 +1,15 @@
 class LinksController < ApplicationController
 	def new
-		@link = PersonEventLink.new
+		@link = EventPerson.new
 		@event = Event.new
-		@type = EventType.first
+		@type = :birth
 		
 		if params.key?(:case_id)
 			@case = Case.find(params[:case_id])
 		end
 		
-		if params.key?(:event_type_id)
-			@type = EventType.find(params[:event_type_id])
+		if params.key?(:event_type)
+			@type = params[:event_type]
 		end
 		
 		if params.key?(:event_id)
@@ -19,8 +19,8 @@ class LinksController < ApplicationController
 		if params.key?(:person_id)
 			@person = Person.find(params[:person_id])
 			@link.person=@person
-			@link.event_type=@type
-			@event.person_event_links<<@link
+			@link.category=@type
+			@event.event_people<<@link
 		end
 		
 		render 'events/new'
@@ -29,7 +29,7 @@ class LinksController < ApplicationController
 	def edit
 		@link = EventLink.find(params[:id])
 		@event = @link.event
-		@type = @link.event_type
+		@type = @link.category
 		
 		render 'events/new'
 	end
