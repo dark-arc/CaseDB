@@ -19,4 +19,8 @@ module ApplicationHelper
     @markdown ||= initMarkdown
     @markdown.render(text).html_safe
   end
+
+  def icon(name,alt)
+    image_tag("icons/#{name}.svg", alt: alt, class: 'icon' )
+  end
 end
