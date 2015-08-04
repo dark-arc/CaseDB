@@ -1,6 +1,9 @@
 <%= content_tag(:nav) do %>
-  <%= link_to t('home.index.title'), index_path %>
-  <%= link_to t('case_files.index.title'), case_files_path %>
-  <%= link_to t('people.index.title'), people_path %>
-  <%= link_to t('home.about.title'), about_path %>
+	<%= link_to t('home.index.title'), index_path %>
+	<%= link_to t('case_files.index.title'), case_files_path %>
+	<%= link_to t('people.index.title'), people_path %>
+	<%= link_to t('home.about.title'), about_path %>
+	<%= link_to current_user.email, destroy_user_session_path, method: :delete if user_signed_in? %>
+	<%= link_to "Login", new_user_session_path unless user_signed_in? %>
+	<%= link_to "Register", new_user_registration_path unless user_signed_in? %>
 <% end %>

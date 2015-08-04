@@ -18,7 +18,7 @@ gem 'sass-rails' # CSS pre-processor and minifier
 
 # Application
 gem 'redcarpet' # Markdown library
-
+gem 'devise'
 # Documentation
 gem 'sdoc', group: :doc # Documentation generator (RDOC)
 gem 'nokogiri', group: :doc # Required by sdoc for HTML generation
