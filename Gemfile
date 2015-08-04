@@ -1,17 +1,20 @@
 source 'https://rubygems.org'
 
 # Rails
-ruby '2.1.5'
-gem 'rails', '4.2.0'
-gem 'rake', '10.3.2'
-
+ruby  '2.3.0'
+gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'journey',  :git => 'git://github.com/rails/journey.git'
+gem 'arel',      :git => 'git://github.com/rails/arel.git'
+gem 'rake'
+# Helpers
+gem 'record_tag_helper', :git => 'https://github.com/rails/record_tag_helper.git'
 # Server
-gem 'unicorn' # Application Server 
+#gem 'unicorn' # Application Server 
 gem 'sqlite3', group: :development # Database
 #gem 'pg' # Postgresql adapter - Used for Heroku
-gem 'turbolinks' # Speeds up page loading by only loading required parts
+gem 'turbolinks', :git => 'https://github.com/rails/turbolinks.git'
 gem 'sass-rails' # CSS pre-processor and minifier
-#gem 'dalli' # Used for heroku
+#gem 'dalli' # Used for hero should also be running the same version of Ruby locally. You ku
 
 # Application
 gem 'redcarpet' # Markdown library

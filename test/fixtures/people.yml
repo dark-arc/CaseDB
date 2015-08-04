@@ -2,8 +2,20 @@
 
 one:
   name: MyString
-  has_and_belongs_to_many: 
+  gender: 1
+  height: 1
+  weight: 1
+  eye_colour: 1
+  hair_colour: 1
+  hair_length: 1
+  ic: 1
 
 two:
   name: MyString
-  has_and_belongs_to_many: 
+  gender: 1
+  height: 1
+  weight: 1
+  eye_colour: 1
+  hair_colour: 1
+  hair_length: 1
+  ic: 1

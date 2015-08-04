@@ -1,44 +1,90 @@
 class Person < ActiveRecord::Base
-  has_many :person_event_links
-  has_many :events, :through => :person_event_links, counter_cache: true
-  has_many :case, -> {distinct}, :through => :event, counter_cache: true
-  validates :name,
-      presence:	true,
-      format: {with: /\A[a-zA-Z0-9 ]+\z/, message: I18n.t('validation.alnum') },
-      length: {minimum: 5}
-  
-  def getBirthEvent
-    return getEvent('Birth')
+  has_many :event_people
+  has_many :events,
+           :through => :event_people
+  has_many :case_files,
+           -> {distinct},
+           :through => :events
+
+  EventPerson.categories.each do |type|
+    type = type[0].to_sym
+    has_many type,
+-> {where 'event_people.category' => type},
+
+             :through => :event_people,
+             :source => :event
   end
-  
-  def getDeathEvent
-    return getEvent('Death')
-  end
-	
-	def getEventLink(type)
-		#model = Product.find(:first, :conditions => ["lower(name) = ?", name.downcase]) 
-		t = EventType.where("name LIKE ?", type).first
-		link = self.person_event_links.where("event_type_id = ?",t)
-		if(link.empty?)
-			PersonEventLink.new
-		else
-			link.first
-		end
-	end
-  
-  def getEvent(type)
-		l=getEventLink(type)
-		if(l.new_record?)
-			return Event.new
-		else
-			return l.event
-		end
-#     t = EventType.find_by!(name: type).id
-#     link = self.event_links.where("event_type_id = ?",t)
-#     if(link.empty?)
-# 			Event.new
-#     else
-# 			link.first.event
-#     end
-  end
+
+  enum gender: [
+         :unknown,
+         :male,
+         :female,
+         :asexual,
+         :transmale,
+         :transfemale
+       ], _prefix: true
+
+  enum eye: [
+         :unknown,
+         :lightBlue,
+         :blue,
+         :blueGray,
+         :gray,
+         :blueGrayBrown,
+         :grayGreenBrown,
+         :green,
+         :greenBrown,
+         :lightBrown,
+         :brown,
+         :hazel,
+         :darkBrown,
+         :black
+       ], _suffix: 'colour'
+
+  enum height: [
+         :dwarf,
+         :short,
+         :average,
+         :tall
+       ], _prefix:true
+
+  enum weight: [
+        :slight,
+        :average,
+        :overweight,
+        :obese
+      ], _prefix:true
+
+  enum hair_colour: [
+         :unknown,
+         :black,
+         :brown,
+         :blond,
+         :auburn,
+         :chestnut,
+         :red,
+         :gray
+       ], _suffix: true
+
+  enum hair_length: [
+         :unknown,
+         :bald,
+         :short,
+         :medium,
+         :shoulderLength,
+         :backLength
+       ], _suffix: true
+
+  enum moustache: [:unknown],_prefix: true
+  enum beard: [:unknown],_prefix: true
+
+  enum ics: [
+         :unknown,
+         :northEurope,
+         :southEurope,
+         :black,
+         :westAsia,
+         :eastAsia,
+         :arabic
+       ], _prefix: true
 end

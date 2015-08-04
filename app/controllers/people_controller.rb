@@ -64,7 +64,17 @@ class PeopleController < ApplicationController
   
   private
   def people_params
-    params.require(:person).permit(:name)
+    params.require(:person).
+      permit(
+        :name,
+        :gender,
+        :eye,
+        :hair_colour,
+        :hair_length,
+        :moustache,
+        :beard,
+        :ic
+      )
   end
   def event_params
     params.require(:person).permit(:event_id)

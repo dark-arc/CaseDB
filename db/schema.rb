@@ -11,44 +11,63 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141030133953) do
+ActiveRecord::Schema.define(version: 20150727202653) do
 
-  create_table "case_files", force: true do |t|
+  create_table "case_files", force: :cascade do |t|
     t.string   "name"
     t.string   "brief"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "person_event_links", force: true do |t|
-    t.integer  "event_id"
+  create_table "event_people", force: :cascade do |t|
     t.integer  "person_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "event_type_id"
+    t.integer  "event_id"
+    t.integer  "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_people_on_event_id"
+    t.index ["person_id"], name: "index_event_people_on_person_id"
   end
 
-  add_index "person_event_links", ["event_type_id"], name: "index_event_links_on_event_types_id"
-
-  create_table "event_types", force: true do |t|
-    t.string "name"
-  end
-
-  create_table "events", force: true do |t|
+  create_table "events", force: :cascade do |t|
     t.integer  "case_file_id"
     t.string   "body"
-    t.date     "date"
-    t.time     "time"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "tagline"
+    t.datetime "date"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["case_file_id"], name: "index_events_on_case_file_id"
   end
 
-  add_index "events", ["case_file_id"], name: "index_events_on_case_id"
+  create_table "mark_people", force: :cascade do |t|
+    t.integer  "mark_id"
+    t.integer  "person_id"
+    t.integer  "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mark_id"], name: "index_mark_people_on_mark_id"
+    t.index ["person_id"], name: "index_mark_people_on_person_id"
+  end
 
-  create_table "people", force: true do |t|
+  create_table "marks", force: :cascade do |t|
+    t.integer  "type"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "people", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "gender"
+    t.integer  "height"
+    t.integer  "weight"
+    t.integer  "eye_colour"
+    t.integer  "hair_colour"
+    t.integer  "hair_length"
+    t.integer  "ic"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

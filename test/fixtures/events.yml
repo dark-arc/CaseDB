@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  case_id: 
+  case_file: 
   body: MyString
-  date: 2014-10-08
-  time: 2014-10-08 12:58:47
+  tagline: MyString
+  date: 2015-07-27 19:40:37
 
 two:
-  case_id: 
+  case_file: 
   body: MyString
-  date: 2014-10-08
-  time: 2014-10-08 12:58:47
+  tagline: MyString
+  date: 2015-07-27 19:40:37
