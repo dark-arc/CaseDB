@@ -3,7 +3,14 @@
 	<%= link_to t('case_files.index.title'), case_files_path %>
 	<%= link_to t('people.index.title'), people_path %>
 	<%= link_to t('home.about.title'), about_path %>
-	<%= link_to current_user.email, destroy_user_session_path, method: :delete if user_signed_in? %>
-	<%= link_to "Login", new_user_session_path unless user_signed_in? %>
-	<%= link_to "Register", new_user_registration_path unless user_signed_in? %>
+	<%= content_tag(:aside) do %>
+	<% if signed_in? %>
+	<%= link_to icon('person','Edit Account'), edit_user_registration_path %>
+	<%= link_to icon('account-logout','Sign out'),
+	destroy_user_session_path, method: :delete %>
+	<% else %>
+	<%= link_to icon('account-login','Login'), new_user_session_path %>
+	<%= link_to icon("pencil","Register"), new_user_registration_path %>
+	<% end %>
+	<% end %>
 <% end %>
