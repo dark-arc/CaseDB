@@ -1,4 +1,6 @@
 class PeopleController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @person = Person.all
   end
