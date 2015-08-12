@@ -6,6 +6,9 @@ class Person < ActiveRecord::Base
            -> {distinct},
            :through => :events
 
+  validate :validate_birth_event_count
+  validate :validate_death_event_count
+  
   EventPerson.categories.each do |type|
     type = type[0].to_sym
     has_many type,
@@ -13,6 +16,18 @@ class Person < ActiveRecord::Base
 
              :through => :event_people,
              :source => :event
+  end
+
+  def validate_birth_event_count
+    if self.birth.size > 1
+      errors.add(:birth, :multipleBirthEvents)
+    end
+  end
+
+  def validate_death_event_count
+    if self.death.size > 1
+      errors.add(:death, :multipleDeathEvents)
+    end
   end
 
   enum gender: [
