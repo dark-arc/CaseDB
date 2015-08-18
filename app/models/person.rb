@@ -1,11 +1,34 @@
+# Person class contains the descriptions of people and a narative of
+# their life. 
 class Person < ActiveRecord::Base
   has_many :event_people
+  #@attribute events
+  # @return [Relation<Event>] Narrative for this persons life
   has_many :events,
            :through => :event_people
+  #@attribute case_files 
+  # @return [Relation<CaseFile>] Cases this person was involved in
   has_many :case_files,
            -> {distinct},
            :through => :events
 
+  #@attribute birth
+  # @return [CollectionProxy<Event>] birth event of this person
+  
+  #@attribute death
+  # @return [CollectionProxy<Event>] death event of this person
+  
+  #@attribute victim
+  # @return [CollectionProxy<Event>] events where this person was
+  # a victim
+  
+  #@attribute perpetrator
+  # @return [CollectionProxy<Event>] events where this person was
+  # a perpetrator
+  
+  #@attribute investigator
+  # @return [CollectionProxy<Event>] events where this person was
+  # an investigator
   EventPerson.categories.each do |type|
     type = type[0].to_sym
     has_many type,
@@ -14,7 +37,8 @@ class Person < ActiveRecord::Base
              :through => :event_people,
              :source => :event
   end
-
+  #@!attribute gender
+  # @return [Symbol] The gender of this person. 
   enum gender: [
          :unknown,
          :male,
@@ -23,7 +47,8 @@ class Person < ActiveRecord::Base
          :transmale,
          :transfemale
        ], _prefix: true
-
+  #@!attribute eye
+  # @return [Symbol] The eye colour of this person. 
   enum eye: [
          :unknown,
          :lightBlue,
@@ -40,21 +65,24 @@ class Person < ActiveRecord::Base
          :darkBrown,
          :black
        ], _suffix: 'colour'
-
+  #@!attribute height
+  # @return [Symbol] The height of this person. 
   enum height: [
          :dwarf,
          :short,
          :average,
          :tall
        ], _prefix:true
-
+  #@!attribute weight
+  # @return [Symbol] The weight of this person. 
   enum weight: [
         :slight,
         :average,
         :overweight,
         :obese
       ], _prefix:true
-
+  #@!attribute hair_colour
+  # @return [Symbol] The hair_colour of this person. 
   enum hair_colour: [
          :unknown,
          :black,
@@ -65,7 +93,8 @@ class Person < ActiveRecord::Base
          :red,
          :gray
        ], _suffix: true
-
+  #@!attribute hair_length
+  # @return [Symbol] The hair_length of this person. 
   enum hair_length: [
          :unknown,
          :bald,
@@ -74,10 +103,16 @@ class Person < ActiveRecord::Base
          :shoulderLength,
          :backLength
        ], _suffix: true
-
+  #@!attribute moustache
+  # @return [Symbol] The type of moustache the person had
+  # @todo add types of moustache
   enum moustache: [:unknown],_prefix: true
+  #@!attribute gender
+  # @return [Symbol] The type of beard the person had
+  # @todo add types of beard
   enum beard: [:unknown],_prefix: true
-
+  #@!attribute ics
+  # @return [Symbol] The ICS code of the person
   enum ics: [
          :unknown,
          :northEurope,

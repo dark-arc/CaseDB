@@ -1,7 +1,7 @@
 == README
 === About
 CaseDB is a site designed to organise information on (historic) criminals. This 
-is a personal project for me and my fiance, we both did forensic degrees, it 
+is a personal project for me and my wife, we both did forensic degrees, it 
 seemed like fun. 
 
 The code is here for my purposes, it's accessible to anyone because I'm cheap 
@@ -23,12 +23,3 @@ The development branch will be committed into a staging branch. The intent of th
 The fix branch structure will branch off master and be pushed into development (or staging) and onto master at the same time. This can only be used for fixing bugs which are severe enough to need an instant fix (anything else can wait).
 
 I will, when I'm used to this, make some rake tasks for doing this stuff to make it easier. 
-
-Taken from <http://nvie.com/posts/a-successful-git-branching-model/>
-=== Work List
- - Better localisation (I've not found a good way to do this yet, mine sucks)
- - Test Cases (Actually write some)
- - Improve UI (I should actually care about people who view the site)
- - Security (Auth Gem + CanCan?)
- - JSON API (I'm lazy and updating things sucks)
- - Modified Markdown (Allow linking to people / locations through syntax)

@@ -1,6 +1,10 @@
 class Event < ActiveRecord::Base
+  #@attribute case_file
+  # The case file the event belongs to
   belongs_to :case_file
   has_many :event_people
+  #@attribute people
+  # The people associated with the case
   has_many :people,
            :through => :event_people
   
@@ -12,7 +16,9 @@ class Event < ActiveRecord::Base
            :through => :event_people,
            :source => :person
   end
-
+  #@attribute tagline
+  # A tagline for the case, this can be set manually or if unset will
+  # be the first sentence of the body.
   def tagline
     return body.split('. ').first if
       super == nil
