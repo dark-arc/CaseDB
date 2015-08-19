@@ -15,4 +15,14 @@ class PersonTest < ActiveSupport::TestCase
     person.death << Event.new
     assert person.invalid?, "Cannot have multiple death events"
   end
+
+  test "Person name validation" do
+    person = Person.new
+    assert person.invalid?, "Person is valid without name"
+    person.name = 'a'*4
+    assert person.invalid?, "Person name can be less than 5 characters"
+    person.name = 'a'*201
+    assert person.invalid?, "Person name can be greater than 200 characters"
+  end
+
 end
