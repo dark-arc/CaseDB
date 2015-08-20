@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+  default_scope { order(:date)}
   #@attribute case_file
   # The case file the event belongs to
   belongs_to :case_file
@@ -7,6 +8,10 @@ class Event < ActiveRecord::Base
   # The people associated with the case
   has_many :people,
            :through => :event_people
+
+  validates :brief,
+            presence: true,
+            length: {minimum: 100}
   
   accepts_nested_attributes_for :event_people
 

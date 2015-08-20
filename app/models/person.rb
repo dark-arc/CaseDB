@@ -11,8 +11,11 @@ class Person < ActiveRecord::Base
   has_many :case_files,
            -> {distinct},
            :through => :events
-  validate :validate_birth_event_count
-  validate :validate_death_event_count
+  validates :name,
+            presence: true,
+            length: {in: 5..200}
+  validate :validate_birth_event_count,
+           :validate_death_event_count
   
   #@attribute birth
   # @return [CollectionProxy<Event>] birth event of this person

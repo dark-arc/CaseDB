@@ -10,6 +10,10 @@ class CaseFile < ActiveRecord::Base
   # A case has many associated people. This lists all of them
   has_many :people,
            :through => :event_people
+
+  validates :name,
+            presence: true,
+            length: {in: 50..500}
   
   EventPerson.categories.each do |type|
   has_many type[0].pluralize.to_sym,
