@@ -17,8 +17,8 @@ gem 'sass-rails'
 # Application
 gem 'redcarpet' # Markdown library
 # Auth
-gem 'devise'
-gem 'cancan'
+gem 'devise', github: 'twalpole/devise', branch: 'rails5'
+gem 'cancancan'
 gem 'role_model'
 
 # Documentation

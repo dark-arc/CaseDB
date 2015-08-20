@@ -17,7 +17,8 @@ module ApplicationHelper
   
   def markdown(text)
     @markdown ||= initMarkdown
-    @markdown.render(text).html_safe
+    @markdown.render(text).html_safe unless
+      text == nil
   end
 
   def icon(name,alt)

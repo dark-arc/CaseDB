@@ -9,7 +9,7 @@ class Event < ActiveRecord::Base
   has_many :people,
            :through => :event_people
 
-  validates :brief,
+  validates :body,
             presence: true,
             length: {minimum: 100}
   

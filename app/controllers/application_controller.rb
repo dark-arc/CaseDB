@@ -5,4 +5,10 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |e|
     redirect_to root_url, :alert => e.message
   end
+
+  before_filter do
+    resource = controller_name.singularize.to_sym
+    method = "#{resource}_params"
+    params[resource] &&= send(method) if respond_to?(method, true)
+  end
 end

@@ -11,9 +11,12 @@ class CaseFile < ActiveRecord::Base
   has_many :people,
            :through => :event_people
 
-  validates :name,
+  validates :brief,
             presence: true,
             length: {in: 50..500}
+  validates :name,
+            presence: true,
+            length: {in: 5..50}
   
   EventPerson.categories.each do |type|
   has_many type[0].pluralize.to_sym,

@@ -55,7 +55,7 @@ class Person < ActiveRecord::Base
        ], _prefix: true
   #@!attribute eye
   # @return [Symbol] The eye colour of this person. 
-  enum eye: [
+  enum eye_colour: [
          :unknown,
          :lightBlue,
          :blue,
@@ -70,10 +70,11 @@ class Person < ActiveRecord::Base
          :hazel,
          :darkBrown,
          :black
-       ], _suffix: 'colour'
+       ] , _suffix: 'eyes'
   #@!attribute height
   # @return [Symbol] The height of this person. 
   enum height: [
+         :unknown,
          :dwarf,
          :short,
          :average,
@@ -82,11 +83,12 @@ class Person < ActiveRecord::Base
   #@!attribute weight
   # @return [Symbol] The weight of this person. 
   enum weight: [
-        :slight,
-        :average,
-        :overweight,
-        :obese
-      ], _prefix:true
+         :unknown,
+         :slight,
+         :average,
+         :overweight,
+         :obese
+       ], _prefix:true
   #@!attribute hair_colour
   # @return [Symbol] The hair_colour of this person. 
   enum hair_colour: [
@@ -112,14 +114,28 @@ class Person < ActiveRecord::Base
   #@!attribute moustache
   # @return [Symbol] The type of moustache the person had
   # @todo add types of moustache
-  enum moustache: [:unknown],_prefix: true
+  enum moustache: [
+         :unknown,
+         :none,
+         :handleBar,
+         :toothbrush,
+       ],_prefix: true
   #@!attribute gender
   # @return [Symbol] The type of beard the person had
   # @todo add types of beard
-  enum beard: [:unknown],_prefix: true
+  enum beard: [
+         :unknown,
+         :clean,
+         :stubble,
+         :soulPatch,
+         :full,
+         :muttonChops,
+         :long,
+         :medium
+       ],_prefix: true
   #@!attribute ics
   # @return [Symbol] The ICS code of the person
-  enum ics: [
+  enum ic: [
          :unknown,
          :northEurope,
          :southEurope,

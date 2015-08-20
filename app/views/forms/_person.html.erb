@@ -8,10 +8,25 @@
     <%= f.select(:gender,
 	Person.genders.keys.map {
 	|g| [g.titleize,g]}) %>
+
+    <%= f.label :ic %>
+    <%= f.select(:ic,
+	Person.ics.keys.map {
+	|g| [g.titleize,g]}) %>    
     
-    <%= f.label :eye %>
-    <%= f.select(:eye,
-	Person.eyes.keys.map {
+    <%= f.label :height %>
+    <%= f.select(:height,
+	Person.heights.keys.map {
+	|g| [g.titleize,g]}) %>
+
+    <%= f.label :weight %>
+    <%= f.select(:weight,
+	Person.weights.keys.map {
+	|g| [g.titleize,g]}) %>
+
+    <%= f.label :eye_colour %>
+    <%= f.select(:eye_colour,
+	Person.eye_colours.keys.map {
 	|g| [g.titleize,g]}) %>
  
     <%= f.label :hair_colour %>
@@ -23,21 +38,5 @@
     <%= f.select(:hair_length,
 	Person.hair_lengths.keys.map {
 	|g| [g.titleize,g]}) %>
-
-    <%= f.label :moustache %>
-    <%= f.select(:moustache,
-	Person.moustaches.keys.map {
-	|g| [g.titleize,g]}) %>
-   
-    <%= f.label :beard %>
-    <%= f.select(:beard,
-	Person.beards.keys.map {
-	|g| [g.titleize,g]}) %>
-
-    <%= f.label :ic %>
-    <%= f.select(:ic,
-	Person.ics.keys.map {
-	|g| [g.titleize,g]}) %>
-    
     <%= f.submit %>
 <% end %>

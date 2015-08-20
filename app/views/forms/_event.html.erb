@@ -9,16 +9,14 @@
 	:start_year => Time.now.year - 500,
 	:end_year => Time.now.year %>
 	
-	<% if defined? @case %>
-		<%= f.label :case_file_id %>
-		<%= f.collection_select :case_file_id, CaseFile.all, :id, :name %>
-	<% end %>
+	<%= f.label :case_file_id %>
+	<%= f.collection_select :case_file_id, CaseFile.all, :id, :name, :include_blank => true %>
 	
 	<% if defined? @link %>
 		<%= f.fields_for :event_people, @link do |e| %>
 			<%= e.label :person_id %>
-			<%= e.select :person_id,
-			Person.all.collect{|c| [c.name,c.id] } %>
+			<%= e.collection_select :person_id,
+			Person.all, :id,:name %>
 			<%= e.label :event_type_id %>
 			<%= e.select :category,
 			EventPerson.categories.collect{|c| [c.first]} %>
