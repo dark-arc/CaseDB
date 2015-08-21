@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150820230548) do
+ActiveRecord::Schema.define(version: 20150820234515) do
 
   create_table "case_files", force: :cascade do |t|
     t.string   "name"
@@ -48,12 +48,6 @@ ActiveRecord::Schema.define(version: 20150820230548) do
     t.datetime "updated_at", null: false
     t.index ["mark_id"], name: "index_mark_people_on_mark_id"
     t.index ["person_id"], name: "index_mark_people_on_person_id"
-  end
-
-  create_table "mark_person", id: false, force: :cascade do |t|
-    t.integer "mark_id",   null: false
-    t.integer "person_id", null: false
-    t.integer "location"
   end
 
   create_table "marks", force: :cascade do |t|
