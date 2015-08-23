@@ -2,8 +2,7 @@ class CaseFile < ActiveRecord::Base
   #@attribute events
   # A case file has many events, these provide the narrative for the
   # case
-  has_many :events,
-           -> {order('date')}
+  has_many :events
   has_many :event_people,
            :through => :events
   #@attribute people

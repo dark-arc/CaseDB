@@ -6,9 +6,13 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, :alert => e.message
   end
 
-  before_filter do
-    resource = controller_name.singularize.to_sym
-    method = "#{resource}_params"
-    params[resource] &&= send(method) if respond_to?(method, true)
+  #  before_filter do
+  #    resource = controller_name.singularize.to_sym
+  #    method = "#{resource}_params"
+  #    params[resource] &&= send(method) if respond_to?(method, true)
+  #  end
+
+  def current_user
+    User.find_by_id session[:user_id]
   end
 end

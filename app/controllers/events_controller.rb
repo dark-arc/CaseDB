@@ -55,7 +55,7 @@ class EventsController < ApplicationController
   private
   def event_params
     params.require(:event).permit(:body, :date, :case_file_id,
-                                  :event_people => [:person_id, :category])
+                                  :event_people_attributes => [:person_id, :category])
   end
 end
 

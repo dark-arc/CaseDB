@@ -2,7 +2,6 @@
 <% content_for(:sidebar) do %>
 	<%=link_to("#{t('case_files.new.edit')}", edit_case_file_path(@case_file)) %>
 	<%=link_to(t('events.new.title'), new_event_path(:casefile =>@case_file.id) ) %>
-	<%=link_to(t('.multilink'), link_case_file_path(@case_file))%>
 
 	<%= render partial: 'people/detail',
 	locals:{title: "Perpetrators", collection: @case_file.perpetrators} %>

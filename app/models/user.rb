@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
                       :on => :create
 
   roles_attribute :roles_mask
-  roles :admin, :researcher, :moderator, :guest
+  roles :admin, :researcher, :moderator,:user, :guest
 
   def self.authenticate(username="", password="")
     user = User.find_by_username(username)

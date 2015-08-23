@@ -37,8 +37,7 @@ class Person < ActiveRecord::Base
   EventPerson.categories.each do |type|
     type = type[0].to_sym
     has_many type,
--> {where 'event_people.category' => type},
-
+             -> {where 'event_people.category' => type},
              :through => :event_people,
              :source => :event
   end

@@ -24,4 +24,17 @@ module ApplicationHelper
   def icon(name,alt)
     image_tag("icons/#{name}.svg", alt: alt, class: 'icon' )
   end
+
+  def signed_in?
+    if session[:user_id] != nil
+      true
+    else
+      false
+    end
+  end
+
+  def current_user
+    session[:user_id]
+  end
+  
 end

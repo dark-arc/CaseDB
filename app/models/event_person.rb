@@ -1,5 +1,8 @@
 class EventPerson < ActiveRecord::Base
-  enum  categories: [
+  belongs_to :event
+  belongs_to :person
+
+  enum  category: [
           :birth,
           :death,
           :victim,
@@ -7,4 +10,8 @@ class EventPerson < ActiveRecord::Base
           :perpetrator,
           :investigator          
         ]
+  EventPerson.categories.each do |type|
+    scope type[0].to_sym,
+          -> { where category: type[0].to_sym }
+  end    
 end

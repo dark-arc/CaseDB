@@ -9,10 +9,14 @@ class Ability
   # This defines the permissions for each page
   # @see http://rubydoc.info/github/ryanb/cancan/CanCan
   def initialize(user)
-    user ||= User.new 
+    user ||= User.new
+    user.roles = :guest
     # Everyone can read
     can :read, @@coreModels
     can :create, User
+    if [:admin,:researcher,:moderator,:user]
+      can [:read, :edit], User
+    end
     # Admin can do everything
     if user.admin?
       can :manage, :all

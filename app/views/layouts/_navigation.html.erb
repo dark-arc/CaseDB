@@ -5,12 +5,11 @@
 	<%= link_to t('home.about.title'), about_path %>
 	<%= content_tag(:aside) do %>
 	<% if signed_in? %>
-	<%= link_to icon('person','Edit Account'), edit_user_registration_path %>
-	<%= link_to icon('account-logout','Sign out'),
-	destroy_user_session_path, method: :delete %>
+	<%= link_to icon('person','Edit Account'), edit_user_path(current_user) %>
+	<%= link_to icon('account-logout','Sign out'), session_path(current_user), method: :delete %>
 	<% else %>
-	<%= link_to icon('account-login','Login'), new_user_session_path %>
-	<%= link_to icon("pencil","Register"), new_user_registration_path %>
+	<%= link_to icon('account-login','Login'), new_session_path %>
+	<%= link_to icon("pencil","Register"), new_user_path %>
 	<% end %>
 	<% end %>
 <% end %>
