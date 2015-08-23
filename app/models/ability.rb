@@ -12,9 +12,11 @@ class Ability
     user ||= User.new 
     # Everyone can read
     can :read, @@coreModels
+    can :create, User
     # Admin can do everything
     if user.admin?
       can :manage, :all
+      can :promote, :user
     end
   end
 end

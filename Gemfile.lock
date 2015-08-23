@@ -70,19 +70,6 @@ GIT
       thor (>= 0.18.1, < 2.0)
 
 GIT
-  remote: git://github.com/twalpole/devise.git
-  revision: c2e8c7a81fab827c354c22b23e3c61b9bc6e4cbf
-  branch: rails5
-  specs:
-    devise (3.5.2)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      responders
-      thread_safe (~> 0.1)
-      warden (~> 1.2.3)
-
-GIT
   remote: https://github.com/rails/turbolinks.git
   revision: 747919cadc64bca640927f4cffcc08f53543bfc1
   specs:
@@ -92,7 +79,6 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    bcrypt (3.1.10)
     builder (3.2.2)
     cancancan (1.12.0)
     coffee-rails (4.1.0)
@@ -123,7 +109,6 @@ GEM
     minitest (5.8.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
-    orm_adapter (0.5.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -140,8 +125,6 @@ GEM
     record_tag_helper (0.0.0)
       rails (~> 5.0.0.alpha)
     redcarpet (3.3.2)
-    responders (2.1.0)
-      railties (>= 4.2.0, < 5)
     role_model (0.8.2)
     sass (3.4.16)
     sass-rails (5.0.3)
@@ -169,8 +152,6 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    warden (1.2.3)
-      rack (>= 1.0)
     yard (0.8.7.6)
 
 PLATFORMS
@@ -180,7 +161,6 @@ DEPENDENCIES
   arel!
   cancancan
   coffee-rails
-  devise!
   journey!
   jquery-rails
   nokogiri

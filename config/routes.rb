@@ -3,32 +3,11 @@ Rails.application.routes.draw do
   get	'index', to: 'home#index'
   get	'about', to: 'home#about'
   
-  resources :case_files do
-    collection do 
-      get 'search'
-    end
-    member do
-      get 'link'
-      post 'link'
-      delete 'unlink'
-    end
-  end
-  
-  resources :events do
-    collection do
-      get 'search'
-    end
-  end
-  
-  resources :links do
-    collection do
-      get 'search'
-    end
-  end
-  
-  resources :people do
-    collection do 
-      get 'search'
-    end
-  end 
+  resources :case_files
+  resources :events
+  resources :links
+  resources :people
+
+  resources :users
+  resources :session
 end
