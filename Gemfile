@@ -11,7 +11,7 @@ gem 'record_tag_helper'
 #gem 'unicorn'
 gem 'puma'
 gem 'sqlite3', group: :development # Database
-#gem 'pg' 
+gem 'pg' 
 gem 'turbolinks', :git => 'https://github.com/rails/turbolinks.git'
 gem 'sass-rails' 
 #gem 'dalli' 
