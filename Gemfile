@@ -7,7 +7,8 @@ gem 'arel',      :git => 'git://github.com/rails/arel.git'
 gem 'rake'
 gem 'record_tag_helper'
 # Server
-#gem 'unicorn' 
+#gem 'unicorn'
+gem 'puma'
 gem 'sqlite3', group: :development # Database
 #gem 'pg' 
 gem 'turbolinks', :git => 'https://github.com/rails/turbolinks.git'
