@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 # Rails
+ruby '2.2.2'
 gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'journey',  :git => 'git://github.com/rails/journey.git'
 gem 'arel',      :git => 'git://github.com/rails/arel.git'
