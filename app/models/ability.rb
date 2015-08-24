@@ -6,21 +6,19 @@ class Ability
   # A list of models which are "core elements". 
   @@coreModels = [CaseFile,Person,Event,Link]
 
-  # This defines the permissions for each page
-  # @see http://rubydoc.info/github/ryanb/cancan/CanCan
   def initialize(user)
     user ||= User.new
     user.roles = :guest
     # Everyone can read
     can :read, @@coreModels
     can :create, User
-    if [:admin,:researcher,:moderator,:user]
-      can [:read, :edit], User
+    if [:researcher,:moderator,:user]
+      can [:read, :update], User, :id => user.id
     end
     # Admin can do everything
-    if user.admin?
+    if [:admin]
       can :manage, :all
-      can :promote, :user
+      can :promote, User
     end
   end
 end

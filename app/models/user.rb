@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
             :uniqueness => true
   validates :password,
             :confirmation => true
+  validates :password_confirmation,
+            :presence => true,
+            unless: Proc.new {|a| a.password.blank?}
   validates_length_of :password,
                       :in => 10..50,
                       :on => :create

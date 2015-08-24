@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    render 'new'
   end
 
   def update
@@ -34,10 +35,19 @@ class UsersController < ApplicationController
 
   private
   def user_params
+    if params[:user][:password] == nil ||
+       params[:user][:password].blank?
+      params[:user].delete(:password)
+      params[:user].delete(:password_confirmation)
+    end
+    if cannot? :promote, User
+      params[:user].delete(:roles)
+    end
     params.require(:user).
       permit(
         :username,
         :email,
+        {:roles => []},
         :password,
         :password_confirmation
       )
