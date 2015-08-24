@@ -17,6 +17,24 @@ module ApplicationHelper
   
   def markdown(text)
     @markdown ||= initMarkdown
-    @markdown.render(text).html_safe
+    @markdown.render(text).html_safe unless
+      text == nil
   end
+
+  def icon(name,alt)
+    image_tag("icons/#{name}.svg", alt: alt, class: 'icon' )
+  end
+
+  def signed_in?
+    if session[:user_id] != nil
+      true
+    else
+      false
+    end
+  end
+
+  def current_user
+    @current_user ||= User.find_by_id session[:user_id]
+  end
+  
 end

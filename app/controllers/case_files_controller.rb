@@ -1,60 +1,56 @@
 class CaseFilesController < ApplicationController
-	def index
-		@file = CaseFile.all
-	end
+  load_and_authorize_resource
+
+  def index
+    @case_file = CaseFile.all
+  end
   
-	def search
-# Not yet implemented
-	end
+  def create
+    if @case_file.save
+      redirect_to @case_file 
+    else
+      render 'new'
+    end
+  end
   
-	def create
-		@file = CaseFile.new(case_params)
-		if @file.save
-			redirect_to @file 
-		else
-			render 'new'
-		end
-	end
+  def new
+    @case_file = CaseFile.new()
+  end
   
-	def new
-		@file = CaseFile.new()
-	end
+  def show
+    @case_file = CaseFile.find(params[:id])
+  end
   
-	def show
-		@file = CaseFile.find(params[:id])
-	end
+  def edit
+    @case_file = CaseFile.find(params[:id])
+  end
   
-	def edit
-		@file = CaseFile.find(params[:id])
-	end
+  def update
+    if @case_file.update(case_file_params)
+      redirect_to @case_file
+    else
+      render 'edit'
+    end
+  end
   
-	def update
-		@file = CaseFile.find(params[:id])
-		if @file.update(case_params)
-			redirect_to @file
-		else
-			render 'edit'
-		end
-	end
+  def destroy
+    if CaseFile.exists?(params[:id])
+      @case_file = CaseFile.find(params[:id])
+      @case_file.destroy()
+      @success = true
+    else
+      @success = false
+    end
+    redirect_to @case_file
+  end
+  # Define case event linking and unlinking
+  def link
+    @case_file = CaseFile.find(params[:id]) 
+    @event = Event.all
+  end
   
-	def destroy
-		if CaseFile.exists?(params[:id])
-			@file = CaseFile.find(params[:id])
-			@file.destroy()
-			@success = true
-		else
-			@success = false
-		end
-		redirect_to @file
-	end
-	# Define case event linking and unlinking
-	def link
-		@file = CaseFile.find(params[:id]) 
-		@event = Event.all
-	end
-  
-	private
-	def case_params
-		params.require(:case_file).permit!
-	end
+  private
+  def case_file_params
+    params.require(:case_file).permit(:name,:brief)
+  end
 end

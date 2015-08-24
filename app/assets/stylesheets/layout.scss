@@ -51,6 +51,12 @@ form{
 	}
 }
 
+.icon{
+	height:0.75em;
+	witdh:0.75em;
+	vertical-align:middle;
+}
+
 @media  (max-width: 600px) {
 	main section{
 		flex-direction:column;

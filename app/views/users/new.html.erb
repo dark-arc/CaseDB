@@ -1,0 +1,21 @@
+<%= render partial: 'forms/error', locals: {errors: @user.errors} %>
+
+<%= form_for @user do |f| %>
+<%= f.label :username %>
+<%= f.text_field :username %>
+<%= f.label :email %>
+<%= f.text_field :email %>
+
+<% if can? :promote, User %>
+<%= f.label :roles %>
+<%= f.select :roles,
+    options_for_select(User.valid_roles,@user.role_symbols),
+    {}, {:multiple => true} %>
+<% end %>
+<%= f.label :password %>
+<%= f.password_field :password, :autocomplete => :off %>
+<%= f.label :password_confirmation %>
+<%= f.password_field :password_confirmation, :autocomplete => :off %>
+
+<%= f.submit %>
+<%  end %>

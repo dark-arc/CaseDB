@@ -1,21 +1,20 @@
-<% content_for(:title, @file.name) %>
+<% content_for(:title, @case_file.name) %>
 <% content_for(:sidebar) do %>
-	<%=link_to("#{t('case_files.new.edit')}", edit_case_file_path(@file)) %>
-	<%=link_to(t('events.new.title'), new_event_path(:casefile =>@file.id) ) %>
-	<%=link_to(t('.multilink'), link_case_file_path(@file))%>
+	<%=link_to("#{t('case_files.new.edit')}", edit_case_file_path(@case_file)) %>
+	<%=link_to(t('events.new.title'), new_event_path(:casefile =>@case_file.id) ) %>
 
 	<%= render partial: 'people/detail',
-	locals:{title: "Perpetrators", collection: @file.perpetrators} %>
+	locals:{title: "Perpetrators", collection: @case_file.perpetrators} %>
 	<%= render partial: 'people/detail',
-	locals:{title: "Victims", collection: @file.victims} %>
+	locals:{title: "Victims", collection: @case_file.victims} %>
 	<%= render partial: 'people/detail',
-	locals:{title: "Deaths", collection: @file.deaths} %>
+	locals:{title: "Deaths", collection: @case_file.deaths} %>
 	<%= render partial: 'people/detail',
-	locals:{title: "Investigators", collection: @file.investigators} %>
+	locals:{title: "Investigators", collection: @case_file.investigators} %>
 <% end %>
 
-<%= markdown @file.brief %>
+<%= markdown @case_file.brief %>
 
 <%= content_tag(:ul) do %>
- <%= render partial: 'events/list', collection: @file.events %>
+ <%= render partial: 'events/list', collection: @case_file.events %>
 <% end %>

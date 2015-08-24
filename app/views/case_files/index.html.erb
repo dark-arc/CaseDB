@@ -1,5 +1,5 @@
 <% content_for(:sidebar, link_to(t('case_files.new.title'), new_case_file_path))%>
 
 <%= content_tag(:ul) do %>
- <%= render partial: 'list', collection: @file %>
+ <%= render partial: 'list', collection: @case_file %>
 <% end %>

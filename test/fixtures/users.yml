@@ -1,0 +1,10 @@
+# Password for all users should be set to the below value (password: rails)
+# 635aa6d4a1ae405548ec86eaf19194a720366e2e
+admin:
+  username: "admin"
+  password_enc: "635aa6d4a1ae405548ec86eaf19194a720366e2e"
+  roles_mask: 1
+user:
+  username: "user"
+  password_enc: "635aa6d4a1ae405548ec86eaf19194a720366e2e"
+  roles_mask: 8

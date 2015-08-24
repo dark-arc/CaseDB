@@ -1,13 +1,9 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  case_file: 
-  body: MyString
-  tagline: MyString
-  date: 2015-07-27 19:40:37
-
-two:
-  case_file: 
-  body: MyString
-  tagline: MyString
-  date: 2015-07-27 19:40:37
+birth:
+  body: "This is a test event. This event should be associated with a person. "
+death:
+  body: "This is a test event. This event should be associated with a person. "
+tagged:
+  body: "This is a test event. This event should be associated with a person. "
+  tagline: "tagline"
+untagged:
+  body: "This is a test event. This event should be associated with a person. "

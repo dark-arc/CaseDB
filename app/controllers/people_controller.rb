@@ -1,22 +1,12 @@
 class PeopleController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @person = Person.all
   end
   
-  def search
-    count = Person.search(params[:q]).count
-    if count > 1
-      case_setup(count)
-      @case = Person.search(params[:q]).limit(@size).offset(@page*@size)
-      render 'index'
-    else
-      redirect_to Person.search(params[:q]).take
-    end
-  end
-  
   def create
-    @person = Person.create(people_params)
-    if @person.save
+    if @person.save!
       if ! params[:person][:event_id].blank?
       @event = Event.find(params[:person][:event_id])
       @person.event << @event
@@ -44,7 +34,7 @@ class PeopleController < ApplicationController
   
   def update
     @person = Person.find(params[:id])
-    if @person.update(people_params)
+    if @person.update!(person_params)
       redirect_to @person
     else
       render 'edit'
@@ -63,20 +53,10 @@ class PeopleController < ApplicationController
   end
   
   private
-  def people_params
-    params.require(:person).
-      permit(
-        :name,
-        :gender,
-        :eye,
-        :hair_colour,
-        :hair_length,
-        :moustache,
-        :beard,
-        :ic
-      )
+  def person_params
+    params.require(:person).permit(:name, :gender, :height,
+                                   :weight, :eye_colour, :hair_colour,
+                                   :hair_length, :moustache, :beard, :ic)
   end
-  def event_params
-    params.require(:person).permit(:event_id)
-  end
+
 end

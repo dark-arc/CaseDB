@@ -1,21 +1,2 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  gender: 1
-  height: 1
-  weight: 1
-  eye_colour: 1
-  hair_colour: 1
-  hair_length: 1
-  ic: 1
-
-two:
-  name: MyString
-  gender: 1
-  height: 1
-  weight: 1
-  eye_colour: 1
-  hair_colour: 1
-  hair_length: 1
-  ic: 1
+jackie:
+  name: "Jackie"
