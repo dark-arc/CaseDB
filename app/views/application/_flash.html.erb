@@ -1,0 +1,10 @@
+<% if notice %>
+	<%= content_tag :section, class: "flash notice" do%>
+		<%= notice %>
+	<%  end %>
+<% end %>
+<% if alert %>
+	<%= content_tag :section, class: "flash alert" do%>
+		<%= alert %>
+	<%  end %>
+<% end %>

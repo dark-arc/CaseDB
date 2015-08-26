@@ -1,0 +1,17 @@
+<%= render 'header' %>
+<%= render 'navigation' %>
+<%= render 'flash' %>
+	<%= content_tag(:h1) do %>
+		<%= yield(:title) %>
+	<% end %>
+<%= content_tag(:main) do %>
+	<% if content_for?(:sidebar) %>
+		<%= content_tag(:aside) do %>
+			<%= yield :sidebar %>
+		<% end %>
+	<% end %>
+	<%= content_tag(:section) do %>
+		<%= yield %>
+	<% end %>
+<% end %>
+<%= render 'footer'%>

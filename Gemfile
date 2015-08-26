@@ -8,31 +8,31 @@ gem 'arel',      :git => 'git://github.com/rails/arel.git'
 gem 'rake'
 gem 'record_tag_helper'
 # Server
-#gem 'unicorn'
+gem 'unicorn', group: :development
 gem 'puma'
-gem 'sqlite3', group: :development # Database
+gem 'sqlite3', group: :development 
 gem 'pg' 
-gem 'turbolinks', :git => 'https://github.com/rails/turbolinks.git'
+#gem 'turbolinks', :git => 'https://github.com/rails/turbolinks.git'
 gem 'sass-rails' 
 #gem 'dalli' 
 
 # Application
-gem 'redcarpet' # Markdown library
+gem 'redcarpet' 
 # Auth
 gem 'cancancan'
 gem 'role_model'
 
 # Documentation
-gem 'sdoc', group: :doc # Documentation generator (RDOC)
-gem 'nokogiri', group: :doc # Required by sdoc for HTML generation
-gem 'yard', group: :doc
+gem 'sdoc', group: :development
+gem 'nokogiri', group: :development
+gem 'yard', group: :development
 
 # Development
 gem 'spring', group: :development 
 
 # (Research)
 #gem 'kaminari'
-gem 'uglifier'
-gem 'coffee-rails'
-gem 'jquery-rails'
+#gem 'uglifier'
+#gem 'coffee-rails'
+#gem 'jquery-rails'
 
