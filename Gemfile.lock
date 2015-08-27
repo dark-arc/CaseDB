@@ -80,7 +80,6 @@ GEM
       activesupport (>= 4.1.0)
     i18n (0.7.0)
     json (1.8.3)
-    kgio (2.9.3)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -104,7 +103,6 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
-    raindrops (0.15.0)
     rake (10.4.2)
     rdoc (4.2.0)
     record_tag_helper (0.0.0)
@@ -134,10 +132,6 @@ GEM
     tilt (1.4.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    unicorn (4.9.0)
-      kgio (~> 2.6)
-      rack
-      raindrops (~> 0.7)
     yard (0.8.7.6)
 
 PLATFORMS
@@ -159,7 +153,6 @@ DEPENDENCIES
   sdoc
   spring
   sqlite3
-  unicorn
   yard
 
 BUNDLED WITH

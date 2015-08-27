@@ -1,6 +1,4 @@
-<%= content_tag(:title) do -%>
-	CaseDB <%= yield(:title) if content_for :title -%>
-<% end %>
-<%= stylesheet_link_tag 'application', media: 'all' %>
-<%= content_tag(:meta, nil, content: "width=device-width", 'initial-scale' => "1.0") %>
-<%= csrf_meta_tags %>
+	<%= content_tag(:title, get_title) %>
+	<%= stylesheet_link_tag get_style, media: 'all' %>
+	<%= tag(:meta, content: "width=device-width", 'initial-scale' => "1.0") %>
+	<%= csrf_meta_tags %>
