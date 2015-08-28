@@ -5,4 +5,5 @@ deployment:
       appname: secret-plateau-1897
   development:
     branch: development
+    heroku:
       appname: pure-meadow-8716
