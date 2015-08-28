@@ -5,10 +5,19 @@ en:
   home:
     index:
       title: "Home"
-      content: "Content for home"
+      content: |
+        Welcome to CaseDB, this website aims to become a repository of
+        information on historic crimes.
     about: 
       title: "About"
-      content: "Content for about"
+      content: |
+        # The Site
+        
+        This website was created as me (Matthew) and my wife
+        (Katherine) have an interest in historic crime. The original
+        aim of this was to create a book on some of the more
+        interesting crimes. However, creating this website first will
+        give us a good platform for collecting the stories.        
   case_files:
     noun: "case"
     index:

@@ -29,15 +29,6 @@ module ApplicationHelper
       text == nil
   end
 
-  # Returns the image tag for an icon.
-  #
-  # @param name [String] The name of the icon
-  # @param alt [Alt] The alt text for the icon. What does the icon do?
-  # @return [String] Image tag for the icon
-  def icon(name,alt)
-    image_tag("icons/#{name}.svg", alt: alt, class: 'icon' )
-  end
-
   # @return [Boolean] true when there is a user signed in. 
   def signed_in?
     if session[:user_id] != nil
