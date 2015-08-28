@@ -1,5 +1,8 @@
 deployment:
-  staging:
+  production:
     branch: master
     heroku:
       appname: secret-plateau-1897
+  development:
+    branch: development
+      appname: pure-meadow-8716
