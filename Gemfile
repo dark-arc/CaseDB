@@ -6,11 +6,14 @@ gem 'journey',  :git => 'git://github.com/rails/journey.git'
 gem 'arel',      :git => 'git://github.com/rails/arel.git'
 gem 'rake'
 gem 'record_tag_helper'
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'jquery-rails'
+gem 'uglifier'
 # Server
 gem 'puma'
 gem 'sqlite3', group: :development 
 gem 'pg' 
-gem 'sass-rails' 
 # Application
 gem 'redcarpet' 
 #gem 'kaminari' # Pagination
