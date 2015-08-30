@@ -18,8 +18,8 @@ body{
     margin:auto;
 }
 header{
-	color:$fore-1;
-	font-size:3em;
+    color:$fore-1;
+    font-size:3em;
 }
 nav{
     margin-bottom:auto;
@@ -62,31 +62,53 @@ a{
     text-decoration:none;
 }
 a:active, a:hover{
-    color:$fore-1;
-}
+	      color:$fore-1;
+	  }
 form{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    input,textarea,select{
+	color:$fore-1;
+	background-color:$body-2;
+	border:1px solid $body-1;
+	margin-bottom:5px;
+	width:50%;
+    }
+    textarea{height:20em;}
+    .fields{
+	max-width:80%;
+	min-width:500px;
 	display:flex;
-	flex-direction:column;
+	align-content:space-around;
 	align-items:center;
-	input,textarea,select{
-		background-color:$body-2;
-		border:1px solid $body-1;
-		margin-bottom:5px;
-		width:50%;
-	}
-	textarea{height:20em;}
-	.fields{
-		max-width:80%;
-		min-width:500px;
-		display:flex;
-		align-content:space-around;
-		align-items:center;
-		input,select{margin-right:auto;min-width:3em;width:auto;max-width:150px;}
-		label{margin-left:auto;margin-right:2px;}
-		a{margin:auto;}
-	}
+	input,select{margin-right:auto;min-width:3em;width:auto;max-width:150px;}
+	label{margin-left:auto;margin-right:2px;}
+	a{margin:auto;}
+    }
 }
 section.flash{
-	text-align:center;
+    text-align:center;
 }
-
+@media only screen and (max-device-width: 500px) {
+    body{width:100%;min-width:auto;}
+    a{margin:0.5em 0px;}
+    main{flex-direction:column;
+	 aside{order:0;width:100%;align-items:flex-start;flex-wrap:wrap;flex-direction:row;
+	       a{margin:auto;}
+	      }
+	}
+    form{
+	input, select, textarea{
+	    width:100%;
+	    height:2em;
+	}
+	textarea{height:10em;}
+	.fields{
+	    width:100%;
+	    min-width:0px;
+	    flex-wrap:wrap;
+	    margin-bottom:1em;
+	}
+    }
+}
