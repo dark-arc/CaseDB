@@ -61,4 +61,13 @@ module ApplicationHelper
   def get_style
     return 'themes/wine'
   end
+  # Returns a default title for the page, this will usually be
+  # "controller_action" and an attempt will be made to localise the
+  # string. To override this title for a page define content for
+  # :title anywhere in the page.
+  #
+  # @return default title for this page  
+  def title
+    return t("#{controller_name}_#{action_name}")
+  end
 end
