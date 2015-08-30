@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   resources :links
   resources :people
 
-  resources :users
-  resources :session
+  resources :users 
+  resources :session, only: [:new,:create,:destroy]
 end

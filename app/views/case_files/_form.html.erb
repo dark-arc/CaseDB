@@ -1,5 +1,4 @@
-<%= render partial: 'forms/error', locals: {errors: @case_file.errors} %>
-
+<%= render partial: 'error', locals: {errors: @case_file.errors} %>
 <%= form_for @case_file do |f|%>
 	<%= f.label :name %>
 	<%= f.text_field :name %>

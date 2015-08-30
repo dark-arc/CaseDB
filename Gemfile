@@ -9,6 +9,7 @@ gem 'record_tag_helper'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'jquery-rails'
+gem 'nested_form'
 gem 'uglifier'
 # Server
 gem 'puma'

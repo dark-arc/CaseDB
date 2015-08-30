@@ -1,0 +1,20 @@
+<%= render 'error', :errors => @event.errors %>
+
+<%= nested_form_for @event do |f| %>
+	<%= f.label :body %>
+	<%= f.text_area :body %>
+	
+	<%= f.label :date %>
+	<%= f.date_select :date,
+	:start_year => Time.now.year - 500,
+	:end_year => Time.now.year %>
+	
+	<%= f.label :case_file_id %>
+	<%= f.collection_select :case_file_id, CaseFile.all, :id, :name, :include_blank => true %>
+	<%= content_tag :h2, t(:linkedPeople) %>
+		<%= f.fields_for :event_people do |e| %>
+		<%= render 'event_people', :e => e %>
+		<% end %>
+		<%= f.link_to_add t(:newLink), :event_people %>
+	<%= f.submit %>
+<% end %>

@@ -1,4 +1,4 @@
-<%= render partial: 'forms/error', locals: {errors: @user.errors} %>
+<%= render 'error', :errors => @user.errors %>
 
 <%= form_for @user do |f| %>
 <%= f.label :username %>
