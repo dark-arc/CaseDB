@@ -2,4 +2,7 @@
 	<%= stylesheet_link_tag get_style, media: 'all' %>
 	<%= javascript_include_tag :application %>
 	<%= tag(:meta, content: "width=device-width", 'initial-scale' => "1.0") %>
+	<%= tag(:meta, charset: "UTF-8") %>
+	<%= tag(:meta, name: "description", content: t(:description)) %>
+
 	<%= csrf_meta_tags %>

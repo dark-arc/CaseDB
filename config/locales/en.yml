@@ -1,4 +1,5 @@
 en:
+  description: A repository of historic crimes and investigations
   date:
     formats: 
       default: ! '%d-%m-%Y'
