@@ -6,17 +6,17 @@ module ApplicationHelper
   # @return [Redcarpet::Markdown] markdown renderer.
   def initMarkdown()
     options = {
-      filter_html: true,
+      html_filter: true,
       no_styles: true,
-      safe_links_only: true,
+      safe_links_only: false
     }
 
     extensions = {
     
     }
 
-    renderer = Redcarpet::Render::HTML.new(options)
-    return Redcarpet::Markdown.new(renderer, extensions)
+    @renderer ||= Formatter.new(options)
+    return Redcarpet::Markdown.new(@renderer, extensions)
   end
   # Renders a piece of text given in the parameters as markdown
   # code. This also calls initMarkdown and caches the renderer.
@@ -24,9 +24,12 @@ module ApplicationHelper
   # @param text [String] Any string, preferably one with markdown in it.
   # @return [String] Markdown formatted string
   def markdown(text)
+    return "" if text == nil
+    puts text
     @markdown ||= initMarkdown
-    @markdown.render(text).html_safe unless
-      text == nil
+    text = @markdown.render(text) || ""
+    puts text
+    text.html_safe
   end
 
   # @return [Boolean] true when there is a user signed in. 
