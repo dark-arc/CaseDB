@@ -15,7 +15,6 @@ class EventsController < ApplicationController
   
   def new
     @event = Event.new()
-    puts params[:casefile]
     if params.has_key?(:casefile)
       @event.case_file = CaseFile.find(
         params[:casefile]
