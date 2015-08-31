@@ -62,6 +62,7 @@ module ApplicationHelper
     if content_for? :title
       title+= " #{content_for :title}"
     end
+    return title
   end
 
   # Returns the current style. This is used by the layout engine and
