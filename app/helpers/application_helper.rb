@@ -59,7 +59,11 @@ module ApplicationHelper
   #
   # @return the current style for this user
   def get_style
-    return 'themes/wine'
+    theme = 'themes/wine'
+    theme = "themes/#{current_user.theme}" unless
+      current_user == nil or current_user.theme == nil
+    puts theme
+    return theme
   end
   # Returns a default title for the page, this will usually be
   # "controller_action" and an attempt will be made to localise the

@@ -47,6 +47,7 @@ class UsersController < ApplicationController
       permit(
         :username,
         :email,
+        :theme,
         {:roles => []},
         :password,
         :password_confirmation

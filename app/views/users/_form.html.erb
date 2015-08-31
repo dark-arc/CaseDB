@@ -6,6 +6,9 @@
 <%= f.label :email %>
 <%= f.text_field :email %>
 
+<%= f.label :theme %>
+<%= f.select :theme, options_for_select(User.themes, @user.theme) %>
+
 <% if can? :promote, User %>
 <%= f.label :roles %>
 <%= f.select :roles,

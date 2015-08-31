@@ -10,6 +10,11 @@
 <%= content_tag :span, @user.created_at %>
 <% end %>
 
+<%= content_tag :div, class: [:created,:information] do %>
+<%= content_tag :span, t(:theme), class: :label %>
+<%= content_tag :span, @user.theme %>
+<% end %>
+
 <%= content_tag :h2, t(:roles) %>
 <%= content_tag :ul, class: :roles do  %>
 <% @user.roles.each do |v| %>
