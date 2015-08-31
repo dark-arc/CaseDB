@@ -8,18 +8,25 @@ module ApplicationHelper
     options = {
       html_filter: true,
       no_styles: true,
-      safe_links_only: false
+      safe_links_only: false,
+      models: {
+        Event => :date,
+        CaseFile => :name,
+        Person => :name
+      },
+      link: /<(.*)\?(.*)>/
     }
 
     extensions = {
     
     }
 
-    @renderer ||= Formatter.new(options)
-    return Redcarpet::Markdown.new(@renderer, extensions)
+    renderer = Formatter.new(options)
+    return Redcarpet::Markdown.new(renderer, extensions)
   end
   # Renders a piece of text given in the parameters as markdown
-  # code. This also calls initMarkdown and caches the renderer.
+  # code. This also calls initMarkdown and caches the renderer which
+  # should speed up calls to markdown.
   #
   # @param text [String] Any string, preferably one with markdown in it.
   # @return [String] Markdown formatted string
