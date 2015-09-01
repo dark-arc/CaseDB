@@ -1,6 +1,7 @@
 # Person class contains the descriptions of people and a narative of
 # their life. 
 class Person < ActiveRecord::Base
+  @@description_fields = [:ic,:gender,:height,:weight,:eye_colour,:hair_length, :hair_colour]
   has_many :event_people
   #@attribute events
   # @return [Relation<Event>] Narrative for this persons life
@@ -143,7 +144,15 @@ class Person < ActiveRecord::Base
          :eastAsia,
          :arabic
        ], _prefix: true
-
+  def description
+    description = {}
+    @@description_fields.each do |v|
+      attr = read_attribute v
+      description[v] = attr unless
+        attr == 'unknown'
+    end
+    return description
+  end
   private 
   def validate_birth_event_count
     if self.birth.size > 1

@@ -1,0 +1,17 @@
+en: 
+  case_files:
+    index:
+      new: "New Case"
+    show:
+      brief: "Case Brief"
+      story: "Story"
+  events:
+    index:
+      new: "New Event"
+    show:
+      edit: "Edit Event"
+    form:
+      linkedPeople: "People"
+      newLink: "Add Link"
+    event_people:
+      removeLink: "Unlink"

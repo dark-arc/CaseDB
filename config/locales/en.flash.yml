@@ -1,0 +1,5 @@
+en:
+  flash:
+    login: "Logged in as %{name}"
+    logout: "Logged out"
+    invalidUsernameOrPassword: "Invalid username or password"

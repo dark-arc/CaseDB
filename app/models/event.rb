@@ -13,7 +13,8 @@ class Event < ActiveRecord::Base
             presence: true,
             length: {minimum: 100}
   
-  accepts_nested_attributes_for :event_people
+  accepts_nested_attributes_for :event_people,
+                                :allow_destroy => true
 
    EventPerson.categories.each do |type|
   has_many type[0].pluralize.to_sym,

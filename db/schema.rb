@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150822171547) do
+ActiveRecord::Schema.define(version: 20150830233654) do
 
   create_table "case_files", force: :cascade do |t|
     t.string   "name"
@@ -75,8 +75,9 @@ ActiveRecord::Schema.define(version: 20150822171547) do
     t.text     "password_enc"
     t.text     "email"
     t.integer  "roles_mask"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "theme"
   end
 
 end

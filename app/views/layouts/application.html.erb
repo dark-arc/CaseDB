@@ -1,37 +1,11 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<%= content_tag(:title) do %>
-			CaseDB - <%= yield(:title) %>
-		<% end %>
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-		<%= csrf_meta_tags %>
-	</head>
-	<body>
-		<%= render 'layouts/header' %>
-		<% if notice %>
-			<%= content_tag :section, class: "notice" do%>
-				<%= notice %>
-			<%  end %>
-		<% end %>
-		<% if alert %>
-			<%= content_tag :section, class: "alert" do%>
-				<%= alert %>
-			<%  end %>
-		<% end %>
-		<%= render 'layouts/navigation' %>
-		<%= content_tag(:main) do %>
-			<%= content_tag(:h1) do %>
-				<%= yield(:title) %>
-			<% end %>
-			<%= content_tag(:section) do %>
-				<%= render 'layouts/sidebar' %>
-				<%= content_tag(:article) do %>
-					<%= yield %>
-				<% end %>
-			<% end %>
-		<% end %>
-		<%= render 'layouts/footer'%>
-	</body>
-</html>
+<%= content_tag(:html) do %>
+<%= content_tag(:head) do %>
+<%= render 'head' -%>
+<% end %>
+
+<%= content_tag(:body) do %>
+<%= render 'body' -%>
+<% end %>
+
+<% end %>

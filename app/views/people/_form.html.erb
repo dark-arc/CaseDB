@@ -1,0 +1,42 @@
+<%= render 'error', :errors => @person.errors %>
+
+<%= form_for @person do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :gender %>
+    <%= f.select(:gender,
+	Person.genders.keys.map {
+	|g| [g.titleize,g]}) %>
+
+    <%= f.label :ic %>
+    <%= f.select(:ic,
+	Person.ics.keys.map {
+	|g| [g.titleize,g]}) %>    
+    
+    <%= f.label :height %>
+    <%= f.select(:height,
+	Person.heights.keys.map {
+	|g| [g.titleize,g]}) %>
+
+    <%= f.label :weight %>
+    <%= f.select(:weight,
+	Person.weights.keys.map {
+	|g| [g.titleize,g]}) %>
+
+    <%= f.label :eye_colour %>
+    <%= f.select(:eye_colour,
+	Person.eye_colours.keys.map {
+	|g| [g.titleize,g]}) %>
+ 
+    <%= f.label :hair_colour %>
+    <%= f.select(:hair_colour,
+	Person.hair_colours.keys.map {
+	|g| [g.titleize,g]}) %>
+
+    <%= f.label :hair_length %>
+    <%= f.select(:hair_length,
+	Person.hair_lengths.keys.map {
+	|g| [g.titleize,g]}) %>
+    <%= f.submit %>
+<% end %>

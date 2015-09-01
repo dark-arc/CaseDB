@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
   validates_length_of :password,
                       :in => 10..50,
                       :on => :create
+  validate :validate_theme
 
   roles_attribute :roles_mask
   roles :admin, :researcher, :moderator,:user, :guest
@@ -34,6 +35,20 @@ class User < ActiveRecord::Base
   end
   def verify_password(password = "")
     password_enc==encrypt("#{username}#{password}")    
+  end
+  def validate_theme
+    unless (User.themes.include?(theme) or theme == nil)
+      themes = User.themes.to_sentence(two_words_connector: " or ",
+                                       last_word_connector: " or ")
+      errors.add(:theme, "must be one of #{themes}") 
+    end
+  end
+  # Gets a list of valid themes that the user can select from.
+  #
+  # @return [Array<String>]
+  def self.themes
+    Dir.glob("app/assets/stylesheets/themes/*.scss").
+      map{|t| File.basename(t, '.scss')} 
   end
   protected
   attr_writer :name, :password_enc

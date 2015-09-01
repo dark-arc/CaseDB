@@ -1,0 +1,7 @@
+<%= e.label :person_id %>
+<%= e.collection_select :person_id,
+    Person.all, :id,:name %>
+<%= e.label :event_type_id %>
+<%= e.select :category,
+    EventPerson.categories.collect{|c| [c.first]} %>
+<%= e.link_to_remove t('.removeLink')%>

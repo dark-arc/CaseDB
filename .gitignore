@@ -34,3 +34,4 @@ config/secrets.yml
 *.bowerrc
 bower.json
 public/assets
+.yardoc/

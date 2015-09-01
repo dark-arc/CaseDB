@@ -2,7 +2,7 @@ class CaseFilesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @case_file = CaseFile.all
+    @case_files = CaseFile.all
   end
   
   def create

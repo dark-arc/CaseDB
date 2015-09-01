@@ -1,0 +1,13 @@
+en:
+  people:
+    index:
+      new: "New Person"
+    show:
+      delete: "Delete"
+      delete_confirm: "Are you sure you want to delete this person?"
+      edit: "Edit Details"
+      addDeath: "Add death"
+      addBirth: "Add birth"
+      description: "Physical Description"
+      noDescription: "This person has no description."
+      story: "Life Story"
