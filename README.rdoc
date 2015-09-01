@@ -1,25 +1,49 @@
-== README
-=== About
-CaseDB is a site designed to organise information on (historic) criminals. This 
-is a personal project for me and my wife, we both did forensic degrees, it 
-seemed like fun. 
+# CaseDB
 
-The code is here for my purposes, it's accessible to anyone because I'm cheap 
-and don't have a good reason to hide the code. I taught myself programming by
-reading code online, why should I stop people stealing mine (for educational 
-purposes, see licence). 
+[![Circle CI](https://circleci.com/gh/dark-arc/CaseDB/tree/development.svg?style=svg&circle-token=8d970d8f62ffeca43d122db1313727e6140eddc0)](https://circleci.com/gh/dark-arc/CaseDB/tree/development) <https://casedb-dev.herokuapp.com/>
 
-I will eventually push this site to a host and have it online (I'll work on 
-some security first). Once that happens I'll put the link in here. 
-=== GIT Structure
-The master branch will always contain the latest released code.
+[![Circle CI](https://circleci.com/gh/dark-arc/CaseDB/tree/master.svg?style=svg&circle-token=8d970d8f62ffeca43d122db1313727e6140eddc0)](https://circleci.com/gh/dark-arc/CaseDB/tree/master) <https://casedb.herokuapp.com/>
 
-The development branch could be in any state, but will typically have the latest merges from projects that are complete. When enough have been completed that the road map is satisfied this gets pushed into master and tagged with a version number.
+## Intro
 
-This branch will also have a sub-branch for every project (read: requirement/change) that is being worked on at the time. These may never make it to github (depends if I ever get someone to help program the project). The project branches can be created with ```git checkout -b req-# development```. To merge them back ```git checkout develop; git merge --no-ff req-#; git branch -d req-#``` then pushing to remote.
+This repository hosts the code for the CaseDB site (currently not
+hosted), the site intends to be a catalogue of historic crimes and
+their investigations.
 
-The development branch will be committed into a staging branch. The intent of this is for non-development related tasks (like writing this file, documentation, versioning, testing) take place. A staging branch is created from the development branch and then goes off into master. ```git checkout -b staging-#.# development```. To finish a release ```git checkout master; git merge --no-ff release-#.#; git tag -a v#.# ; git checkout development; git merge --no-ff release-#.#; git branch -d release-#.#```.
+CaseDB started when me and my fiance (now wife) were talking about
+famous serial killers (we're Crime Scene / Digital Forensics
+graduates, we do that sometimes). At some point in the future we're
+hoping to create a book on some of the most interesting cases. Until
+that time I'm hoping this will be a useful research tool as well as a
+pretty cool catalogue in itself.
 
-The fix branch structure will branch off master and be pushed into development (or staging) and onto master at the same time. This can only be used for fixing bugs which are severe enough to need an instant fix (anything else can wait).
+## Installation
 
-I will, when I'm used to this, make some rake tasks for doing this stuff to make it easier. 
+Don't! I'm going to find full hosting for this when I get the chance,
+having multiple instances would be a pain to keep up to date. I'll
+update this section when I have links. For now it can be accessed (as
+a preview) through <https://casedb.herokuapp.com/> or
+<https://casedb-dev.herokuapp.com/> for the one I'm currently working
+on.
+
+Also, if you're interested and have hosting *hint, hint*.
+
+## Usage
+
+The site will be readable by anyone, anywhere. In addition anyone who
+creates an account on the site will be able to comment on a
+case. Updating will be reserved for only special users however.
+
+## Contributing
+
+I mess up a lot, if you see a bug or something weird in the code,
+either tell me about it on
+[GitHub](https://github.com/dark-arc/CaseDB/issues) or fix the issue
+and send me a pull request. I'll ignore any pull requests that don't
+link to an issue... Otherwise things get confusing.
+
+## Licence
+
+I'm not sure yet. The code is/will be public for people to learn from
+or use for other purposes. I'd rather not deal with commercial uses or
+an exact mirror. So I guess GPLish?
