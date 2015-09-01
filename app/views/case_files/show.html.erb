@@ -1,5 +1,5 @@
 <%= content_for :title, @case_file.name %>
-<%= content_tag :h2, t(:brief) %>
+<%= content_tag :h2, t('.brief') %>
 <%= markdown @case_file.brief %>
-<%= content_tag :h2, t(:story) %>
+<%= content_tag :h2, t('.story') %>
 <%= render @case_file.events %>

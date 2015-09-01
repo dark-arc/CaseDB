@@ -4,6 +4,4 @@
 <%= e.label :event_type_id %>
 <%= e.select :category,
     EventPerson.categories.collect{|c| [c.first]} %>
-<%#= e.label :_destroy, t(:unlink) %>
-<%#= e.check_box :_destroy %>
-<%= e.link_to_remove t(:removeLink)%>
+<%= e.link_to_remove t('.removeLink')%>

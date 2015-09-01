@@ -1,21 +1,21 @@
 <%= content_for :title, @person.name %>
 <% content_for(:sidebar) do %>
-   <%= link_to t(:edit), edit_person_path(@person) %>
-   <%= link_to t(:delete), @person, method: :delete, data: { confirm: "#{t('delete_confirm')}" }%>
-   <%= link_to t(:addBirth), new_link_path(:person_id => @person, :event_type => :birth) if
+   <%= link_to t('.edit'), edit_person_path(@person) %>
+   <%= link_to t('.delete'), @person, method: :delete, data: { confirm: t('.delete_confirm') }%>
+   <%= link_to t('.addBirth'), new_link_path(:person_id => @person, :event_type => :birth) if
    @person.birth.empty?%>
-   <%= link_to t(:addDeath), new_link_path(:person_id => @person, :event_type => :death) if
+   <%= link_to t('.addDeath'), new_link_path(:person_id => @person, :event_type => :death) if
    @person.death.empty?%>
 <% end %>
 
-<%= content_tag :h2, t(:description) %>
+<%= content_tag :h2, t('.description') %>
 <%= content_tag :dl do %>
 <% @person.description.each do |k,v|%>
 <%= content_tag :dt, k %>
 <%= content_tag :dd, v %>
 <% end %>
-<%= content_tag :p, t(:noDescription) unless
+<%= content_tag :p, t('.noDescription') unless
     @person.description.size > 0 %>
 <% end %>
-<%= content_tag :h2, t(:story) %>
+<%= content_tag :h2, t('.story') %>
 <%= render @person.events %>

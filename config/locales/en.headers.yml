@@ -1,0 +1,23 @@
+en:
+  headers:
+    case_files:
+      index: "Case Files"
+      new: "New Case File"
+      edit: "Edit Case File"
+    people:
+      index: "People"
+      new: "New Person"
+      edit: "Edit Person"
+    events:
+      index: "Events"
+      new: "New Event"
+      edit: "Edit Event"
+    users:
+      index: "Users"
+      new: "Create Account"
+      edit: "Edit Account"
+    session:
+      new: "Login"
+    home:
+      index: "Home"
+      about: "About"

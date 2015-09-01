@@ -83,6 +83,6 @@ module ApplicationHelper
   #
   # @return default title for this page  
   def title
-    return t("#{controller_name}_#{action_name}")
+    return t("headers.#{controller_name}.#{action_name}")
   end
 end

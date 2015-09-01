@@ -1,0 +1,19 @@
+en:
+  application:
+    navigation:
+      home: "Home"
+      case_files: "Cases"
+      people: "People"
+      about: "About"
+      login: "Login"
+      register: "Register"
+      editAccount: "Edit Account"
+      signOut: "Logout"
+    head:
+      :description: A repository of crimes and investigations
+    footer:
+      footer: |
+        Please report any issues on
+        [github](https://github.com/dark-arc/CaseDB).
+    header:
+      header: CaseDB

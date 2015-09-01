@@ -1,5 +1,5 @@
 <%= content_for :title, @event.date %>
 <% content_for :sidebar do %>
-<%= link_to :edit, edit_event_path(@event) %>
+<%= link_to t('.edit'), edit_event_path(@event) %>
 <% end %>
 <%= markdown @event.body %>
