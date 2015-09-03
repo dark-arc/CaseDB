@@ -4,17 +4,16 @@ class ErrorsControllerTest < ActionController::TestCase
   @@errorController = {
     controller: "errors",
     action: "show",
-    code: 500,
     format: :html
   }
 
   test "404" do
-    assert_routing '/404', @@errorController
+    assert_routing '/404', @@errorController.merge({code: 404})
   end
   test "422" do
-    assert_routing '/422', @@errorController
+    assert_routing '/422', @@errorController.merge({code: 422})
   end
   test "500" do
-    assert_routing '/500', @@errorController
+    assert_routing '/500', @@errorController.merge({code: 500})
   end
 end
