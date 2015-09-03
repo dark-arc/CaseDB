@@ -19,13 +19,14 @@ gem 'pg'
 gem 'redcarpet' 
 #gem 'kaminari' # Pagination
 # Auth
-gem 'cancancan'
+gem 'cancancan', git: "https://github.com/CanCanCommunity/cancancan.git", branch: "develop"
 gem 'role_model'
 # Documentation
 gem 'sdoc', group: :development
 gem 'nokogiri', group: :development
 gem 'yard', group: :development
 # Development
-gem 'spring', group: :development 
-
+gem 'spring', group: :development
+gem 'rails-controller-testing', group: :test
+gem 'minitest-ci', :git => 'git@github.com:circleci/minitest-ci.git', group: :test
 
