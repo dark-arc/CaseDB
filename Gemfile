@@ -14,6 +14,7 @@ gem 'uglifier'
 # Server
 gem 'puma'
 gem 'sqlite3', group: :development 
+gem 'rails_12factor', group: :production
 gem 'pg' 
 # Application
 gem 'redcarpet' 
