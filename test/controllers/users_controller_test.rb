@@ -1,9 +1,17 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
-   test "permissions (user)" do
+  test "Guest can create" do
+    get :new, session: {user_id: nil}
+    assert_response :success
+  end
+  test "Cannot edit others" do
+    get :edit,
+        params: {id: users(:admin).id},
+        session: {user_id: users(:user).id}
+    assert_response :failed
+  end
 
-   end
 
    test "User accounts are created as user" do
      post :create, params: {user: {username: "guest", email: "guest@gslkdjf.com", theme: "wine", password: "[FILTERED]", password_confirmation: "[FILTERED]"}}

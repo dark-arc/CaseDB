@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite time='0.014632' skipped='0' failures='0' errors='0' name="CaseFileTest" assertions='12' tests='2'>
-  <testcase time='0.007971' file="test/models/case_file_test.rb" name="test_case_file_must_have_brief_between_50..500" assertions='6'>
-  </testcase>
-  <testcase time='0.006661' file="test/models/case_file_test.rb" name="test_case_file_must_have_name_between_5..50" assertions='6'>
-  </testcase>
-</testsuite>
