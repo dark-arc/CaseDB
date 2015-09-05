@@ -7,23 +7,23 @@ class CaseFilesControllerTest < ActionController::TestCase
     assert_not_nil assigns(:case_files)
   end
   test "Guest can view show" do 
-    get :show, {id: case_files(:jack).id}
+    get :show, params: {id: case_files(:jack).id}
     assert_response :success
     assert_not_nil assigns(:case_file)
   end
   test "Guest cannot edit" do 
-    get :edit, {id: case_files(:jack).id}
+    get :edit, params: {id: case_files(:jack).id}
     assert_response :redirect
     assert_not flash[:alert].empty?
   end
   test "Researcher can edit" do
-    get :edit, {id: case_files(:jack).id},
-        {user_id: users(:researcher).id}
+    get :edit, params: {id: case_files(:jack).id},
+        session: {user_id: users(:researcher).id}
 
     assert_response :success
   end
   test "Invalid case ID shows index" do
-    get :show, {id: 5000}
+    get :show, params: {id: 5000}
     assert_response :redirect
     assert_not flash[:alert].empty?
   end

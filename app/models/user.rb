@@ -3,7 +3,7 @@ require 'digest/sha1'
 
 class User < ActiveRecord::Base
   include RoleModel
-  before_save :encrypt_password
+  before_save :encrypt_password,:check_roles
   after_save :clear_password
   
   attr_accessor :password
@@ -26,6 +26,11 @@ class User < ActiveRecord::Base
   roles_attribute :roles_mask
   roles :admin, :researcher, :moderator,:user, :guest
 
+  def check_roles
+    if(! roles.include? :user)
+      roles << :user
+    end
+  end
   def self.authenticate(username="", password="")
     user = User.find_by_username(username)
     if user && user.verify_password(password)

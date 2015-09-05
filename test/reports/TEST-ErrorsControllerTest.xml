@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite time='0.006784' skipped='0' failures='0' errors='0' name="ErrorsControllerTest" assertions='9' tests='3'>
+  <testcase time='0.003796' file="test/controllers/errors_controller_test.rb" name="test_404" assertions='3'>
+  </testcase>
+  <testcase time='0.001559' file="test/controllers/errors_controller_test.rb" name="test_422" assertions='3'>
+  </testcase>
+  <testcase time='0.001430' file="test/controllers/errors_controller_test.rb" name="test_500" assertions='3'>
+  </testcase>
+</testsuite>

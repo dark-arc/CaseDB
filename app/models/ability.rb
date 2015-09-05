@@ -12,7 +12,7 @@ class Ability
     can :read, @@coreModels
     can [:read, :update, :destroy], User, :id => user.id
     
-    if user.guest?
+    if user.new_record?
       can :create, User
     end
 

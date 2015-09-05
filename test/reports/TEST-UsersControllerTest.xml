@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite time='0.080673' skipped='0' failures='0' errors='0' name="UsersControllerTest" assertions='2' tests='3'>
+  <testcase time='0.008632' file="test/controllers/users_controller_test.rb" name="test_permissions_(user)" assertions='0'>
+  </testcase>
+  <testcase time='0.046147' file="test/controllers/users_controller_test.rb" name="test_User_accounts_are_created_as_user" assertions='1'>
+  </testcase>
+  <testcase time='0.025894' file="test/controllers/users_controller_test.rb" name="test_Users_cannot_create_accounts_as_admin" assertions='1'>
+  </testcase>
+</testsuite>
