@@ -5,6 +5,7 @@ class Ability
   #@attribute coreModels [r]
   # A list of models which are "core elements". 
   @@coreModels = [CaseFile,Person,Event]
+  @@userModels = [User]
 
   def initialize(user)
     user ||= User.new
@@ -21,11 +22,11 @@ class Ability
     end
     
     if user.moderator?
-
+      can [:promote,:update,:create,:destroy], @@userModels
     end
 
     if user.researcher?
-      can [:update,:create], @@coreModels
+      can [:update,:create,:destroy], @@coreModels
     end
 
     if user.admin?
