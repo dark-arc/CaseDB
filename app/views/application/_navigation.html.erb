@@ -1,9 +1,11 @@
 <%= content_tag(:nav) do %>
+<% cache do %>
 	<%= link_to t('.home'), index_path %>
 	<%= link_to t('.case_files'), case_files_path %>
 	<%= link_to t('.people'), people_path %>
 	<%= link_to t('.about'), about_path %>
 	<%= content_tag(:div, class: :account ) do %>
+<% end %>
 	<% if signed_in? %>
 	<%= link_to t(".editAccount"), edit_user_path(current_user) %>
 	<%= link_to t(".signOut"), session_path(current_user), method: :delete %>

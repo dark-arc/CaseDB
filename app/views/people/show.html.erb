@@ -1,4 +1,5 @@
 <%= content_for :title, @person.name %>
+<% cache(@person) do %>
 <% content_for(:sidebar) do %>
    <%= link_to t('.edit'), edit_person_path(@person) %>
    <%= link_to t('.delete'), @person, method: :delete, data: { confirm: t('.delete_confirm') }%>
@@ -19,3 +20,4 @@
 <% end %>
 <%= content_tag :h2, t('.story') %>
 <%= render @person.events %>
+<% end %>

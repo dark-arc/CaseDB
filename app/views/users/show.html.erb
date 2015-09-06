@@ -1,3 +1,5 @@
+<% cache(@user) do %>
+
 <%= content_for :title, @user.username %>
 
 <%= content_tag :div, class: [:email,:information] do %>
@@ -19,5 +21,6 @@
 <%= content_tag :ul, class: :roles do  %>
 <% @user.roles.each do |v| %>
 <%= content_tag :li, v %>
+<% end %>
 <% end %>
 <% end %>

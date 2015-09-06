@@ -2,4 +2,6 @@
 <% content_for :sidebar do %>
 <%= link_to t('.edit'), edit_event_path(@event) %>
 <% end %>
+<% cache(@event) do %>
 <%= markdown @event.body %>
+<% end %>
