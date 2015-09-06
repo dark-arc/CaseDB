@@ -35,3 +35,4 @@ config/secrets.yml
 bower.json
 public/assets
 .yardoc/
+test/reports/

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite time='0.125597' skipped='0' failures='0' errors='0' name="PersonTest" assertions='2' tests='2'>
-  <testcase time='0.103326' file="test/models/person_test.rb" name="test_Person_may_only_have_one_birth_Event" assertions='1'>
-  </testcase>
-  <testcase time='0.022271' file="test/models/person_test.rb" name="test_Person_may_only_have_one_death_Event" assertions='1'>
-  </testcase>
-</testsuite>
