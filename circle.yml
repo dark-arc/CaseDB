@@ -1,0 +1,5 @@
+test:
+  minitest_globs:
+    - test/**/*.rb
+  post:
+    - mv test/reports/* $CIRCLE_TEST_REPORTS

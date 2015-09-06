@@ -1,6 +1,9 @@
 <%= div_for(case_file) do %>
+<% cache(case_file) do %>
 <%= link_to(case_file.name,case_file) %>
 <%= content_tag(:article) do %>
 <%= markdown case_file.brief%>
 <% end %>
 <% end %>
+<% end %>
+

@@ -1,5 +1,7 @@
 <%= content_for :title, @case_file.name %>
 <%= content_tag :h2, t('.brief') %>
+<% cache(@case_file) do %>
 <%= markdown @case_file.brief %>
+<% end %>
 <%= content_tag :h2, t('.story') %>
 <%= render @case_file.events %>

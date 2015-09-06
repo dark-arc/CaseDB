@@ -32,10 +32,8 @@ module ApplicationHelper
   # @return [String] Markdown formatted string
   def markdown(text)
     return "" if text == nil
-    puts text
     @markdown ||= initMarkdown
     text = @markdown.render(text) || ""
-    puts text
     text.html_safe
   end
 
@@ -73,7 +71,6 @@ module ApplicationHelper
     theme = 'themes/wine'
     theme = "themes/#{current_user.theme}" unless
       current_user == nil or current_user.theme == nil
-    puts theme
     return theme
   end
   # Returns a default title for the page, this will usually be

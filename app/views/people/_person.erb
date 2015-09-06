@@ -1,3 +1,5 @@
 <%= div_for(person) do %>
+<% cache(person) do %>
 <%= link_to(person.name,person) %>
+<% end %>
 <% end %>

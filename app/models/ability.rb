@@ -4,21 +4,33 @@ class Ability
   include CanCan::Ability
   #@attribute coreModels [r]
   # A list of models which are "core elements". 
-  @@coreModels = [CaseFile,Person,Event,Link]
+  @@coreModels = [CaseFile,Person,Event]
+  @@userModels = [User]
 
   def initialize(user)
     user ||= User.new
-    user.roles = :guest
-    # Everyone can read
+    
     can :read, @@coreModels
-    can :create, User
-    if [:researcher,:moderator,:user]
-      can [:read, :update], User, :id => user.id
+    can [:show, :update, :destroy], User, :id => user.id
+    
+    if user.new_record?
+      can :create, User
     end
-    # Admin can do everything
-    if [:admin]
+
+    if user.user?
+      
+    end
+    
+    if user.moderator?
+      can [:promote,:show,:update,:create,:destroy], @@userModels
+    end
+
+    if user.researcher?
+      can [:update,:create,:destroy], @@coreModels
+    end
+
+    if user.admin?
       can :manage, :all
-      can :promote, User
     end
   end
 end
