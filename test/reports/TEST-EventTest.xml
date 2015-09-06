@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite time='0.001440' skipped='0' failures='0' errors='0' name="EventTest" assertions='0' tests='2'>
+  <testcase time='0.000717' file="test/models/event_test.rb" name="test_date_order" assertions='0'>
+  </testcase>
+  <testcase time='0.000723' file="test/models/event_test.rb" name="test_tagline" assertions='0'>
+  </testcase>
+</testsuite>

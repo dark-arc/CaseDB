@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class HomeControllerTest < ActionController::TestCase
-  ## Section : Routing
   test "Routing: Home" do
     assert_routing '/',
                    controller: "home",

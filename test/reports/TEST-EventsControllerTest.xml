@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite time='0.127278' skipped='0' failures='0' errors='0' name="EventsControllerTest" assertions='9' tests='5'>
+  <testcase time='0.033915' file="test/controllers/events_controller_test.rb" name="test_Guest_can_view_index" assertions='2'>
+  </testcase>
+  <testcase time='0.049413' file="test/controllers/events_controller_test.rb" name="test_Researcher_can_edit" assertions='1'>
+  </testcase>
+  <testcase time='0.021564' file="test/controllers/events_controller_test.rb" name="test_Guest_can_view_show" assertions='2'>
+  </testcase>
+  <testcase time='0.013016' file="test/controllers/events_controller_test.rb" name="test_Guest_cannot_edit" assertions='2'>
+  </testcase>
+  <testcase time='0.009370' file="test/controllers/events_controller_test.rb" name="test_Invalid_ID_shows_index" assertions='2'>
+  </testcase>
+</testsuite>

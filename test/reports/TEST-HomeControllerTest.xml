@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite time='0.004584' skipped='0' failures='0' errors='0' name="HomeControllerTest" assertions='6' tests='2'>
+  <testcase time='0.003185' file="test/controllers/home_controller_test.rb" name="test_Routing:_About" assertions='3'>
+  </testcase>
+  <testcase time='0.001399' file="test/controllers/home_controller_test.rb" name="test_Routing:_Home" assertions='3'>
+  </testcase>
+</testsuite>

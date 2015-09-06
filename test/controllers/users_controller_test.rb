@@ -9,7 +9,7 @@ class UsersControllerTest < ActionController::TestCase
     get :edit,
         params: {id: users(:admin).id},
         session: {user_id: users(:user).id}
-    assert_response :failed
+    assert_response :redirect
   end
 
 
