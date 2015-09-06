@@ -1,0 +1,10 @@
+en:
+  unauthorized:
+    create:
+      all: "You are not authorized to add a new %{subject}"
+    update:
+      all: "You are not authorized to update this %{subject}"
+    destroy:
+      all: "You are not authorized to destroy this %{subject}"
+    read:
+      all: "You are not authorized to view this %{subject}"

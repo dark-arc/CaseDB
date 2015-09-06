@@ -4,7 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 #  check_authorization
   rescue_from CanCan::AccessDenied do |e|
-    redirect_to root_url, :alert => e.message
+    #flash[:alert] = e.message
+    @message = e.message
+    render 'errors/403', status: 403
   end
 
   rescue_from ActiveRecord::RecordNotFound do |e|
