@@ -11,7 +11,7 @@ class Ability
     user ||= User.new
     
     can :read, @@coreModels
-    can [:read, :update, :destroy], User, :id => user.id
+    can [:show, :update, :destroy], User, :id => user.id
     
     if user.new_record?
       can :create, User
@@ -22,7 +22,7 @@ class Ability
     end
     
     if user.moderator?
-      can [:promote,:update,:create,:destroy], @@userModels
+      can [:promote,:show,:update,:create,:destroy], @@userModels
     end
 
     if user.researcher?

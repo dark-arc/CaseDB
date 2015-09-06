@@ -8,3 +8,5 @@ en:
       all: "You are not authorized to destroy this %{subject}"
     read:
       all: "You are not authorized to view this %{subject}"
+    index:
+      user: "You are not authorised to view lists of users"
