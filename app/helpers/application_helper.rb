@@ -32,10 +32,8 @@ module ApplicationHelper
   # @return [String] Markdown formatted string
   def markdown(text)
     return "" if text == nil
-    puts text
     @markdown ||= initMarkdown
     text = @markdown.render(text) || ""
-    puts text
     text.html_safe
   end
 
