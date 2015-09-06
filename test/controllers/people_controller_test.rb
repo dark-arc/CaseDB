@@ -13,8 +13,8 @@ class PeopleControllerTest < ActionController::TestCase
   end
   test "Guest cannot edit" do 
     get :edit, params: {id: people(:jack).id}
-    assert_response :redirect
-    assert_not flash[:alert].empty?
+    assert_response 403
+    assert_not_nil assigns(:message)
   end
   test "Researcher can edit" do
     get :edit, params: {id: people(:jack).id},

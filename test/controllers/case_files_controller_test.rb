@@ -13,13 +13,12 @@ class CaseFilesControllerTest < ActionController::TestCase
   end
   test "Guest cannot edit" do 
     get :edit, params: {id: case_files(:jack).id}
-    assert_response :redirect
-    assert_not flash[:alert].empty?
+    assert_response 403
+    assert_not_nil assigns(:message)
   end
   test "Researcher can edit" do
     get :edit, params: {id: case_files(:jack).id},
         session: {user_id: users(:researcher).id}
-
     assert_response :success
   end
   test "Invalid case ID shows index" do
