@@ -1,9 +1,10 @@
-@import '../application.css';
 $body-1: #0C0002;
 $body-2: #1b0004;
 $body-3: #43000b;
 $fore-1: #F7F5D9;
 $fore-2: #b2001c;
+
+@import "application";
 
 html{
     width:100%;
@@ -144,4 +145,26 @@ section.flash{
 	    margin-bottom:1em;
 	}
     }
+}
+.select2-selection, .select2-dropdown,.select2-container,{
+    background-color:$body-2;
+    border:1px solid $body-1;
+}
+.select2-search input{
+    background-color:inherit;
+    border:0;
+    outline:0;
+}
+.select2-selection__choice {
+    background-color:$body-3;
+}
+.select2-selection__choice:hover, .select2-results__option:hover {
+    background-color:$body-1;
+}
+/** Up and down arrows on single selection boxes */
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+      border-color: $fore-1 transparent transparent transparent;
+}
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+  border-color: transparent transparent $fore-1 transparent;
 }
