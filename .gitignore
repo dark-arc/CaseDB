@@ -36,3 +36,4 @@ bower.json
 public/assets
 .yardoc/
 test/reports/
+.*#*

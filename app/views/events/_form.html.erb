@@ -5,9 +5,7 @@
 	<%= f.text_area :body %>
 	
 	<%= f.label :date %>
-	<%= f.date_select :date,
-	:start_year => Time.now.year - 500,
-	:end_year => Time.now.year %>
+	<%= f.text_field :date, class: "datepicker" %>
 	
 	<%= f.label :case_file_id %>
 	<%= f.collection_select :case_file_id, CaseFile.all, :id, :name, :include_blank => true %>

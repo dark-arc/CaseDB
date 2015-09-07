@@ -85,6 +85,7 @@ GIT
 
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     builder (3.2.2)
     coffee-rails (4.1.0)
@@ -121,6 +122,10 @@ GEM
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rails-assets-datetimepicker (2.4.5)
+      rails-assets-jquery (>= 1.7.2)
+    rails-assets-jquery (2.1.4)
+    rails-assets-select2 (4.0.0)
     rails-controller-testing (0.0.3)
       rails (>= 4.2)
     rails-deprecated_sanitizer (1.0.3)
@@ -185,6 +190,8 @@ DEPENDENCIES
   pg
   puma
   rails!
+  rails-assets-datetimepicker!
+  rails-assets-select2!
   rails-controller-testing
   rails_12factor
   rake

@@ -18,6 +18,11 @@ gem 'rails_12factor', group: :production
 gem 'pg' 
 # Application
 gem 'redcarpet' 
+source 'https://rails-assets.org' do
+  # Javascript assets
+  gem 'rails-assets-select2'
+  gem 'rails-assets-datetimepicker'
+end
 #gem 'kaminari' # Pagination
 # Auth
 gem 'cancancan', git: "https://github.com/CanCanCommunity/cancancan.git", branch: "develop"
