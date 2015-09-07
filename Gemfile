@@ -19,7 +19,9 @@ gem 'pg'
 # Application
 gem 'redcarpet' 
 source 'https://rails-assets.org' do
+  # Javascript assets
   gem 'rails-assets-select2'
+  gem 'rails-assets-datetimepicker'
 end
 #gem 'kaminari' # Pagination
 # Auth
