@@ -51,12 +51,14 @@ class PeopleController < ApplicationController
     end
     redirect_to action: 'index'
   end
-  
+
   private
   def person_params
     params.require(:person).permit(:name, :gender, :height,
-                                   :weight, :eye_colour, :hair_colour,
-                                   :hair_length, :moustache, :beard, :ic)
+                                   :build, :eye_colour, :hair_colour,
+                                   :hair_length, :moustache, :beard,
+                                   :ic, :aliases_attributes => [
+                                     :id,:_destroy,:name])
   end
 
 end

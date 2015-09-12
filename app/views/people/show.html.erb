@@ -9,6 +9,11 @@
    @person.death.empty?%>
 <% end %>
 
+<%= content_tag :h2, t('.aliases') %>
+<%= render partial: :alias,
+    collection: @person.aliases,
+    as: :item %>
+
 <%= content_tag :h2, t('.description') %>
 <%= content_tag :dl do %>
 <% @person.description.each do |k,v|%>

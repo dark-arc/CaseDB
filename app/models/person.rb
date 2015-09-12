@@ -17,7 +17,32 @@ class Person < ActiveRecord::Base
             length: {in: 5..200}
   validate :validate_birth_event_count,
            :validate_death_event_count
-  
+  attr_accessor :name
+  has_many :aliases, dependent: :destroy
+  accepts_nested_attributes_for :aliases,
+                                allow_destroy: true
+
+  def name
+    begin
+      aliases.default_name.first.name
+    rescue
+      aliases.first.name
+    end
+  end
+
+  def name=(nom)
+    a = aliases.
+        find_or_create_by(
+          person: self,
+          name: nom
+        )
+    aliases.default_name.each do |p|
+      p.default = false
+      p.save
+    end
+    a.default = true
+    a.save
+  end
   #@attribute birth
   # @return [CollectionProxy<Event>] birth event of this person
   

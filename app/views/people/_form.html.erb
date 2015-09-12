@@ -1,8 +1,14 @@
 <%= render 'error', :errors => @person.errors %>
 
-<%= form_for @person do |f| %>
+<%= nested_form_for @person do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
+
+    <%= content_tag :h2, t('.aliases') %>
+    <%= f.fields_for :aliases do |a| %>
+    <%= render 'aliases', :a => a %>
+    <% end %>
+    <%= f.link_to_add t('.addAlias'), :aliases %>
 
     <%= f.label :gender %>
     <%= f.select(:gender,
