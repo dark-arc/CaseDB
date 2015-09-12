@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150830233654) do
+ActiveRecord::Schema.define(version: 20150912115527) do
 
   create_table "case_files", force: :cascade do |t|
     t.string   "name"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20150830233654) do
     t.string   "name"
     t.integer  "gender"
     t.integer  "height"
-    t.integer  "weight"
+    t.integer  "build"
     t.integer  "eye_colour"
     t.integer  "hair_colour"
     t.integer  "hair_length"

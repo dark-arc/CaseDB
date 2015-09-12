@@ -1,7 +1,7 @@
 # Person class contains the descriptions of people and a narative of
 # their life. 
 class Person < ActiveRecord::Base
-  @@description_fields = [:ic,:gender,:height,:weight,:eye_colour,:hair_length, :hair_colour]
+  @@description_fields = [:ic,:gender,:height,:build,:eye_colour,:hair_length, :hair_colour]
   has_many :event_people
   #@attribute events
   # @return [Relation<Event>] Narrative for this persons life
@@ -82,7 +82,7 @@ class Person < ActiveRecord::Base
        ], _prefix:true
   #@!attribute weight
   # @return [Symbol] The weight of this person. 
-  enum weight: [
+  enum build: [
          :unknown,
          :slight,
          :average,
