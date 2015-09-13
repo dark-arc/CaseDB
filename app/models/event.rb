@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
 
   validates :body,
             presence: true,
-            length: {minimum: 100}
+            length: {minimum: 20}
   
   accepts_nested_attributes_for :event_people,
                                 :allow_destroy => true
