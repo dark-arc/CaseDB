@@ -15,7 +15,7 @@ gem 'uglifier'
 gem 'puma'
 gem 'sqlite3', group: :development 
 gem 'rails_12factor', group: :production
-gem 'pg' 
+gem 'pg', group: :production 
 # Application
 gem 'redcarpet' 
 source 'https://rails-assets.org' do
