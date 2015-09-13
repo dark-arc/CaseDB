@@ -12,10 +12,9 @@ class CaseFile < ActiveRecord::Base
 
   validates :brief,
             presence: true,
-            length: {in: 50..500}
+            length: {minimum: 50}
   validates :name,
-            presence: true,
-            length: {in: 5..50}
+            presence: true
   
   EventPerson.categories.each do |type|
   has_many type[0].pluralize.to_sym,

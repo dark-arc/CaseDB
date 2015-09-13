@@ -34,5 +34,7 @@ gem 'yard', group: :development
 # Development
 gem 'spring', group: :development
 gem 'rails-controller-testing', group: :test
+gem 'faker', group: [:test,:development]
+gem 'factory_girl_rails', group: [:test,:development]
 gem 'minitest-ci', :git => 'git@github.com:circleci/minitest-ci.git', group: :test
 

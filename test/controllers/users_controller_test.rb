@@ -7,14 +7,14 @@ class UsersControllerTest < ActionController::TestCase
   end
   test "Cannot edit others" do
     get :edit,
-        params: {id: users(:admin).id},
-        session: {user_id: users(:user).id}
+        params: {id: create(:user,:admin).id},
+        session: {user_id: create(:user).id}
     assert_response 403
     assert_not_nil assigns(:message)
   end
 
   test "Users cannot view index of users" do
-    get :index, session: {user_id: users(:user).id}
+    get :index, session: {user_id: create(:user).id}
     assert_response 403
     assert_not_nil assigns(:message)
   end

@@ -2,15 +2,15 @@ require 'test_helper'
 
 class PersonTest < ActiveSupport::TestCase
   test "Person may only have one birth Event" do
-    person = people(:jack)
-    person.birth << events(:birth)
-    person.birth << events(:death)
+    person = create :person
+    person.birth << create(:event)
+    person.birth << create(:event)
     assert_not person.valid?
   end
   test "Person may only have one death Event" do
-    person = people(:jack)
-    person.death << events(:birth)
-    person.death << events(:death)
+    person = create :person
+    person.death << create(:event)
+    person.death << create(:event)
     assert_not person.valid?
   end
 end

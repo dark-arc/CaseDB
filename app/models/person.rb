@@ -12,9 +12,6 @@ class Person < ActiveRecord::Base
   has_many :case_files,
            -> {distinct},
            :through => :events
-  validates :name,
-            presence: true,
-            length: {in: 5..200}
   validate :validate_birth_event_count,
            :validate_death_event_count
   attr_accessor :name

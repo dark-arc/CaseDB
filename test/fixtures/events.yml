@@ -1,9 +1,0 @@
-birth:
-  body: "This is a test event. This event should be associated with a person. "
-death:
-  body: "This is a test event. This event should be associated with a person. "
-tagged:
-  body: "This is a test event. This event should be associated with a person. "
-  tagline: "tagline"
-untagged:
-  body: "This is a test event. This event should be associated with a person. "

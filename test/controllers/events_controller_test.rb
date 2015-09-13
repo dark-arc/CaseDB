@@ -7,18 +7,18 @@ class EventsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:event)
   end
   test "Guest can view show" do 
-    get :show, params: {id: events(:birth).id}
+    get :show, params: {id: create(:event).id}
     assert_response :success
     assert_not_nil assigns(:event)
   end
   test "Guest cannot edit" do 
-    get :edit, params: {id: events(:birth).id}
+    get :edit, params: {id: create(:event).id}
     assert_response 403
     assert_not_nil assigns(:message)
   end
   test "Researcher can edit" do
-    get :edit, params: {id: events(:birth).id},
-        session: {user_id: users(:researcher).id}
+    get :edit, params: {id: create(:event).id},
+        session: {user_id: create(:user,:researcher).id}
     assert_response :success
   end
   test "Invalid ID shows index" do
