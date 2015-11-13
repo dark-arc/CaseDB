@@ -19,6 +19,12 @@ class Formatter < Redcarpet::Render::HTML
   def preprocess(text)
     parse_special_links(text)
   end
+
+  # Outputs headers (starting at level 3)
+  def header(text, level)
+    level += 2
+    "<h#{level}>#{text}</h#{level}>"
+  end 
   
   # This method is called by preprocess and will look through the
   # current text for "special links". The format of these links is
