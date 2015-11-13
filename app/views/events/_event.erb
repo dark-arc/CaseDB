@@ -1,6 +1,6 @@
 <%= div_for(event) do %>
 <% cache(event) do %>
-<%= link_to event.date, event%>
+<%= content_tag(:h3,link_to(event.date, event))%>
 <%= markdown event.body %>
 <% end %>
 <% end %>
