@@ -1,6 +1,6 @@
 class EventPerson < ActiveRecord::Base
-  belongs_to :event
-  belongs_to :person
+  belongs_to :event, :touch => true
+  belongs_to :person, :touch => true
 
   enum  category: [
           :birth,

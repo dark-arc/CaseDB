@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
   default_scope { order(:date)}
   #@attribute case_file
   # The case file the event belongs to
-  belongs_to :case_file
+  belongs_to :case_file, :touch => true
   has_many :event_people
   #@attribute people
   # The people associated with the case

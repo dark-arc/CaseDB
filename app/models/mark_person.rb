@@ -3,6 +3,6 @@
 # tattoos and piercings which will all be the same mark but also have
 # differences
 class MarkPerson < ActiveRecord::Base
-  belongs_to :mark
-  belongs_to :person
+  belongs_to :mark, :touch => true
+  belongs_to :person, :touch => true
 end
