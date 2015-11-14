@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
     password_enc==encrypt("#{username}#{password}")    
   end
   def validate_theme
-    unless (User.themes.include?(theme) or theme == nil)
+    unless (User.themes.include?(theme) or theme.nil?)
       themes = User.themes.to_sentence(two_words_connector: " or ",
                                        last_word_connector: " or ")
       errors.add(:theme, "must be one of #{themes}") 

@@ -27,7 +27,7 @@ class Event < ActiveRecord::Base
   # be the first sentence of the body.
   def tagline
     return body.split('. ').first if
-      super == nil
+      super.nil?
     return super
   end
 end

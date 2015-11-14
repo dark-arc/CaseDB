@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    if params[:user][:password] == nil ||
+    if params[:user][:password].nil? ||
        params[:user][:password].blank?
       params[:user].delete(:password)
       params[:user].delete(:password_confirmation)

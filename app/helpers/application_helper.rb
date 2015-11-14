@@ -31,7 +31,7 @@ module ApplicationHelper
   # @param text [String] Any string, preferably one with markdown in it.
   # @return [String] Markdown formatted string
   def markdown(text)
-    return "" if text == nil
+    return "" if text.nil?
     @markdown ||= initMarkdown
     text = @markdown.render(text) || ""
     text.html_safe
@@ -39,7 +39,7 @@ module ApplicationHelper
 
   # @return [Boolean] true when there is a user signed in. 
   def signed_in?
-    if session[:user_id] != nil
+    if ! session[:user_id].nil?
       true
     else
       false
@@ -70,7 +70,7 @@ module ApplicationHelper
   def get_style
     theme = 'themes/wine'
     theme = "themes/#{current_user.theme}" unless
-      current_user == nil or current_user.theme == nil
+      current_user.nil? or current_user.theme.nil?
     return theme
   end
   # Returns a default title for the page, this will usually be
