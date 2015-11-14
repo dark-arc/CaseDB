@@ -1,9 +1,6 @@
 <%= render 'error', :errors => @person.errors %>
 
 <%= nested_form_for @person do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-
     <%= content_tag :h2, t('.aliases') %>
     <%= f.fields_for :aliases do |a| %>
     <%= render 'aliases', :a => a %>

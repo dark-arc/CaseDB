@@ -2,7 +2,7 @@ class CaseFilesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @case_files = CaseFile.all
+
   end
   
   def create
@@ -14,15 +14,15 @@ class CaseFilesController < ApplicationController
   end
   
   def new
-    @case_file = CaseFile.new(case_file_params)
+
   end
   
   def show
-    @case_file = CaseFile.find(params[:id])
+ 
   end
   
   def edit
-    @case_file = CaseFile.find(params[:id])
+ 
   end
   
   def update
@@ -34,14 +34,8 @@ class CaseFilesController < ApplicationController
   end
   
   def destroy
-    if CaseFile.exists?(params[:id])
-      @case_file = CaseFile.find(params[:id])
       @case_file.destroy()
-      @success = true
-    else
-      @success = false
-    end
-    redirect_to @case_file
+      redirect_to case_files
   end
   # Define case event linking and unlinking
   def link
