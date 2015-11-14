@@ -10,9 +10,7 @@
 	<% end %>
 	<%= content_tag :p do %>
 		<%= t('.birth', date: l(@person.dob, format: :formal)) unless @person.dob.nil? %>
-		<%= t('.birth', date: t('.unknown')) if @person.dob.nil? %>
 		<%= t('.death', date: l(@person.dod, format: formal)) unless @person.dod.nil? %>
-		<%= t('.death', date: t('.unknown')) if @person.dod.nil? %>
 	<% end %>
 	<%= content_tag :h2, t('.aliases') %>
 	<%= render partial: :alias,
