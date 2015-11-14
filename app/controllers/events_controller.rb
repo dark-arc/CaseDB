@@ -14,14 +14,8 @@ class EventsController < ApplicationController
   end
   
   def new
-    @event = Event.new()
-    if params.has_key?(:casefile)
-      @event.case_file = CaseFile.find(
-        params[:casefile]
-      )        
-    end
+    @event = Event.new(event_params)
   end
-
                                     
   def show
     @event = Event.find(params[:id])
@@ -54,7 +48,15 @@ class EventsController < ApplicationController
   private
   def event_params
     params.require(:event).permit(:body, :date, :case_file_id,
-                                  :event_people_attributes => [:person_id,:id, :category,:_destroy])
+                                  :event_people_attributes => [
+                                    :person_id,
+                                    :id,
+                                    :category,
+                                    :_destroy],
+                                  :event_people => [
+                                    :person_id,
+                                    :category]
+                                 )
   end
 end
 

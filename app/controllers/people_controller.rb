@@ -21,7 +21,7 @@ class PeopleController < ApplicationController
     if ! params[:event].blank?
       @event = Event.find(params[:event].to_i)
     end
-    @person = Person.new()
+    @person = Person.new(person_params)
   end
   
   def show

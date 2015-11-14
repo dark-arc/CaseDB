@@ -40,6 +40,22 @@ class Person < ActiveRecord::Base
     a.default = true
     a.save
   end
+
+  def dob
+    if birth.empty?
+      return nil
+    else
+      return birth.first.date
+    end
+  end
+
+  def dod
+    if death.empty?
+      return nil
+    else
+      return death.first.date
+    end
+  end
   #@attribute birth
   # @return [CollectionProxy<Event>] birth event of this person
   

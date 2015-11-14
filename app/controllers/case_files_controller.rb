@@ -14,7 +14,7 @@ class CaseFilesController < ApplicationController
   end
   
   def new
-    @case_file = CaseFile.new()
+    @case_file = CaseFile.new(case_file_params)
   end
   
   def show

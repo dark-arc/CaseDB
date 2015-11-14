@@ -8,6 +8,8 @@ en:
       edit: "Edit Details"
       addDeath: "Add death"
       addBirth: "Add birth"
+      birth: "Born: %{date}"
+      death: "Died: "
       description: "Physical Description"
       noDescription: "This person has no description."
       story: "Life Story"
