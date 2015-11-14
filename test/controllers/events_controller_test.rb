@@ -4,7 +4,6 @@ class EventsControllerTest < ActionController::TestCase
   test "Guest can view index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:event)
   end
   test "Guest can view show" do 
     get :show, params: {id: create(:event).id}

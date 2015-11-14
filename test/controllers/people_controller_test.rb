@@ -4,7 +4,6 @@ class PeopleControllerTest < ActionController::TestCase
   test "Guest can view index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:person)
   end
   test "Guest can view show" do 
     get :show, params: {id: create(:person).id}
