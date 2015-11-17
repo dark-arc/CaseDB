@@ -182,12 +182,14 @@ class Person < ActiveRecord::Base
          :arabic
        ], _prefix: true
   def description
-  @description_fields ||= [:ic,:gender,:height,:build,:eye_colour,:hair_length, :hair_colour]
-  description = {}
+    @description_fields ||= [:ic,:gender,:height,:build,:eye_colour,:hair_length, :hair_colour]
+    description = {}
     @description_fields.each do |v|
       attr = read_attribute v
-      description[v] = attr unless
-        attr == 'unknown'
+      next if attr == 'unknown'
+      field = Person.human_attribute_name(v)
+      attr = Person.human_attribute_name(attr)
+      description[field] = attr
     end
     return description
   end

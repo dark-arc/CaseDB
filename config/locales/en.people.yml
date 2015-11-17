@@ -13,3 +13,10 @@ en:
       description: "Physical Description"
       noDescription: "This person has no description."
       story: "Life Story"
+  activerecord:
+    attributes:
+      person:
+        ic: "IC"
+
+        
+    
