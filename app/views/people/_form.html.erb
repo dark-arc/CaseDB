@@ -41,5 +41,16 @@
     <%= f.select(:hair_length,
 	Person.hair_lengths.keys.map {
 	|g| [g.titleize,g]}) %>
+
+    <%= f.label :moustache %>
+    <%= f.select(:moustache,
+	Person.moustaches.keys.map {
+	|g| [g.titleize,g]}) %>
+
+    <%= f.label :beard %>
+    <%= f.select(:beard,
+	Person.beards.keys.map {
+	|g| [g.titleize,g]}) %>
+
     <%= f.submit %>
 <% end %>

@@ -182,7 +182,9 @@ class Person < ActiveRecord::Base
          :arabic
        ], _prefix: true
   def description
-    @description_fields ||= [:ic,:gender,:height,:build,:eye_colour,:hair_length, :hair_colour]
+    @description_fields ||=
+      [:ic,:gender,:height,:build,:eye_colour,
+       :hair_length, :hair_colour,:beard,:moustache]
     description = {}
     @description_fields.each do |v|
       attr = read_attribute v
