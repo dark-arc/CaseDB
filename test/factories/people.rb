@@ -10,6 +10,8 @@ FactoryGirl.define do
     hair_colour {Person.hair_colours.keys.sample}
     hair_length {Person.hair_lengths.keys.sample}
     ic {Person.ics.keys.sample}
+    beard {Person.beards.keys.sample}
+    moustache {Person.moustaches.keys.sample}
     trait :with_birth do
       after(:build) do |p|
         p.birth << create(:event)
