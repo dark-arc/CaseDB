@@ -188,7 +188,7 @@ class Person < ActiveRecord::Base
     description = {}
     @description_fields.each do |v|
       attr = read_attribute v
-      next if attr == 'unknown'
+      next if attr == 'unknown' || attr.nil?
       field = Person.human_attribute_name(v)
       attr = Person.human_attribute_name(attr)
       description[field] = attr

@@ -13,4 +13,11 @@ class PersonTest < ActiveSupport::TestCase
     person.death << create(:event)
     assert_not person.valid?
   end
+
+  test "description contain a list of all known attributes" do
+    person = create :person
+    assert_equal person.description, {}
+    person = create :person, :with_description
+    assert_not person.description.empty?
+  end
 end
