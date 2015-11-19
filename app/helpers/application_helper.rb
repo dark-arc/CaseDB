@@ -1,42 +1,4 @@
 module ApplicationHelper
-  # Initializes an instance of markdown and returns it. This should
-  # never be called directly as creating the renderer will slow down
-  # the application, use [markdown] instead.
-  #
-  # @return [Redcarpet::Markdown] markdown renderer.
-  def initMarkdown()
-    options = {
-      html_filter: true,
-      no_styles: true,
-      safe_links_only: false,
-      models: {
-        Event => :date,
-        CaseFile => :name,
-        Person => :name
-      },
-      link: /<(.*)\?(.*)>/
-    }
-
-    extensions = {
-    
-    }
-
-    renderer = Formatter.new(options)
-    return Redcarpet::Markdown.new(renderer, extensions)
-  end
-  # Renders a piece of text given in the parameters as markdown
-  # code. This also calls initMarkdown and caches the renderer which
-  # should speed up calls to markdown.
-  #
-  # @param text [String] Any string, preferably one with markdown in it.
-  # @return [String] Markdown formatted string
-  def markdown(text)
-    return "" if text.nil?
-    @markdown ||= initMarkdown
-    text = @markdown.render(text) || ""
-    text.html_safe
-  end
-
   # @return [Boolean] true when there is a user signed in. 
   def signed_in?
     if ! session[:user_id].nil?

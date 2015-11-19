@@ -17,7 +17,7 @@ gem 'sqlite3', group: :development
 gem 'rails_12factor', group: :production
 gem 'pg', group: :production 
 # Application
-gem 'redcarpet' 
+gem 'rails_markdown', :github => 'dark-arc/rails_markdown'
 source 'https://rails-assets.org' do
   # Javascript assets
   gem 'rails-assets-select2'

@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/dark-arc/rails_markdown.git
+  revision: 56ba2301902cd9c72bd000eab63d458b29ae51bc
+  specs:
+    rails_markdown (0.0.1)
+      rails
+      redcarpet (~> 3.3)
+
+GIT
   remote: git://github.com/rails/arel.git
   revision: d5432b4616ff43fbb14540d351eed351e21bb20e
   specs:
@@ -152,7 +160,7 @@ GEM
     rdoc (4.2.0)
     record_tag_helper (0.0.0)
       rails (~> 5.0.0.alpha)
-    redcarpet (3.3.2)
+    redcarpet (3.3.3)
     role_model (0.8.2)
     sass (3.4.16)
     sass-rails (5.0.3)
@@ -203,9 +211,9 @@ DEPENDENCIES
   rails-assets-select2!
   rails-controller-testing
   rails_12factor
+  rails_markdown!
   rake
   record_tag_helper
-  redcarpet
   role_model
   sass-rails
   sdoc
