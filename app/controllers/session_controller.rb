@@ -4,7 +4,8 @@ class SessionController < ApplicationController
   end
 
   def create
-    user = User.authenticate(params[:session][:username], params[:session][:password])
+    logger.warn create_params
+    user = User.authenticate(create_params)
     if user 
       session[:user_id] = user.id
       flash[:notice] = "Logged in as #{user.username}"
@@ -19,5 +20,11 @@ class SessionController < ApplicationController
     session[:user_id] = nil
     flash[:notice] = "Logged out."
     redirect_to(root_path)
+  end
+
+  private
+
+  def create_params
+    params.require(:session).permit(:username,:password)
   end
 end

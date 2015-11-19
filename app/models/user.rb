@@ -31,9 +31,12 @@ class User < ActiveRecord::Base
       roles << :user
     end
   end
-  def self.authenticate(username="", password="")
-    user = User.find_by_username(username)
-    if user && user.verify_password(password)
+  
+  def self.authenticate(auth = {})
+    return false if auth['username'].nil?
+    return false if auth['password'].nil?
+    user = User.find_by_username(auth['username'])
+    if user && user.verify_password(auth['password'])
       return user
     end
     return false
