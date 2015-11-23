@@ -49,6 +49,6 @@ class AnatomiesController < ApplicationController
   private
     # Only allow a trusted parameter "white list" through.
     def anatomy_params
-      params.require(:anatomy).permit!
+      params.require(:anatomy).permit(:name, :parent_id)
     end
 end
