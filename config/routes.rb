@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   resources :events
   resources :links
   resources :people
-
+  resources :anatomies
+  
   resources :users 
   resources :session, only: [:new,:create,:destroy]
 

@@ -18,6 +18,7 @@ gem 'rails_12factor', group: :production
 gem 'pg', group: :production 
 # Application
 gem 'rails_markdown', :github => 'dark-arc/rails_markdown'
+gem 'awesome_nested_set'
 source 'https://rails-assets.org' do
   # Javascript assets
   gem 'rails-assets-select2'

@@ -95,6 +95,8 @@ GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
   specs:
+    awesome_nested_set (3.0.2)
+      activerecord (>= 4.0.0, < 5)
     builder (3.2.2)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -195,6 +197,7 @@ PLATFORMS
 
 DEPENDENCIES
   arel!
+  awesome_nested_set
   cancancan!
   coffee-rails
   factory_girl_rails

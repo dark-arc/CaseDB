@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117224509) do
+ActiveRecord::Schema.define(version: 20151123190637) do
 
   create_table "aliases", force: :cascade do |t|
     t.integer  "person_id"
@@ -19,6 +19,20 @@ ActiveRecord::Schema.define(version: 20151117224509) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.boolean  "default",    default: false
+  end
+
+  create_table "anatomies", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.integer  "depth"
+    t.integer  "children_count"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["lft"], name: "index_anatomies_on_lft"
+    t.index ["parent_id"], name: "index_anatomies_on_parent_id"
+    t.index ["rgt"], name: "index_anatomies_on_rgt"
   end
 
   create_table "case_files", force: :cascade do |t|

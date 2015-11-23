@@ -1,0 +1,7 @@
+<%= content_for :title, @anatomy.name %>
+<% content_for :sidebar do %>
+<%= link_to t('.edit'), edit_anatomy_path(@anatomy) %>
+<% end %>
+<% cache(@anatomy) do %>
+<%= @anatomy.path %>
+<% end %>
