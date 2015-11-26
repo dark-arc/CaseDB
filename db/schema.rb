@@ -76,15 +76,6 @@ ActiveRecord::Schema.define(version: 20151126202605) do
     t.index ["rgt"], name: "index_mark_types_on_rgt"
   end
 
-  create_table "marks", force: :cascade do |t|
-    t.integer  "person_id"
-    t.integer  "anatomical_location_id"
-    t.integer  "mark_type_id"
-    t.text     "description"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
   create_table "people", force: :cascade do |t|
     t.integer  "gender"
     t.integer  "height"
