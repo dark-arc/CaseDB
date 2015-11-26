@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :case_files
   resources :events
   resources :links
-  resources :people
+  resources :people do
+    resources :marks
+  end
   resources :anatomies
   
   resources :users 

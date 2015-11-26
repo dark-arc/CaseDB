@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151123190637) do
+ActiveRecord::Schema.define(version: 20151126202605) do
 
   create_table "aliases", force: :cascade do |t|
     t.integer  "person_id"
@@ -62,21 +62,27 @@ ActiveRecord::Schema.define(version: 20151123190637) do
     t.index ["case_file_id"], name: "index_events_on_case_file_id"
   end
 
-  create_table "mark_people", force: :cascade do |t|
-    t.integer  "mark_id"
-    t.integer  "person_id"
-    t.integer  "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["mark_id"], name: "index_mark_people_on_mark_id"
-    t.index ["person_id"], name: "index_mark_people_on_person_id"
+  create_table "mark_types", force: :cascade do |t|
+    t.string   "type"
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.integer  "depth"
+    t.integer  "children_count"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["lft"], name: "index_mark_types_on_lft"
+    t.index ["parent_id"], name: "index_mark_types_on_parent_id"
+    t.index ["rgt"], name: "index_mark_types_on_rgt"
   end
 
   create_table "marks", force: :cascade do |t|
-    t.integer  "type"
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "person_id"
+    t.integer  "anatomical_location_id"
+    t.integer  "mark_type_id"
+    t.text     "description"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "people", force: :cascade do |t|
