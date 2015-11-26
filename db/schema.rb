@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126202605) do
+ActiveRecord::Schema.define(version: 20151126210931) do
 
   create_table "aliases", force: :cascade do |t|
     t.integer  "person_id"
@@ -72,8 +72,20 @@ ActiveRecord::Schema.define(version: 20151126202605) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.index ["lft"], name: "index_mark_types_on_lft"
-    t.index ["parent_id"], name: "index_mark_types_on_parent_id"
     t.index ["rgt"], name: "index_mark_types_on_rgt"
+    t.index ["type"], name: "index_mark_types_on_type"
+  end
+
+  create_table "marks", force: :cascade do |t|
+    t.integer  "person_id"
+    t.integer  "anatomy_id"
+    t.integer  "mark_type_id"
+    t.text     "description"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["anatomy_id"], name: "index_marks_on_anatomy_id"
+    t.index ["mark_type_id"], name: "index_marks_on_mark_type_id"
+    t.index ["person_id"], name: "index_marks_on_person_id"
   end
 
   create_table "people", force: :cascade do |t|
