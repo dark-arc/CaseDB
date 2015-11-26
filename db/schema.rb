@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20151126210931) do
   end
 
   create_table "mark_types", force: :cascade do |t|
-    t.string   "type"
+    t.string   "name"
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 20151126210931) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.index ["lft"], name: "index_mark_types_on_lft"
+    t.index ["name"], name: "index_mark_types_on_name"
     t.index ["rgt"], name: "index_mark_types_on_rgt"
-    t.index ["type"], name: "index_mark_types_on_type"
   end
 
   create_table "marks", force: :cascade do |t|
