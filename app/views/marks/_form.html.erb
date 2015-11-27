@@ -1,0 +1,21 @@
+<%= render 'error', :errors => @mark.errors %>
+
+<%= form_for [@person,@mark] do |f| %>
+<%= f.label :description %>
+<%= f.text_area :description %>
+
+<%= f.label :anatomy_id %>
+<%= f.collection_select :anatomy_id,
+    Anatomy.all, :id, :path %>
+
+<#%= f.label :person_id %>
+<#%= f.collection_select :person_id,
+    Person.all, :id, :name %>
+
+<%= f.label :mark_type_id %>
+<%= f.collection_select :mark_type_id,
+    MarkType.all, :id, :path %>
+
+
+<%= f.submit %>
+<%  end %>

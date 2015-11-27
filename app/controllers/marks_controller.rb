@@ -1,5 +1,6 @@
 class MarksController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :person
+  load_and_authorize_resource :mark, :through => :person
 
   # GET /marks
   def index
@@ -23,9 +24,10 @@ class MarksController < ApplicationController
   # POST /marks
   def create
     @mark = Mark.new(mark_params)
-
+    @mark.person = @person
     if @mark.save
-      redirect_to @mark, notice: 'Mark was successfully created.'
+      redirect_to [@person,@mark],
+                  notice: 'Mark was successfully created.'
     else
       render :new
     end
@@ -49,7 +51,6 @@ class MarksController < ApplicationController
   private
     # Only allow a trusted parameter "white list" through.
   def mark_params
-    debug params
       params.require(:mark).permit!
     end
 end

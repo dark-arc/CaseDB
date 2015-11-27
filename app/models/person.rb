@@ -17,7 +17,8 @@ class Person < ActiveRecord::Base
   has_many :aliases, dependent: :destroy
   accepts_nested_attributes_for :aliases,
                                 allow_destroy: true
-
+  has_many :marks
+  
   def name
     begin
       aliases.default_name.first.name
