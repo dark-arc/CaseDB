@@ -1,20 +1,18 @@
+# Controller for people/marks.
 class MarksController < ApplicationController
   load_and_authorize_resource :person
-  load_and_authorize_resource :mark, :through => :person
+  load_and_authorize_resource :mark, through: :person
 
   # GET /marks
   def index
-
   end
 
   # GET /marks/1
   def show
-
   end
 
   # GET /marks/new
   def new
-
   end
 
   # GET /marks/1/edit
@@ -51,8 +49,9 @@ class MarksController < ApplicationController
   end
 
   private
-    # Only allow a trusted parameter "white list" through.
+
+  # Only allow a trusted parameter "white list" through.
   def mark_params
-      params.require(:mark).permit!
-    end
+    params.require(:mark).permit!
+  end
 end
