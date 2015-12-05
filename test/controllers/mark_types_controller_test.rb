@@ -17,7 +17,6 @@ class MarkTypesControllerTest < ActionController::TestCase
   end
 
   test 'should create mark_type' do
-    puts @mark_type.name
     assert_difference('MarkType.count') do
       post :create,
            params: {

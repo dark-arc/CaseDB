@@ -26,7 +26,7 @@ class MarksController < ApplicationController
     @mark = Mark.new(mark_params)
     @mark.person = @person
     if @mark.save
-      redirect_to [@person,@mark],
+      redirect_to @person,
                   notice: 'Mark was successfully created.'
     else
       render :new
@@ -36,7 +36,8 @@ class MarksController < ApplicationController
   # PATCH/PUT /marks/1
   def update
     if @mark.update(mark_params)
-      redirect_to @mark, notice: 'Mark was successfully updated.'
+      redirect_to @person,
+                  notice: 'Mark was successfully updated.'
     else
       render :edit
     end
@@ -45,7 +46,8 @@ class MarksController < ApplicationController
   # DELETE /marks/1
   def destroy
     @mark.destroy
-    redirect_to marks_url, notice: 'Mark was successfully destroyed.'
+    redirect_to @person,
+                notice: 'Mark was successfully destroyed.'
   end
 
   private

@@ -2,47 +2,76 @@ require 'test_helper'
 
 class MarksControllerTest < ActionController::TestCase
   setup do
-    @mark = marks(:one)
+    @mark = build :mark
+    @person = create :person
+    @params = { user_id: create(:user, :admin).id }
   end
 
   test "should get index" do
-    get :index
+    get :index,
+        params: {person_id: @person.id},
+        session: @params
     assert_response :success
   end
 
   test "should get new" do
-    get :new
+    get :new,
+        params: {person_id: @person.id},
+        session: @params
     assert_response :success
   end
 
   test "should create mark" do
     assert_difference('Mark.count') do
-      post :create, params: { mark: {  } }
+      post :create,
+           params: {
+             person_id: @person.id,
+             mark: {
+               description: @mark.description,
+               anatomy_id: @mark.anatomy_id,
+               mark_type_id: @mark.mark_type_id
+             }
+           },session: @params
     end
 
-    assert_redirected_to mark_path(Mark.last)
+    assert_redirected_to person_path(@person)
   end
 
   test "should show mark" do
-    get :show, params: { id: @mark }
+    save_setup
+    get :show, params: {person_id: @person, id: @mark },
+        session: @params
     assert_response :success
   end
-
+  
   test "should get edit" do
-    get :edit, params: { id: @mark }
+    save_setup
+    get :edit, params: {person_id: @person, id: @mark },
+        session: @params
     assert_response :success
   end
 
   test "should update mark" do
-    patch :update, params: { id: @mark, mark: {  } }
-    assert_redirected_to mark_path(@mark)
+    save_setup
+    patch :update,
+          params: {
+            person_id: @person,
+            id: @mark,
+            mark: {description: "s"},
+          },
+          session: @params
+    assert_redirected_to person_path(@person)
   end
 
   test "should destroy mark" do
+    save_setup
     assert_difference('Mark.count', -1) do
-      delete :destroy, params: { id: @mark }
+      delete :destroy, params: {
+               person_id: @person,
+               id: @mark
+             },session: @params
     end
 
-    assert_redirected_to marks_path
+    assert_redirected_to person_path(@person)
   end
 end
