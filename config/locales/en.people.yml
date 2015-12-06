@@ -15,6 +15,7 @@ en:
       marks: "Identifying Marks"
       noMarks: "This person has no Identifying Marks"
       editMark: "Edit"
+      newMark: "Add Mark"
       story: "Life Story"
   activerecord:
     attributes:

@@ -6,7 +6,8 @@
 		<%= link_to t('.addBirth'), new_personal_event_path(@person,:birth) if
 			@person.birth.empty? %>
 		<%= link_to t('.addDeath'), new_personal_event_path(@person,:death) if
-			@person.death.empty? %>
+		    @person.death.empty? %>
+		<%= link_to t('.newMark'), new_person_mark_path(@person) %>
 	<% end %>
 	<%= content_tag :p do %>
 		<%= t('.birth', date: l(@person.dob, format: :formal)) unless @person.dob.nil? %>
