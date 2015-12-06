@@ -1,3 +1,4 @@
 <% content_for(:sidebar, link_to(t('.new'), new_event_path))%>
 
 <%= render @events %>
+<%= paginate @events %>

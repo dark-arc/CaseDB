@@ -1,27 +1,20 @@
+# This class represents accounts on the website
 class UsersController < ApplicationController
-  load_and_authorize_resource
-
   def index
-
   end
-  
-  def new
 
+  def new
   end
 
   def create
-    if @user.save
-      flash[:notice] = "Successfully signed up."
-    end
+    flash[:notice] = 'Successfully signed up.' if @user.save
     render 'new'
   end
 
   def show
-
   end
 
   def edit
-
   end
 
   def update
@@ -33,23 +26,22 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
-    if params[:user][:password].nil? ||
-       params[:user][:password].blank?
-      params[:user].delete(:password)
-      params[:user].delete(:password_confirmation)
-    end
-    if cannot? :promote, User
-      params[:user].delete(:roles)
-    end
-    params.require(:user).
-      permit(
-        :username,
-        :email,
-        :theme,
-        {:roles => []},
-        :password,
-        :password_confirmation
-      )
+    delete_password if params[:user][:password].nil? ||
+                       params[:user][:password].blank?
+    delete_roles if cannot? :promote, User
+    params.require(:user)
+      .permit(:username, :email, :theme,
+              :password, :password_confirmation, roles: [])
+  end
+
+  def delete_roles
+    params[:user].delete(:roles)
+  end
+
+  def delete_password
+    params[:user].delete(:password)
+    params[:user].delete(:password_confirmation)
   end
 end

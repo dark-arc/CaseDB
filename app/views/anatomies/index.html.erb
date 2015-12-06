@@ -1,3 +1,4 @@
 <% content_for(:sidebar, link_to(t('.new'), new_anatomy_path))%>
 
 <%= render @anatomies %>
+<%= paginate @anatomies %>

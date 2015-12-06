@@ -1,6 +1,6 @@
+# Mark types should only be configurable by administrators they can be
+# used for categorising marks
 class MarkTypesController < ApplicationController
-  load_and_authorize_resource 
-
   # GET /mark_types
   def index
   end
@@ -21,10 +21,10 @@ class MarkTypesController < ApplicationController
   def create
     logger.debug @mark_type
     if @mark_type.save!
-      logger.debug "saved"
+      logger.debug 'saved'
       redirect_to @mark_type, notice: 'Mark type was successfully created.'
     else
-      logger.debug "not "
+      logger.debug 'not '
       render :new
     end
   end
@@ -45,8 +45,9 @@ class MarkTypesController < ApplicationController
   end
 
   private
-    # Only allow a trusted parameter "white list" through.
-    def mark_type_params
-      params.require(:mark_type).permit(:name, :parent_id)
-    end
+
+  # Only allow a trusted parameter "white list" through.
+  def mark_type_params
+    params.require(:mark_type).permit(:name, :parent_id)
+  end
 end

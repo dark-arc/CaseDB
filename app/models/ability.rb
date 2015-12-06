@@ -8,7 +8,8 @@ class Ability
     @coreModels = [CaseFile,Person,Event]
     @userModels = [User]
     @user = user || User.new
-    
+
+    can :manage, Home
     can :read, @coreModels    
     load_unauthenticated_permissions if @user.new_record?
     load_user_permissions if @user.user?
@@ -21,6 +22,7 @@ class Ability
 
   def load_unauthenticated_permissions
     can :create, User
+    can :create, Session
   end
   
   def load_admin_permissions
@@ -37,5 +39,6 @@ class Ability
   
   def load_user_permissions
     can [:show, :update, :destroy], User, :id => @user.id
+    can [:destroy], Session
   end
 end
