@@ -26,6 +26,6 @@ class ApplicationController < ActionController::Base
     current = instance_variable_get("@#{controller_name}")
     return nil if current.nil?
     instance_variable_set("@#{controller_name}",
-                          current.page(params[:page]).per(2))
+                          current.page(params[:page]))
   end
 end
