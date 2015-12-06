@@ -12,6 +12,9 @@ en:
       death: "Died: "
       description: "Physical Description"
       noDescription: "This person has no description."
+      marks: "Identifying Marks"
+      noMarks: "This person has no Identifying Marks"
+      editMark: "Edit"
       story: "Life Story"
   activerecord:
     attributes:

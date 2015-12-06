@@ -22,9 +22,21 @@
 		<% @person.description.each do |k,v|%>
 			<%= content_tag :dt, k %>
 			<%= content_tag :dd, v %>
-		<% end %>
+			<% end %>
 		<%= content_tag :p, t('.noDescription') unless
 			@person.description.size > 0 %>
+	<% end %>
+	<%= content_tag :h2, t('.marks') %>
+	<%= content_tag :dl do %>
+	<% @person.marks.each do |v|%>
+	<%= content_tag(:dt) do %>
+	<%= v.path %>
+	<%=edit_mark_link(@person, v)%>
+	<% end %>
+			<%= content_tag :dd, v.description %>
+			<% end %>
+		<%= content_tag :p, t('.noMarks') unless
+			@person.marks.size > 0 %>
 	<% end %>
 	<%= content_tag :h2, t('.story') %>
 	<%= render @person.events %>

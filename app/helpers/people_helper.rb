@@ -13,4 +13,8 @@ module PeopleHelper
     )
   end
 
+  def edit_mark_link(person,mark)
+    link_to(t('.editMark'), edit_person_mark_path(person,mark))
+  end
+  
 end
