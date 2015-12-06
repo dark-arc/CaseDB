@@ -5,7 +5,6 @@ class SessionController < ApplicationController
   end
 
   def create
-    logger.warn create_params
     user = User.authenticate(create_params)
     if user
       session[:user_id] = user.id
