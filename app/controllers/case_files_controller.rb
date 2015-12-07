@@ -31,7 +31,7 @@ class CaseFilesController < ApplicationController
 
   def destroy
     @case_file.destroy
-    redirect_to case_files
+    redirect_to CaseFile
   end
 
   # Define case event linking and unlinking

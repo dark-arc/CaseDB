@@ -1,32 +1,65 @@
 require 'test_helper'
-
+# Test case file controller
 class CaseFilesControllerTest < ActionController::TestCase
-  test "Guest can view index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:case_files)
+  setup do
+    @case_file = build :case_file
+    @params = { user_id: create(:user, :admin).id }
   end
-  test "Guest can view show" do
-    c = create(:case_file)
-    get :show, params: {id: c.id}
-    assert_response :success
-    assert_not_nil assigns(:case_file)
-  end
-  test "Guest cannot edit" do 
-    c = create(:case_file)
-    get :edit, params: {id: c.id}
-    assert_response 403
-    assert_not_nil assigns(:message)
-  end
-  test "Researcher can edit" do
-    c = create(:case_file)
-    get :edit, params: {id: c.id},
-        session: {user_id: create(:user,:researcher).id}
+
+  test 'should get index' do
+    get :index, session: @params
     assert_response :success
   end
-  test "Invalid case ID shows index" do
-    get :show, params: {id: 5000}
-    assert_response :redirect
-    assert_not flash[:alert].empty?
+
+  test 'should get new' do
+    get :new, session: @params
+    assert_response :success
+  end
+
+  test 'should create case_file' do
+    assert_difference('CaseFile.count') do
+      post :create,
+           params:  { case_file: @case_file.attributes },
+           session: @params
+    end
+
+    assert_redirected_to case_file_path(CaseFile.last)
+  end
+
+  test 'should show case_file' do
+    @case_file.save
+    get :show,
+        params: { id: @case_file },
+        session: @params
+    assert_response :success
+  end
+
+  test 'should get edit' do
+    @case_file.save
+    get :edit,
+        params: { id: @case_file },
+        session: @params
+    assert_response :success
+  end
+
+  test 'should update case_file' do
+    @case_file.save
+    patch :update,
+          params: {
+            id: @case_file,
+            case_file: { name: 'test' } },
+          session: @params
+    assert_redirected_to case_file_path(@case_file)
+  end
+
+  test 'should destroy case_file' do
+    @case_file.save
+    assert_difference('CaseFile.count', -1) do
+      delete :destroy,
+             params: { id: @case_file },
+             session: @params
+    end
+
+    assert_redirected_to case_files_path
   end
 end
