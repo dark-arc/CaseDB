@@ -7,8 +7,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    flash[:notice] = 'Successfully signed up.' if @user.save
-    render 'new'
+    @user = User.new(user_params)
+
+    if @user.save
+      redirect_to @user, notice: 'Successfully signed up'
+    else
+      render :new
+    end
   end
 
   def show
