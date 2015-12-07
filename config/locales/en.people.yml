@@ -17,6 +17,12 @@ en:
       editMark: "Edit"
       newMark: "Add Mark"
       story: "Life Story"
+      aliases: "Aliases"
+    form:
+      aliases: "Aliases"
+      addAlias: "Add Alias"
+    aliases:
+      removeAlias: "Remove"
   activerecord:
     attributes:
       person:
