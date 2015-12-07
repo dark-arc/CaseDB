@@ -1,4 +1,4 @@
-# This class maps marks to people. 
+# This class maps marks to people.
 class Mark < ActiveRecord::Base
   belongs_to :person
   belongs_to :anatomy

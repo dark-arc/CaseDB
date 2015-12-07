@@ -2,15 +2,15 @@
 # CanCan documentation
 class Ability
   include CanCan::Ability
-  #@attribute coreModels [r]
-  # A list of models which are "core elements". 
+  # @attribute coreModels [r]
+  # A list of models which are "core elements".
   def initialize(user)
-    @coreModels = [CaseFile,Person,Event]
-    @userModels = [User]
+    @core_models = [CaseFile, Person, Event]
+    @user_models = [User]
     @user = user || User.new
 
     can :manage, Home
-    can :read, @coreModels    
+    can :read, @core_models
     load_unauthenticated_permissions if @user.new_record?
     load_user_permissions if @user.user?
     load_moderator_permissions if @user.moderator?
@@ -24,21 +24,21 @@ class Ability
     can :create, User
     can :create, Session
   end
-  
+
   def load_admin_permissions
     can :manage, :all
   end
-  
+
   def load_moderator_permissions
-    can [:promote,:show,:update,:create,:destroy], @userModels
+    can [:promote, :show, :update, :create, :destroy], @user_models
   end
-  
+
   def load_researcher_permissions
-    can [:update,:create,:destroy], @coreModels
+    can [:update, :create, :destroy], @core_models
   end
-  
+
   def load_user_permissions
-    can [:show, :update, :destroy], User, :id => @user.id
+    can [:show, :update, :destroy], User, id: @user.id
     can [:destroy], Session
   end
 end
