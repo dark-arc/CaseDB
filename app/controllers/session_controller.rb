@@ -11,13 +11,13 @@ class SessionController < ApplicationController
       flash[:notice] = "Logged in as #{user.username}"
       redirect_to(root_path)
     else
-      flash[:notice] = 'Invalid username or password.}'
+      flash[:notice] = 'Invalid username or password.'
       render 'new'
     end
   end
 
   def destroy
-    session[:user_id] = nil
+    reset_session
     flash[:notice] = 'Logged out.'
     redirect_to(root_path)
   end
