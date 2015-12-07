@@ -1,28 +1,65 @@
 require 'test_helper'
-
+# Tests for event controller
 class EventsControllerTest < ActionController::TestCase
-  test "Guest can view index" do
-    get :index
+  setup do
+    @event = build :event
+    @params = { user_id: create(:user, :admin).id }
+  end
+
+  test 'should get index' do
+    get :index, session: @params
     assert_response :success
   end
-  test "Guest can view show" do 
-    get :show, params: {id: create(:event).id}
-    assert_response :success
-    assert_not_nil assigns(:event)
-  end
-  test "Guest cannot edit" do 
-    get :edit, params: {id: create(:event).id}
-    assert_response 403
-    assert_not_nil assigns(:message)
-  end
-  test "Researcher can edit" do
-    get :edit, params: {id: create(:event).id},
-        session: {user_id: create(:user,:researcher).id}
+
+  test 'should get new' do
+    get :new, session: @params
     assert_response :success
   end
-  test "Invalid ID shows index" do
-    get :show, params: {id: 5000}
-    assert_response :redirect
-    assert_not flash[:alert].empty?
+
+  test 'should create event' do
+    assert_difference('Event.count') do
+      post :create,
+           params:  { event: @event.attributes },
+           session: @params
+    end
+
+    assert_redirected_to event_path(Event.last)
+  end
+
+  test 'should show event' do
+    @event.save
+    get :show,
+        params: { id: @event },
+        session: @params
+    assert_response :success
+  end
+
+  test 'should get edit' do
+    @event.save
+    get :edit,
+        params: { id: @event },
+        session: @params
+    assert_response :success
+  end
+
+  test 'should update event' do
+    @event.save
+    patch :update,
+          params: {
+            id: @event,
+            event: { name: 'test' } },
+          session: @params
+    assert_redirected_to event_path(@event)
+  end
+
+  test 'should destroy event' do
+    @event.save
+    assert_difference('Event.count', -1) do
+      delete :destroy,
+             params: { id: @event },
+             session: @params
+    end
+
+    assert_redirected_to events_path
   end
 end
