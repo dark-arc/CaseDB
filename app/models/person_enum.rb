@@ -1,4 +1,5 @@
-# Enums for Person module
+# Enums for Person module.
+# @see Person
 module PersonEnum
   # @!attribute gender
   # @return [Symbol] The gender of this person.
@@ -70,7 +71,6 @@ module PersonEnum
   ], _suffix: true
   # @!attribute moustache
   # @return [Symbol] The type of moustache the person had
-  # @todo add types of moustache
   Person.enum moustache: [
     :unknown,
     :none,
@@ -79,7 +79,6 @@ module PersonEnum
   ], _prefix: true
   # @!attribute gender
   # @return [Symbol] The type of beard the person had
-  # @todo add types of beard
   Person.enum beard: [
     :unknown,
     :clean,
