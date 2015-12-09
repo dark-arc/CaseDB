@@ -1,15 +1,15 @@
 require 'test_helper'
-
+# Tests for home controller
 class HomeControllerTest < ActionController::TestCase
-  test "Routing: Home" do
+  test 'Routing: Home' do
     assert_routing '/',
-                   controller: "home",
-                   action: "index"
+                   controller: 'home',
+                   action: 'index'
   end
 
-  test "Routing: About" do
+  test 'Routing: About' do
     assert_routing '/about',
-                   controller: "home",
-                   action: "about"
+                   controller: 'home',
+                   action: 'about'
   end
 end
