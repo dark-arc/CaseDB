@@ -1,0 +1,1054 @@
+Inspecting 119 files
+C.C...........CCCCCCCC.CCC...........C...CC..CCC.CC.C..C..CCCCCCCCCCCCCCCCCCCCC.C.C.C.C.C...CC.CCC.CCC...C...CC..C.C..C
+
+Offenses:
+
+config.ru:3:52: C: Unnecessary spacing detected.
+require ::File.expand_path('../config/environment',  __FILE__)
+                                                   ^
+Rakefile:2:81: C: Line is too long. [90/80]
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+                                                                                ^^^^^^^^^^
+app/helpers/anatomies_helper.rb:1:1: C: Missing top-level module documentation comment.
+module AnatomiesHelper
+^^^^^^
+app/helpers/anatomies_helper.rb:2:1: C: Extra empty line detected at module body beginning.
+app/helpers/anatomies_helper.rb:5:17: C: Trailing whitespace detected.
+      anatomy: { 
+                ^
+app/helpers/application_helper.rb:1:1: C: Missing top-level module documentation comment.
+module ApplicationHelper
+^^^^^^
+app/helpers/application_helper.rb:2:59: C: Trailing whitespace detected.
+  # @return [Boolean] true when there is a user signed in. 
+                                                          ^
+app/helpers/application_helper.rb:4:8: C: Do not leave space between ! and its argument.
+    if ! session[:user_id].nil?
+       ^
+app/helpers/application_helper.rb:10:1: C: Trailing whitespace detected.
+app/helpers/application_helper.rb:20:7: C: Do not prefix reader method names with get_.
+  def get_title
+      ^^^^^^^^^
+app/helpers/application_helper.rb:21:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    title = "CaseDB"
+            ^^^^^^^^
+app/helpers/application_helper.rb:22:5: C: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+    if content_for? :title
+    ^^
+app/helpers/application_helper.rb:23:12: C: Surrounding space missing for operator +=.
+      title+= " #{content_for :title}"
+           ^^
+app/helpers/application_helper.rb:25:5: C: Redundant return detected.
+    return title
+    ^^^^^^
+app/helpers/application_helper.rb:32:7: C: Do not prefix reader method names with get_.
+  def get_style
+      ^^^^^^^^^
+app/helpers/application_helper.rb:35:25: C: Use || instead of or.
+      current_user.nil? or current_user.theme.nil?
+                        ^^
+app/helpers/application_helper.rb:36:5: C: Redundant return detected.
+    return theme
+    ^^^^^^
+app/helpers/application_helper.rb:43:40: C: Trailing whitespace detected.
+  # @return default title for this page  
+                                       ^^
+app/helpers/application_helper.rb:44:3: C: Use empty lines between method definitions.
+  def title
+  ^^^
+app/helpers/application_helper.rb:45:5: C: Redundant return detected.
+    return t("headers.#{controller_name}.#{action_name}")
+    ^^^^^^
+app/helpers/cases_helper.rb:1:1: C: Missing top-level module documentation comment.
+module CasesHelper
+^^^^^^
+app/helpers/errors_helper.rb:1:1: C: Missing top-level module documentation comment.
+module ErrorsHelper
+^^^^^^
+app/helpers/events_helper.rb:1:1: C: Missing top-level module documentation comment.
+module EventsHelper
+^^^^^^
+app/helpers/home_helper.rb:1:1: C: Missing top-level module documentation comment.
+module HomeHelper
+^^^^^^
+app/helpers/marks_helper.rb:1:1: C: Missing top-level module documentation comment.
+module MarksHelper
+^^^^^^
+app/helpers/mark_types_helper.rb:1:1: C: Missing top-level module documentation comment.
+module MarkTypesHelper
+^^^^^^
+app/helpers/mark_types_helper.rb:4:19: C: Trailing whitespace detected.
+      mark_type: { 
+                  ^
+app/helpers/session_helper.rb:1:1: C: Missing top-level module documentation comment.
+module SessionHelper
+^^^^^^
+app/helpers/users_helper.rb:1:1: C: Missing top-level module documentation comment.
+module UsersHelper
+^^^^^^
+app/models/ability.rb:27:3: C: Cyclomatic complexity for initialize is too high. [7/6]
+  def initialize(user)
+  ^^^
+app/models/user.rb:43:3: C: Prefer the new style validations validates :column, length: value over validates_length_of.
+  validates_length_of :password,
+  ^^^^^^^^^^^^^^^^^^^
+bin/setup:15:26: C: Use || instead of or.
+  system('bundle check') or system('bundle install')
+                         ^^
+config/application.rb:8:3: C: Missing top-level class documentation comment.
+  class Application < Rails::Application
+  ^^^^^
+config/application.rb:9:28: C: Redundant self detected.
+    config.exeptions_app = self.routes
+                           ^^^^^^^^^^^
+config/environments/development.rb:2:81: C: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/environments/development.rb:30:81: C: Line is too long. [82/80]
+  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
+                                                                                ^^
+config/environments/production.rb:2:81: C: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/environments/production.rb:28:81: C: Line is too long. [82/80]
+  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
+                                                                                ^^
+config/environments/production.rb:32:81: C: Line is too long. [102/80]
+  # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:41:81: C: Line is too long. [96/80]
+  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+                                                                                ^^^^^^^^^^^^^^^^
+config/environments/production.rb:57:81: C: Line is too long. [83/80]
+  # Use a real queuing backend for Active Job (and separate queues per environment)
+                                                                                ^^^
+config/environments/production.rb:62:81: C: Line is too long. [100/80]
+  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
+                                                                                ^^^^^^^^^^^^^^^^^^^^
+config/environments/test.rb:2:81: C: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/initializers/assets.rb:9:81: C: Line is too long. [93/80]
+# application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+                                                                                ^^^^^^^^^^^^^
+config/initializers/assets.rb:12:52: C: Avoid using {...} for multi-line blocks.
+  Dir['./app/assets/stylesheets/themes/*.scss'].map{|f|
+                                                   ^
+config/initializers/assets.rb:13:28: C: Space missing after comma.
+  "themes/#{File.basename(f,".scss")}.css"}
+                           ^
+config/initializers/assets.rb:13:29: C: Prefer single-quoted strings inside interpolations.
+  "themes/#{File.basename(f,".scss")}.css"}
+                            ^^^^^^^
+config/initializers/assets.rb:13:43: C: Expression at 13, 43 should be on its own line.
+  "themes/#{File.basename(f,".scss")}.css"}
+                                          ^
+config/initializers/backtrace_silencers.rb:3:81: C: Line is too long. [107/80]
+# You can add backtrace silencers for libraries that you're using but don't wish to see in your backtraces.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/backtrace_silencers.rb:6:81: C: Line is too long. [112/80]
+# You can also remove all the silencers if you're trying to debug a problem that might stem from framework code.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/cors.rb:2:81: C: Line is too long. [91/80]
+# Handle Cross-Origin Resource Sharing (CORS) in order to accept cross-origin AJAX requests
+                                                                                ^^^^^^^^^^^
+config/initializers/kaminari_config.rb:2:3: C: Missing space after #.
+  #config.default_per_page = 25
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/wrap_parameters.rb:6:81: C: Line is too long. [96/80]
+# Enable parameter wrapping for JSON. You can disable this by setting :format to an empty array.
+                                                                                ^^^^^^^^^^^^^^^^
+config/routes.rb:6:7: C: Space missing after comma.
+  [404,422,500].each do |code|
+      ^
+config/routes.rb:6:11: C: Space missing after comma.
+  [404,422,500].each do |code|
+          ^
+config/routes.rb:7:20: C: Use the new Ruby 1.9 hash syntax.
+    get "#{code}", :to => "errors#show", :code => code, :defaults => {:format => :html}
+                   ^^^^^^
+config/routes.rb:7:27: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    get "#{code}", :to => "errors#show", :code => code, :defaults => {:format => :html}
+                          ^^^^^^^^^^^^^
+config/routes.rb:7:42: C: Use the new Ruby 1.9 hash syntax.
+    get "#{code}", :to => "errors#show", :code => code, :defaults => {:format => :html}
+                                         ^^^^^^^^
+config/routes.rb:7:57: C: Use the new Ruby 1.9 hash syntax.
+    get "#{code}", :to => "errors#show", :code => code, :defaults => {:format => :html}
+                                                        ^^^^^^^^^^^^
+config/routes.rb:7:70: C: Space inside { missing.
+    get "#{code}", :to => "errors#show", :code => code, :defaults => {:format => :html}
+                                                                     ^
+config/routes.rb:7:71: C: Use the new Ruby 1.9 hash syntax.
+    get "#{code}", :to => "errors#show", :code => code, :defaults => {:format => :html}
+                                                                      ^^^^^^^^^^
+config/routes.rb:7:81: C: Line is too long. [87/80]
+    get "#{code}", :to => "errors#show", :code => code, :defaults => {:format => :html}
+                                                                                ^^^^^^^
+config/routes.rb:7:87: C: Space inside } missing.
+    get "#{code}", :to => "errors#show", :code => code, :defaults => {:format => :html}
+                                                                                      ^
+config/routes.rb:19:1: C: Trailing whitespace detected.
+config/routes.rb:20:19: C: Trailing whitespace detected.
+  resources :users 
+                  ^
+config/routes.rb:21:34: C: Space missing after comma.
+  resources :session, only: [:new,:create,:destroy]
+                                 ^
+config/routes.rb:21:42: C: Space missing after comma.
+  resources :session, only: [:new,:create,:destroy]
+                                         ^
+config/routes.rb:22:1: C: Extra empty line detected at block body end.
+db/migrate/20150727183617_create_case_files.rb:1:1: C: Missing top-level class documentation comment.
+class CreateCaseFiles < ActiveRecord::Migration
+^^^^^
+db/migrate/20150727184037_create_events.rb:1:1: C: Missing top-level class documentation comment.
+class CreateEvents < ActiveRecord::Migration
+^^^^^
+db/migrate/20150727184437_create_people.rb:1:1: C: Missing top-level class documentation comment.
+class CreatePeople < ActiveRecord::Migration
+^^^^^
+db/migrate/20150727184437_create_people.rb:2:3: C: Method has too many lines. [11/10]
+  def change
+  ^^^
+db/migrate/20150727184737_create_join_tables.rb:1:1: C: Missing top-level class documentation comment.
+class CreateJoinTables < ActiveRecord::Migration
+^^^^^
+db/migrate/20150727184737_create_join_tables.rb:9:1: C: Incorrect indentation detected (column 0 instead of 4).
+#    end
+^^^^^^^^
+db/migrate/20150727202547_create_event_people.rb:1:1: C: Missing top-level class documentation comment.
+class CreateEventPeople < ActiveRecord::Migration
+^^^^^
+db/migrate/20150822171547_create_users.rb:1:1: C: Missing top-level class documentation comment.
+class CreateUsers < ActiveRecord::Migration
+^^^^^
+db/migrate/20150830233654_add_theme_to_users.rb:1:1: C: Missing top-level class documentation comment.
+class AddThemeToUsers < ActiveRecord::Migration
+^^^^^
+db/migrate/20150912115527_change_people_weight_to_people_build.rb:1:1: C: Missing top-level class documentation comment.
+class ChangePeopleWeightToPeopleBuild < ActiveRecord::Migration
+^^^^^
+db/migrate/20150912120226_create_aliases.rb:1:1: C: Missing top-level class documentation comment.
+class CreateAliases < ActiveRecord::Migration
+^^^^^
+db/migrate/20150912124654_migrate_names_to_aliases.rb:1:1: C: Missing top-level class documentation comment.
+class MigrateNamesToAliases < ActiveRecord::Migration
+^^^^^
+db/migrate/20150912132614_add_default_to_aliases.rb:1:1: C: Missing top-level class documentation comment.
+class AddDefaultToAliases < ActiveRecord::Migration
+^^^^^
+db/migrate/20150912132614_add_default_to_aliases.rb:3:44: C: Space missing after comma.
+    add_column :aliases, :default, :boolean,:default => false
+                                           ^
+db/migrate/20150912132614_add_default_to_aliases.rb:3:45: C: Use the new Ruby 1.9 hash syntax.
+    add_column :aliases, :default, :boolean,:default => false
+                                            ^^^^^^^^^^^
+db/migrate/20150912133834_add_default_aliases_data.rb:1:1: C: Missing top-level class documentation comment.
+class AddDefaultAliasesData < ActiveRecord::Migration
+^^^^^
+db/migrate/20150912133834_add_default_aliases_data.rb:9:3: C: Use empty lines between method definitions.
+  def down
+  ^^^
+db/migrate/20150912160348_remove_name_from_people.rb:1:1: C: Missing top-level class documentation comment.
+class RemoveNameFromPeople < ActiveRecord::Migration
+^^^^^
+db/migrate/20151117224509_add_beard_and_moustache_to_person.rb:1:1: C: Missing top-level class documentation comment.
+class AddBeardAndMoustacheToPerson < ActiveRecord::Migration
+^^^^^
+db/migrate/20151117224509_add_beard_and_moustache_to_person.rb:4:17: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      t.integer "beard"
+                ^^^^^^^
+db/migrate/20151117224509_add_beard_and_moustache_to_person.rb:5:17: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      t.integer "moustache"
+                ^^^^^^^^^^^
+db/migrate/20151123190637_create_anatomies.rb:1:1: C: Missing top-level class documentation comment.
+class CreateAnatomies < ActiveRecord::Migration
+^^^^^
+db/migrate/20151123190637_create_anatomies.rb:2:3: C: Method has too many lines. [12/10]
+  def change
+  ^^^
+db/migrate/20151126205140_create_mark_types.rb:1:1: C: Missing top-level class documentation comment.
+class CreateMarkTypes < ActiveRecord::Migration
+^^^^^
+db/migrate/20151126205140_create_mark_types.rb:2:3: C: Method has too many lines. [12/10]
+  def change
+  ^^^
+db/migrate/20151126210931_create_marks.rb:1:1: C: Missing top-level class documentation comment.
+class CreateMarks < ActiveRecord::Migration
+^^^^^
+db/migrate/20151207231835_create_pages.rb:1:1: C: Missing top-level class documentation comment.
+class CreatePages < ActiveRecord::Migration
+^^^^^
+db/schema.rb:4:81: C: Line is too long. [81/80]
+# incrementally modify your database, and then regenerate this schema definition.
+                                                                                ^
+db/schema.rb:9:81: C: Line is too long. [86/80]
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+                                                                                ^^^^^^
+db/schema.rb:12:81: C: Line is too long. [86/80]
+# It's strongly recommended that you check this file into your version control system.
+                                                                                ^^^^^^
+db/schema.rb:14:38: C: Separate every 3 digits in the integer portion of a number with underscores(_).
+ActiveRecord::Schema.define(version: 20151207231835) do
+                                     ^^^^^^^^^^^^^^
+db/schema.rb:15:1: C: Extra empty line detected at block body beginning.
+db/schema.rb:16:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "aliases", force: :cascade do |t|
+               ^^^^^^^^^
+db/schema.rb:17:14: C: Put one space between the method name and the first argument.
+    t.integer  "person_id"
+             ^^
+db/schema.rb:17:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "person_id"
+               ^^^^^^^^^^^
+db/schema.rb:18:13: C: Put one space between the method name and the first argument.
+    t.string   "name"
+            ^^^
+db/schema.rb:18:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "name"
+               ^^^^^^
+db/schema.rb:19:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at",                 null: false
+               ^^^^^^^^^^^^
+db/schema.rb:20:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at",                 null: false
+               ^^^^^^^^^^^^
+db/schema.rb:21:14: C: Put one space between the method name and the first argument.
+    t.boolean  "default",    default: false
+             ^^
+db/schema.rb:21:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.boolean  "default",    default: false
+               ^^^^^^^^^
+db/schema.rb:21:26: C: Unnecessary spacing detected.
+    t.boolean  "default",    default: false
+                         ^^^
+db/schema.rb:24:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "anatomies", force: :cascade do |t|
+               ^^^^^^^^^^^
+db/schema.rb:25:13: C: Put one space between the method name and the first argument.
+    t.string   "name"
+            ^^^
+db/schema.rb:25:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "name"
+               ^^^^^^
+db/schema.rb:26:14: C: Put one space between the method name and the first argument.
+    t.integer  "parent_id"
+             ^^
+db/schema.rb:26:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "parent_id"
+               ^^^^^^^^^^^
+db/schema.rb:27:14: C: Put one space between the method name and the first argument.
+    t.integer  "lft"
+             ^^
+db/schema.rb:27:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "lft"
+               ^^^^^
+db/schema.rb:28:14: C: Put one space between the method name and the first argument.
+    t.integer  "rgt"
+             ^^
+db/schema.rb:28:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "rgt"
+               ^^^^^
+db/schema.rb:29:14: C: Put one space between the method name and the first argument.
+    t.integer  "depth"
+             ^^
+db/schema.rb:29:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "depth"
+               ^^^^^^^
+db/schema.rb:30:14: C: Put one space between the method name and the first argument.
+    t.integer  "children_count"
+             ^^
+db/schema.rb:30:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "children_count"
+               ^^^^^^^^^^^^^^^^
+db/schema.rb:31:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at",     null: false
+               ^^^^^^^^^^^^
+db/schema.rb:32:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at",     null: false
+               ^^^^^^^^^^^^
+db/schema.rb:33:14: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["lft"], name: "index_anatomies_on_lft"
+             ^^^^^
+db/schema.rb:33:28: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["lft"], name: "index_anatomies_on_lft"
+                           ^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:34:14: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["parent_id"], name: "index_anatomies_on_parent_id"
+             ^^^^^^^^^^^
+db/schema.rb:34:34: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["parent_id"], name: "index_anatomies_on_parent_id"
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:35:14: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["rgt"], name: "index_anatomies_on_rgt"
+             ^^^^^
+db/schema.rb:35:28: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["rgt"], name: "index_anatomies_on_rgt"
+                           ^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:38:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "case_files", force: :cascade do |t|
+               ^^^^^^^^^^^^
+db/schema.rb:39:13: C: Put one space between the method name and the first argument.
+    t.string   "name"
+            ^^^
+db/schema.rb:39:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "name"
+               ^^^^^^
+db/schema.rb:40:13: C: Put one space between the method name and the first argument.
+    t.string   "brief"
+            ^^^
+db/schema.rb:40:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "brief"
+               ^^^^^^^
+db/schema.rb:41:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:42:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:45:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "event_people", force: :cascade do |t|
+               ^^^^^^^^^^^^^^
+db/schema.rb:46:14: C: Put one space between the method name and the first argument.
+    t.integer  "person_id"
+             ^^
+db/schema.rb:46:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "person_id"
+               ^^^^^^^^^^^
+db/schema.rb:47:14: C: Put one space between the method name and the first argument.
+    t.integer  "event_id"
+             ^^
+db/schema.rb:47:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "event_id"
+               ^^^^^^^^^^
+db/schema.rb:48:14: C: Put one space between the method name and the first argument.
+    t.integer  "category"
+             ^^
+db/schema.rb:48:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "category"
+               ^^^^^^^^^^
+db/schema.rb:49:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:50:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:51:14: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["event_id"], name: "index_event_people_on_event_id"
+             ^^^^^^^^^^
+db/schema.rb:51:33: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["event_id"], name: "index_event_people_on_event_id"
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:52:14: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["person_id"], name: "index_event_people_on_person_id"
+             ^^^^^^^^^^^
+db/schema.rb:52:34: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["person_id"], name: "index_event_people_on_person_id"
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:55:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "events", force: :cascade do |t|
+               ^^^^^^^^
+db/schema.rb:56:14: C: Put one space between the method name and the first argument.
+    t.integer  "case_file_id"
+             ^^
+db/schema.rb:56:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "case_file_id"
+               ^^^^^^^^^^^^^^
+db/schema.rb:57:13: C: Put one space between the method name and the first argument.
+    t.string   "body"
+            ^^^
+db/schema.rb:57:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "body"
+               ^^^^^^
+db/schema.rb:58:13: C: Put one space between the method name and the first argument.
+    t.string   "tagline"
+            ^^^
+db/schema.rb:58:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "tagline"
+               ^^^^^^^^^
+db/schema.rb:59:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "date"
+               ^^^^^^
+db/schema.rb:60:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at",   null: false
+               ^^^^^^^^^^^^
+db/schema.rb:61:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at",   null: false
+               ^^^^^^^^^^^^
+db/schema.rb:62:14: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["case_file_id"], name: "index_events_on_case_file_id"
+             ^^^^^^^^^^^^^^
+db/schema.rb:62:37: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["case_file_id"], name: "index_events_on_case_file_id"
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:65:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "mark_types", force: :cascade do |t|
+               ^^^^^^^^^^^^
+db/schema.rb:66:13: C: Put one space between the method name and the first argument.
+    t.string   "name"
+            ^^^
+db/schema.rb:66:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "name"
+               ^^^^^^
+db/schema.rb:67:14: C: Put one space between the method name and the first argument.
+    t.integer  "parent_id"
+             ^^
+db/schema.rb:67:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "parent_id"
+               ^^^^^^^^^^^
+db/schema.rb:68:14: C: Put one space between the method name and the first argument.
+    t.integer  "lft"
+             ^^
+db/schema.rb:68:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "lft"
+               ^^^^^
+db/schema.rb:69:14: C: Put one space between the method name and the first argument.
+    t.integer  "rgt"
+             ^^
+db/schema.rb:69:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "rgt"
+               ^^^^^
+db/schema.rb:70:14: C: Put one space between the method name and the first argument.
+    t.integer  "depth"
+             ^^
+db/schema.rb:70:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "depth"
+               ^^^^^^^
+db/schema.rb:71:14: C: Put one space between the method name and the first argument.
+    t.integer  "children_count"
+             ^^
+db/schema.rb:71:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "children_count"
+               ^^^^^^^^^^^^^^^^
+db/schema.rb:72:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at",     null: false
+               ^^^^^^^^^^^^
+db/schema.rb:73:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at",     null: false
+               ^^^^^^^^^^^^
+db/schema.rb:74:14: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["lft"], name: "index_mark_types_on_lft"
+             ^^^^^
+db/schema.rb:74:28: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["lft"], name: "index_mark_types_on_lft"
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:75:14: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["name"], name: "index_mark_types_on_name"
+             ^^^^^^
+db/schema.rb:75:29: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["name"], name: "index_mark_types_on_name"
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:76:14: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["rgt"], name: "index_mark_types_on_rgt"
+             ^^^^^
+db/schema.rb:76:28: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["rgt"], name: "index_mark_types_on_rgt"
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:79:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "marks", force: :cascade do |t|
+               ^^^^^^^
+db/schema.rb:80:14: C: Put one space between the method name and the first argument.
+    t.integer  "person_id"
+             ^^
+db/schema.rb:80:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "person_id"
+               ^^^^^^^^^^^
+db/schema.rb:81:14: C: Put one space between the method name and the first argument.
+    t.integer  "anatomy_id"
+             ^^
+db/schema.rb:81:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "anatomy_id"
+               ^^^^^^^^^^^^
+db/schema.rb:82:14: C: Put one space between the method name and the first argument.
+    t.integer  "mark_type_id"
+             ^^
+db/schema.rb:82:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "mark_type_id"
+               ^^^^^^^^^^^^^^
+db/schema.rb:83:11: C: Put one space between the method name and the first argument.
+    t.text     "description"
+          ^^^^^
+db/schema.rb:83:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text     "description"
+               ^^^^^^^^^^^^^
+db/schema.rb:84:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at",   null: false
+               ^^^^^^^^^^^^
+db/schema.rb:85:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at",   null: false
+               ^^^^^^^^^^^^
+db/schema.rb:86:14: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["anatomy_id"], name: "index_marks_on_anatomy_id"
+             ^^^^^^^^^^^^
+db/schema.rb:86:35: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["anatomy_id"], name: "index_marks_on_anatomy_id"
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:87:14: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["mark_type_id"], name: "index_marks_on_mark_type_id"
+             ^^^^^^^^^^^^^^
+db/schema.rb:87:37: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["mark_type_id"], name: "index_marks_on_mark_type_id"
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:88:14: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["person_id"], name: "index_marks_on_person_id"
+             ^^^^^^^^^^^
+db/schema.rb:88:34: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["person_id"], name: "index_marks_on_person_id"
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:91:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "pages", force: :cascade do |t|
+               ^^^^^^^
+db/schema.rb:92:13: C: Put one space between the method name and the first argument.
+    t.string   "name"
+            ^^^
+db/schema.rb:92:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "name"
+               ^^^^^^
+db/schema.rb:93:11: C: Put one space between the method name and the first argument.
+    t.text     "text"
+          ^^^^^
+db/schema.rb:93:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text     "text"
+               ^^^^^^
+db/schema.rb:94:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:95:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at", null: false
+               ^^^^^^^^^^^^
+db/schema.rb:96:14: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["name"], name: "index_pages_on_name"
+             ^^^^^^
+db/schema.rb:96:29: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.index ["name"], name: "index_pages_on_name"
+                            ^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:99:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "people", force: :cascade do |t|
+               ^^^^^^^^
+db/schema.rb:100:14: C: Put one space between the method name and the first argument.
+    t.integer  "gender"
+             ^^
+db/schema.rb:100:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "gender"
+               ^^^^^^^^
+db/schema.rb:101:14: C: Put one space between the method name and the first argument.
+    t.integer  "height"
+             ^^
+db/schema.rb:101:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "height"
+               ^^^^^^^^
+db/schema.rb:102:14: C: Put one space between the method name and the first argument.
+    t.integer  "build"
+             ^^
+db/schema.rb:102:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "build"
+               ^^^^^^^
+db/schema.rb:103:14: C: Put one space between the method name and the first argument.
+    t.integer  "eye_colour"
+             ^^
+db/schema.rb:103:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "eye_colour"
+               ^^^^^^^^^^^^
+db/schema.rb:104:14: C: Put one space between the method name and the first argument.
+    t.integer  "hair_colour"
+             ^^
+db/schema.rb:104:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "hair_colour"
+               ^^^^^^^^^^^^^
+db/schema.rb:105:14: C: Put one space between the method name and the first argument.
+    t.integer  "hair_length"
+             ^^
+db/schema.rb:105:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "hair_length"
+               ^^^^^^^^^^^^^
+db/schema.rb:106:14: C: Put one space between the method name and the first argument.
+    t.integer  "ic"
+             ^^
+db/schema.rb:106:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "ic"
+               ^^^^
+db/schema.rb:107:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at",  null: false
+               ^^^^^^^^^^^^
+db/schema.rb:108:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at",  null: false
+               ^^^^^^^^^^^^
+db/schema.rb:109:14: C: Put one space between the method name and the first argument.
+    t.integer  "beard"
+             ^^
+db/schema.rb:109:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "beard"
+               ^^^^^^^
+db/schema.rb:110:14: C: Put one space between the method name and the first argument.
+    t.integer  "moustache"
+             ^^
+db/schema.rb:110:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "moustache"
+               ^^^^^^^^^^^
+db/schema.rb:113:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "users", force: :cascade do |t|
+               ^^^^^^^
+db/schema.rb:114:11: C: Put one space between the method name and the first argument.
+    t.text     "username"
+          ^^^^^
+db/schema.rb:114:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text     "username"
+               ^^^^^^^^^^
+db/schema.rb:115:11: C: Put one space between the method name and the first argument.
+    t.text     "password_enc"
+          ^^^^^
+db/schema.rb:115:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text     "password_enc"
+               ^^^^^^^^^^^^^^
+db/schema.rb:116:11: C: Put one space between the method name and the first argument.
+    t.text     "email"
+          ^^^^^
+db/schema.rb:116:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text     "email"
+               ^^^^^^^
+db/schema.rb:117:14: C: Put one space between the method name and the first argument.
+    t.integer  "roles_mask"
+             ^^
+db/schema.rb:117:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "roles_mask"
+               ^^^^^^^^^^^^
+db/schema.rb:118:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at",   null: false
+               ^^^^^^^^^^^^
+db/schema.rb:119:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at",   null: false
+               ^^^^^^^^^^^^
+db/schema.rb:120:13: C: Put one space between the method name and the first argument.
+    t.string   "theme"
+            ^^^
+db/schema.rb:120:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "theme"
+               ^^^^^^^
+db/schema.rb:122:1: C: Extra empty line detected at block body end.
+lib/tasks/unicorn.rake:2:1: C: Tab detected.
+	# optional port parameter
+^
+lib/tasks/unicorn.rake:3:1: C: Use 2 (not 1) spaces for indentation.
+	port = ENV['PORT'] ? ENV['PORT'] : '3000'
+^
+lib/tasks/unicorn.rake:3:1: C: Tab detected.
+	port = ENV['PORT'] ? ENV['PORT'] : '3000'
+^
+lib/tasks/unicorn.rake:4:1: C: Tab detected.
+	puts 'start unicorn development'
+^
+lib/tasks/unicorn.rake:5:1: C: Tab detected.
+	sh "cd #{Rails.root} && RAILS_ENV=development unicorn -p #{port}"
+^
+lib/tasks/unicorn.rake:9:1: C: Tab detected.
+	# optional port parameter
+^
+lib/tasks/unicorn.rake:10:1: C: Use 2 (not 1) spaces for indentation.
+	port = ENV['PORT'] ? ENV['PORT'] : '3000'
+^
+lib/tasks/unicorn.rake:10:1: C: Tab detected.
+	port = ENV['PORT'] ? ENV['PORT'] : '3000'
+^
+lib/tasks/unicorn.rake:11:1: C: Tab detected.
+	ENV['SECRET_KEY_BASE'] = 'e06a2dcb020356d86314bd67f14ad43252bbe02c8680f318fb90d15d29fa051500bed265e6d78636e4d327090a7945df81c2bfc07c7e9e247d49cadfaf435b6f'
+^
+lib/tasks/unicorn.rake:11:81: C: Line is too long. [156/80]
+	ENV['SECRET_KEY_BASE'] = 'e06a2dcb020356d86314bd67f14ad43252bbe02c8680f318fb90d15d29fa051500bed265e6d78636e4d327090a7945df81c2bfc07c7e9e247d49cadfaf435b6f'
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+lib/tasks/unicorn.rake:12:1: C: Tab detected.
+	puts 'start unicorn development'
+^
+lib/tasks/unicorn.rake:13:1: C: Tab detected.
+	sh "cd #{Rails.root} && RAILS_ENV=production unicorn -p #{port}"
+^
+lib/tasks/unicorn.rake:16:1: C: Extra blank line detected.
+lib/tasks/unicorn.rake:18:6: C: Use the new Ruby 1.9 hash syntax.
+task :s => :dev_server
+     ^^^^^
+lib/tasks/unicorn.rake:19:6: C: Use the new Ruby 1.9 hash syntax.
+task :server => :dev_server
+     ^^^^^^^^^^
+test/controllers/anatomies_controller_test.rb:3:1: C: Missing top-level class documentation comment.
+class AnatomiesControllerTest < ActionController::TestCase
+^^^^^
+test/controllers/errors_controller_test.rb:3:1: C: Missing top-level class documentation comment.
+class ErrorsControllerTest < ActionController::TestCase
+^^^^^
+test/controllers/errors_controller_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/controllers/errors_controller_test.rb:5:7: C: Use snake_case for method names.
+  def errorController
+      ^^^^^^^^^^^^^^^
+test/controllers/errors_controller_test.rb:7:19: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      controller: "errors",
+                  ^^^^^^^^
+test/controllers/errors_controller_test.rb:8:15: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      action: "show",
+              ^^^^^^
+test/controllers/errors_controller_test.rb:12:1: C: Trailing whitespace detected.
+test/controllers/errors_controller_test.rb:13:8: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "404" do
+       ^^^^^
+test/controllers/errors_controller_test.rb:14:50: C: Redundant curly braces around a hash parameter.
+    assert_routing '/404', errorController.merge({code: 404})
+                                                 ^^^^^^^^^^^
+test/controllers/errors_controller_test.rb:14:50: C: Space inside { missing.
+    assert_routing '/404', errorController.merge({code: 404})
+                                                 ^
+test/controllers/errors_controller_test.rb:14:60: C: Space inside } missing.
+    assert_routing '/404', errorController.merge({code: 404})
+                                                           ^
+test/controllers/errors_controller_test.rb:16:8: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "422" do
+       ^^^^^
+test/controllers/errors_controller_test.rb:17:50: C: Redundant curly braces around a hash parameter.
+    assert_routing '/422', errorController.merge({code: 422})
+                                                 ^^^^^^^^^^^
+test/controllers/errors_controller_test.rb:17:50: C: Space inside { missing.
+    assert_routing '/422', errorController.merge({code: 422})
+                                                 ^
+test/controllers/errors_controller_test.rb:17:60: C: Space inside } missing.
+    assert_routing '/422', errorController.merge({code: 422})
+                                                           ^
+test/controllers/errors_controller_test.rb:19:8: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "500" do
+       ^^^^^
+test/controllers/errors_controller_test.rb:20:50: C: Redundant curly braces around a hash parameter.
+    assert_routing '/500', errorController.merge({code: 500})
+                                                 ^^^^^^^^^^^
+test/controllers/errors_controller_test.rb:20:50: C: Space inside { missing.
+    assert_routing '/500', errorController.merge({code: 500})
+                                                 ^
+test/controllers/errors_controller_test.rb:20:60: C: Space inside } missing.
+    assert_routing '/500', errorController.merge({code: 500})
+                                                           ^
+test/controllers/home_controller_test.rb:3:1: C: Missing top-level class documentation comment.
+class HomeControllerTest < ActionController::TestCase
+^^^^^
+test/controllers/home_controller_test.rb:4:8: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "Routing: Home" do
+       ^^^^^^^^^^^^^^^
+test/controllers/home_controller_test.rb:6:32: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                   controller: "home",
+                               ^^^^^^
+test/controllers/home_controller_test.rb:7:28: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                   action: "index"
+                           ^^^^^^^
+test/controllers/home_controller_test.rb:10:8: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "Routing: About" do
+       ^^^^^^^^^^^^^^^^
+test/controllers/home_controller_test.rb:12:32: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                   controller: "home",
+                               ^^^^^^
+test/controllers/home_controller_test.rb:13:28: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                   action: "about"
+                           ^^^^^^^
+test/controllers/mark_types_controller_test.rb:3:1: C: Missing top-level class documentation comment.
+class MarkTypesControllerTest < ActionController::TestCase
+^^^^^
+test/factories/aliases.rb:3:11: C: Space missing inside {.
+    name {Faker::Name.name}
+          ^
+test/factories/aliases.rb:3:27: C: Space missing inside }.
+    name {Faker::Name.name}
+                          ^
+test/factories/anatomical_locations.rb:3:10: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    name "MyText"
+         ^^^^^^^^
+test/factories/anatomical_locations.rb:4:1: C: Inconsistent indentation detected.
+left 1
+^^^^^^
+test/factories/anatomical_locations.rb:5:1: C: Inconsistent indentation detected.
+right 1
+^^^^^^^
+test/factories/anatomical_locations.rb:6:1: C: Inconsistent indentation detected.
+depth 1
+^^^^^^^
+test/factories/anatomical_locations.rb:8:1: C: Extra empty line detected at block body end.
+test/factories/case_files.rb:2:24: C: Trailing whitespace detected.
+  factory :case_file do 
+                       ^
+test/factories/case_files.rb:3:11: C: Space missing inside {.
+    name {Faker::Lorem.words(rand(3..5)).join(' ')}
+          ^
+test/factories/case_files.rb:3:51: C: Space missing inside }.
+    name {Faker::Lorem.words(rand(3..5)).join(' ')}
+                                                  ^
+test/factories/case_files.rb:4:12: C: Space missing inside {.
+    brief {Faker::Lorem.paragraphs(rand(5..14)).join("\n\n")}
+           ^
+test/factories/case_files.rb:4:61: C: Space missing inside }.
+    brief {Faker::Lorem.paragraphs(rand(5..14)).join("\n\n")}
+                                                            ^
+test/factories/events.rb:2:20: C: Trailing whitespace detected.
+  factory :event do 
+                   ^
+test/factories/events.rb:3:11: C: Space missing inside {.
+    body {Faker::Lorem.paragraphs(rand(5..15)).join("\n\n")}
+          ^
+test/factories/events.rb:3:60: C: Space missing inside }.
+    body {Faker::Lorem.paragraphs(rand(5..15)).join("\n\n")}
+                                                           ^
+test/factories/events.rb:4:11: C: Space missing inside {.
+    date {Faker::Date.between(300.years.ago,2.days.ago)}
+          ^
+test/factories/events.rb:4:44: C: Space missing after comma.
+    date {Faker::Date.between(300.years.ago,2.days.ago)}
+                                           ^
+test/factories/events.rb:4:56: C: Space missing inside }.
+    date {Faker::Date.between(300.years.ago,2.days.ago)}
+                                                       ^
+test/factories/marks.rb:3:13: C: Space missing inside {.
+    person {build(:person)}
+            ^
+test/factories/marks.rb:3:27: C: Space missing inside }.
+    person {build(:person)}
+                          ^
+test/factories/marks.rb:4:14: C: Space missing inside {.
+    anatomy {build(:anatomy)}
+             ^
+test/factories/marks.rb:4:29: C: Space missing inside }.
+    anatomy {build(:anatomy)}
+                            ^
+test/factories/marks.rb:5:16: C: Space missing inside {.
+    mark_type {build(:mark_type)}
+               ^
+test/factories/marks.rb:5:33: C: Space missing inside }.
+    mark_type {build(:mark_type)}
+                                ^
+test/factories/marks.rb:6:18: C: Space missing inside {.
+    description {Faker::Lorem.paragraphs(1).join('\n\n')}
+                 ^
+test/factories/marks.rb:6:57: C: Space missing inside }.
+    description {Faker::Lorem.paragraphs(1).join('\n\n')}
+                                                        ^
+test/factories/marks.rb:8:1: C: Extra empty line detected at block body end.
+test/factories/pages.rb:3:10: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    name "MyText"
+         ^^^^^^^^
+test/factories/pages.rb:4:1: C: Inconsistent indentation detected.
+text "MyText"
+^^^^^^^^^^^^^
+test/factories/pages.rb:4:6: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+text "MyText"
+     ^^^^^^^^
+test/factories/pages.rb:6:1: C: Extra empty line detected at block body end.
+test/factories/people.rb:4:20: C: Space missing after comma.
+      create(:alias,:default,person: p)
+                   ^
+test/factories/people.rb:4:29: C: Space missing after comma.
+      create(:alias,:default,person: p)
+                            ^
+test/factories/people.rb:6:1: C: Trailing whitespace detected.
+test/factories/people.rb:7:31: C: Trailing whitespace detected.
+    trait :with_description do 
+                              ^
+test/factories/people.rb:8:15: C: Space missing inside {.
+      gender {Person.genders.keys.sample}
+              ^
+test/factories/people.rb:8:41: C: Space missing inside }.
+      gender {Person.genders.keys.sample}
+                                        ^
+test/factories/people.rb:9:15: C: Space missing inside {.
+      height {Person.heights.keys.sample}
+              ^
+test/factories/people.rb:9:41: C: Space missing inside }.
+      height {Person.heights.keys.sample}
+                                        ^
+test/factories/people.rb:10:14: C: Space missing inside {.
+      build {Person.builds.keys.sample}
+             ^
+test/factories/people.rb:10:39: C: Space missing inside }.
+      build {Person.builds.keys.sample}
+                                      ^
+test/factories/people.rb:11:19: C: Space missing inside {.
+      eye_colour {Person.eye_colours.keys.sample}
+                  ^
+test/factories/people.rb:11:49: C: Space missing inside }.
+      eye_colour {Person.eye_colours.keys.sample}
+                                                ^
+test/factories/people.rb:12:20: C: Space missing inside {.
+      hair_colour {Person.hair_colours.keys.sample}
+                   ^
+test/factories/people.rb:12:51: C: Space missing inside }.
+      hair_colour {Person.hair_colours.keys.sample}
+                                                  ^
+test/factories/people.rb:13:20: C: Space missing inside {.
+      hair_length {Person.hair_lengths.keys.sample}
+                   ^
+test/factories/people.rb:13:51: C: Space missing inside }.
+      hair_length {Person.hair_lengths.keys.sample}
+                                                  ^
+test/factories/people.rb:14:11: C: Space missing inside {.
+      ic {Person.ics.keys.sample}
+          ^
+test/factories/people.rb:14:33: C: Space missing inside }.
+      ic {Person.ics.keys.sample}
+                                ^
+test/factories/people.rb:15:14: C: Space missing inside {.
+      beard {Person.beards.keys.sample}
+             ^
+test/factories/people.rb:15:39: C: Space missing inside }.
+      beard {Person.beards.keys.sample}
+                                      ^
+test/factories/people.rb:16:18: C: Space missing inside {.
+      moustache {Person.moustaches.keys.sample}
+                 ^
+test/factories/people.rb:16:47: C: Space missing inside }.
+      moustache {Person.moustaches.keys.sample}
+                                              ^
+test/factories/users.rb:3:15: C: Space missing inside {.
+    username {Faker::Internet.user_name}
+              ^
+test/factories/users.rb:3:40: C: Space missing inside }.
+    username {Faker::Internet.user_name}
+                                       ^
+test/factories/users.rb:4:12: C: Space missing inside {.
+    email {Faker::Internet.email}
+           ^
+test/factories/users.rb:4:33: C: Space missing inside }.
+    email {Faker::Internet.email}
+                                ^
+test/factories/users.rb:5:14: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    password "ReallyBadPassword"
+             ^^^^^^^^^^^^^^^^^^^
+test/factories/users.rb:6:27: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    password_confirmation "ReallyBadPassword"
+                          ^^^^^^^^^^^^^^^^^^^
+test/factories/users.rb:7:1: C: Trailing whitespace detected.
+test/factories/users.rb:29:1: C: Trailing whitespace detected.
+test/helpers/marks_helper_test.rb:3:1: C: Missing top-level class documentation comment.
+class MarksControllerTest < ActionController::TestCase
+^^^^^
+test/models/case_file_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/models/event_test.rb:3:1: C: Missing top-level class documentation comment.
+class EventTest < ActiveSupport::TestCase
+^^^^^
+test/models/event_test.rb:5:1: C: Extra empty line detected at method body beginning.
+test/models/event_test.rb:9:1: C: Extra empty line detected at method body beginning.
+test/models/mark_type_test.rb:3:1: C: Missing top-level class documentation comment.
+class MarkTypeTest < ActiveSupport::TestCase
+^^^^^
+test/models/person_test.rb:3:1: C: Missing top-level class documentation comment.
+class PersonTest < ActiveSupport::TestCase
+^^^^^
+test/models/person_test.rb:4:8: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "Person may only have one birth Event" do
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/models/person_test.rb:10:8: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "Person may only have one death Event" do
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/models/person_test.rb:17:8: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "description contain a list of all known attributes" do
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/test_helper.rb:5:1: C: Missing top-level class documentation comment.
+class ActiveSupport::TestCase
+^^^^^
+test/test_helper.rb:5:7: C: Use nested module/class definitions instead of compact style.
+class ActiveSupport::TestCase
+      ^^^^^^^^^^^^^^^^^^^^^^^
+test/test_helper.rb:6:81: C: Line is too long. [82/80]
+  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+                                                                                ^^
+
+119 files inspected, 361 offenses detected
