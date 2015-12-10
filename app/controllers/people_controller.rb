@@ -37,7 +37,7 @@ class PeopleController < ApplicationController
   private
 
   def person_params
-    params.require(:person).permit(:name, :gender, :height,
+    params.require(:person).permit(:gender, :height,
                                    :build, :eye_colour, :hair_colour,
                                    :hair_length, :moustache, :beard,
                                    :ic, aliases_attributes: [

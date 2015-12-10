@@ -1,6 +1,9 @@
 require 'test_helper'
 
 class PersonTest < ActiveSupport::TestCase
+  def setup
+    @person = build :person
+  end
   test "Person may only have one birth Event" do
     person = create :person
     person.birth << create(:event)

@@ -5,8 +5,31 @@
 #
 # @see Person
 class Alias < ActiveRecord::Base
-  scope :default_name, -> { where(default: true).limit(1) }
   belongs_to :person, touch: true
+  scope :default_name, -> {
+    where(default: true)
+  }
+  scope :person, -> (person) {
+    where(person: person)
+  }
+  before_validation :check_defaults
+  validates :default,
+            uniqueness: {
+              scope: [:person]
+            }
+  validates :name,
+            uniqueness: {
+              scope: [:person]
+            }
+  validates :person,
+            presence: true
+
+  def check_defaults
+    return unless default_changed?
+    defaults = Alias.person(person_id)
+    defaults.update_all(default: false)
+  end
+  
   # @!attribute [rw] name
   # The "name" given to the person
 
