@@ -1,0 +1,16 @@
+---
+- id: 1
+  name: 'home'
+  text: |
+    'Welcome to Case DB'
+- id: 2
+  name: 'about'
+  text: |
+    CaseDB
+    =========
+    
+    Us
+    =========
+    
+    Issues
+    =========

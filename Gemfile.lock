@@ -7,6 +7,12 @@ GIT
       redcarpet (~> 3.3)
 
 GIT
+  remote: git://github.com/quirkey/static_model.git
+  revision: a3881b150d39b0a6a0b7b374416a23f5065cf07c
+  specs:
+    static_model (1.1.0)
+
+GIT
   remote: git://github.com/rails/arel.git
   revision: d5432b4616ff43fbb14540d351eed351e21bb20e
   specs:
@@ -226,6 +232,7 @@ DEPENDENCIES
   sdoc
   spring
   sqlite3
+  static_model!
   uglifier
   yard
 

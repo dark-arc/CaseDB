@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151207231835) do
+ActiveRecord::Schema.define(version: 20151210221658) do
 
   create_table "aliases", force: :cascade do |t|
     t.integer  "person_id"

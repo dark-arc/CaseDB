@@ -19,6 +19,7 @@ gem 'pg', group: :production
 # Application
 gem 'rails_markdown', github: 'dark-arc/rails_markdown'
 gem 'awesome_nested_set'
+gem 'static_model', github: 'quirkey/static_model'
 source 'https://rails-assets.org' do
   # Javascript assets
   gem 'rails-assets-select2'
