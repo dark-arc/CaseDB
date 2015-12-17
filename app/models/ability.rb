@@ -25,17 +25,25 @@ class Ability
   # created with no roles.
   # @param user [User] The current user of the site.
   def initialize(user)
-    @core_models = [CaseFile, Person, Event]
-    @user_models = [User]
     @user = user || User.new
 
     can :manage, Home
-    can :read, @core_models
-    load_unauthenticated_permissions if @user.new_record?
-    load_user_permissions if @user.user?
-    load_moderator_permissions if @user.moderator?
-    load_researcher_permissions if @user.researcher?
-    load_admin_permissions if @user.admin?
+    can :read, core_models
+    if @user.new_record?
+      load_unauthenticated_permissions
+    else
+      @user.roles.each do |role|
+        method("load_#{role}_permissions").call
+      end
+    end
+  end
+
+  def core_models
+    [CaseFile, Person, Event]
+  end
+
+  def user_models
+    [User]
   end
 
   private
@@ -55,12 +63,12 @@ class Ability
 
   # Permissions for moderators
   def load_moderator_permissions
-    can [:promote, :show, :update, :create, :destroy], @user_models
+    can [:promote, :show, :update, :create, :destroy], user_models
   end
 
   # Permissions for researchers
   def load_researcher_permissions
-    can [:update, :create, :destroy], @core_models
+    can [:update, :create, :destroy], core_models
   end
 
   # Permissions for Users all users should have this role.
