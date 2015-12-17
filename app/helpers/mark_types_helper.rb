@@ -5,7 +5,7 @@ module MarkTypesHelper
   # @return the path for a new "marktype" with parent as the parent
   def new_child_mark_type_path(parent)
     new_mark_type_path(
-      mark_type: { 
+      mark_type: {
         parent_id: parent
       }
     )

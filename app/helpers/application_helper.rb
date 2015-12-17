@@ -1,14 +1,14 @@
 # Helper method for all Views
 module ApplicationHelper
-  # @return [Boolean] true when there is a user signed in. 
+  # @return [Boolean] true when there is a user signed in.
   def signed_in?
-    if ! session[:user_id].nil?
+    if !session[:user_id].nil?
       true
     else
       false
     end
   end
-  
+
   # @return [String] the name of the current user
   def current_user
     @current_user ||= User.find_by_id session[:user_id]
@@ -18,11 +18,9 @@ module ApplicationHelper
   # engine and probably shouldn't be called elsewhere.
   # @return the page title
   def get_title
-    title = "CaseDB"
-    if content_for? :title
-      title+= " #{content_for :title}"
-    end
-    return title
+    title = 'CaseDB'
+    title += " #{content_for :title}" if content_for? :title
+    title
   end
 
   # Returns the current style. This is used by the layout engine and
@@ -31,16 +29,16 @@ module ApplicationHelper
   def get_style
     theme = 'themes/wine'
     theme = "themes/#{current_user.theme}" unless
-      current_user.nil? or current_user.theme.nil?
-    return theme
+      current_user.nil? || current_user.theme.nil?
+    theme
   end
-  
+
   # Returns a default title for the page, this will usually be
   # "controller_action" and an attempt will be made to localise the
   # string. To override this title for a page define content for
   # :title anywhere in the page.
-  # @return default title for this page  
+  # @return default title for this page
   def title
-    return t("headers.#{controller_name}.#{action_name}")
+    t("headers.#{controller_name}.#{action_name}")
   end
 end

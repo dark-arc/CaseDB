@@ -6,10 +6,10 @@
 # @see Person
 class Alias < ActiveRecord::Base
   belongs_to :person, touch: true
-  scope :default_name, -> {
+  scope :default_name, lambda {
     where(default: true)
   }
-  scope :person, -> (person) {
+  scope :person, lambda { |person|
     where(person: person)
   }
   before_validation :check_defaults
@@ -29,7 +29,7 @@ class Alias < ActiveRecord::Base
     defaults = Alias.person(person_id)
     defaults.update_all(default: false)
   end
-  
+
   # @!attribute [rw] name
   # The "name" given to the person
 

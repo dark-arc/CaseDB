@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :user do
-    username {Faker::Internet.user_name}
-    email {Faker::Internet.email}
-    password "ReallyBadPassword"
-    password_confirmation "ReallyBadPassword"
-    
+    username { Faker::Internet.user_name }
+    email { Faker::Internet.email }
+    password 'ReallyBadPassword'
+    password_confirmation 'ReallyBadPassword'
+
     trait :admin do
       after(:build) do |a|
         a.roles << [:admin]
@@ -25,7 +25,5 @@ FactoryGirl.define do
         a.roles << [:user]
       end
     end
-
-    
   end
 end
