@@ -40,9 +40,10 @@ class User < ActiveRecord::Base
   validates :password_confirmation,
             presence: true,
             unless: proc { |a| a.password.blank? }
-  validates_length_of :password,
-                      in: 10..50,
-                      on: :create
+  validates :password,
+            length: {
+              in: 10..50
+            }, on: :create
   validate :validate_theme
   # @!attribute roles_mask
   # The roles mask is a bitmask which allows roles to be assigned to a
