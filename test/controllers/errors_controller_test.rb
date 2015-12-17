@@ -2,7 +2,7 @@ require 'test_helper'
 
 # Controller for error pages
 class ErrorsControllerTest < ActionController::TestCase
-  def errorController
+  def error_controller
     {
       controller: 'errors',
       action: 'show',
@@ -11,12 +11,12 @@ class ErrorsControllerTest < ActionController::TestCase
   end
 
   test '404' do
-    assert_routing '/404', errorController.merge(code: 404)
+    assert_routing '/404', error_controller.merge(code: 404)
   end
   test '422' do
-    assert_routing '/422', errorController.merge(code: 422)
+    assert_routing '/422', error_controller.merge(code: 422)
   end
   test '500' do
-    assert_routing '/500', errorController.merge(code: 500)
+    assert_routing '/500', error_controller.merge(code: 500)
   end
 end
