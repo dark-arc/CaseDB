@@ -1,15 +1,16 @@
 require 'test_helper'
 
+# Tests for the Alias model
 class AliasTest < ActiveSupport::TestCase
   def setup
     @person = FactoryGirl.create :person
   end
 
   test 'one default per person' do
-    a = FactoryGirl.create(
+    FactoryGirl.create(
       :alias, person: @person, default: true
     ).save
-    b = FactoryGirl.create(
+    FactoryGirl.create(
       :alias, person: @person, default: true
     ).save
     assert_equal 1, Alias.person(@person).where(default: true).count

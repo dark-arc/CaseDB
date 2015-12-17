@@ -1,5 +1,6 @@
 require 'test_helper'
 
+# Controller for MarkType pages
 class MarkTypesControllerTest < ActionController::TestCase
   setup do
     @mark_type = build :mark_type

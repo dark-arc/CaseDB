@@ -1,5 +1,6 @@
 require 'test_helper'
 
+# Tests for the mark_type model
 class MarkTypeTest < ActiveSupport::TestCase
   test 'Can create a mark' do
     type = build :mark_type

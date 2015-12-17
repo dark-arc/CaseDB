@@ -1,5 +1,6 @@
 require 'test_helper'
 
+# Tests for the event model
 class EventTest < ActiveSupport::TestCase
   def test_tagline
   end

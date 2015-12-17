@@ -1,5 +1,6 @@
 require 'test_helper'
 
+# Controller for Anatomies
 class AnatomiesControllerTest < ActionController::TestCase
   setup do
     @anatomy = build :anatomy

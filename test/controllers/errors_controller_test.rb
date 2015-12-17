@@ -1,5 +1,6 @@
 require 'test_helper'
 
+# Controller for error pages
 class ErrorsControllerTest < ActionController::TestCase
   def errorController
     {

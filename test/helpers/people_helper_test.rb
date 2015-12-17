@@ -1,5 +1,6 @@
 require 'test_helper'
 
+# Helper for People Testing
 class PeopleHelperTest < ActionView::TestCase
   def add_name(person)
     name = Faker::Name.name

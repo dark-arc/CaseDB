@@ -1,5 +1,6 @@
 require 'test_helper'
 
+# Tests for the Person model
 class PersonTest < ActiveSupport::TestCase
   def setup
     @person = build :person
