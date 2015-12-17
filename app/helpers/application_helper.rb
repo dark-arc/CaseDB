@@ -17,16 +17,15 @@ module ApplicationHelper
   # Gets the title of the current page. This is used by the layout
   # engine and probably shouldn't be called elsewhere.
   # @return the page title
-  def get_title
-    title = 'CaseDB'
-    title += " #{content_for :title}" if content_for? :title
-    title
+  def title
+    return "CaseDB - #{content_for :title}" if content_for? :title
+    default_title
   end
 
   # Returns the current style. This is used by the layout engine and
   # shouldn't be called elsewhere.
   # @return the current style for this user
-  def get_style
+  def style
     theme = 'themes/wine'
     theme = "themes/#{current_user.theme}" unless
       current_user.nil? || current_user.theme.nil?
@@ -38,7 +37,7 @@ module ApplicationHelper
   # string. To override this title for a page define content for
   # :title anywhere in the page.
   # @return default title for this page
-  def title
+  def default_title
     t("headers.#{controller_name}.#{action_name}")
   end
 end
