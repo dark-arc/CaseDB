@@ -2,7 +2,7 @@
 <% cache(case_file) do %>
 <%= link_to(case_file.name,case_file) %>
 <%= content_tag(:article) do %>
-<%= markdown case_file.brief%>
+<%= markdown case_file.tagline%>
 <% end %>
 <% end %>
 <% end %>

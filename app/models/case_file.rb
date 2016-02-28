@@ -33,6 +33,12 @@ class CaseFile < ActiveRecord::Base
   validates :name,
             presence: true
 
+  def tagline
+    return brief.split('. ').first if
+      super.nil?
+    super
+  end
+  
   EventPerson.categories.each do |type|
     has_many type[0].pluralize.to_sym,
              -> { where 'event_people.category' => type[0].to_sym },
