@@ -1,0 +1,12 @@
+<%= render 'error', :errors => @anatomy.errors %>
+
+<%= nested_form_for @anatomy do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :parent_id %>
+<%= f.collection_select :parent_id,
+    Anatomy.all, :id, :path %>
+
+<%= f.submit %>
+<% end %>

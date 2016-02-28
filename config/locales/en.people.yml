@@ -8,6 +8,25 @@ en:
       edit: "Edit Details"
       addDeath: "Add death"
       addBirth: "Add birth"
+      birth: "Born: %{date}"
+      death: "Died: "
       description: "Physical Description"
       noDescription: "This person has no description."
+      marks: "Identifying Marks"
+      noMarks: "This person has no Identifying Marks"
+      editMark: "Edit"
+      newMark: "Add Mark"
       story: "Life Story"
+      aliases: "Aliases"
+    form:
+      aliases: "Aliases"
+      addAlias: "Add Alias"
+    aliases:
+      removeAlias: "Remove"
+  activerecord:
+    attributes:
+      person:
+        ic: "IC"
+
+        
+    

@@ -1,0 +1,9 @@
+<%= content_for :title, @anatomy.name %>
+<% content_for :sidebar do %>
+<%= link_to t('.newChild'), new_child_anatomy_path(@anatomy) %>
+<%= link_to t('.edit'), edit_anatomy_path(@anatomy) %>
+<%= link_to t('.delete'), anatomy_path(@anatomy), method: :delete %>
+<% end %>
+<% cache(@anatomy) do %>
+<%= @anatomy.path %>
+<% end %>

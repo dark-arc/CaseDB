@@ -1,0 +1,4 @@
+<% content_for(:sidebar, link_to(t('.new'), new_location_path))%>
+
+<%= render @locations %>
+<%= paginate @locations %>

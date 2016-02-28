@@ -109,6 +109,9 @@ form,.field_with_errors{
 section.flash{
     text-align:center;
 }
+.default{
+    font-weight:bold;
+}
 @media only screen and (max-device-width: 500px) {
     body{
 	width:100%;
@@ -139,13 +142,16 @@ section.flash{
 	    height:10em;
 	}
 	.fields{
+	    display:flex;
 	    width:100%;
 	    min-width:0px;
-	    flex-wrap:wrap;
+	    flex-wrap:no-wrap;
 	    margin-bottom:1em;
 	}
     }
 }
+
+
 .select2-selection, .select2-dropdown,.select2-container,{
     background-color:$body-2;
     border:1px solid $body-1;

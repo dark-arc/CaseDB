@@ -1,0 +1,12 @@
+AllCops:
+  RunRailsCops: true
+  Exclude:
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'doc/**/*'
+    - 'public/**/*'
+    - 'log/**/*'
+    - 'config/**/*'
+    - 'lib/**/*'
+    - 'db/**/*'
+    - 'bin/**/*'

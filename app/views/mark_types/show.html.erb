@@ -1,0 +1,9 @@
+<%= content_for :title, @mark_type.name %>
+<% content_for :sidebar do %>
+<%= link_to t('.newChild'), new_child_mark_type_path(@mark_type) %>
+<%= link_to t('.edit'), edit_mark_type_path(@mark_type) %>
+<%= link_to t('.delete'), mark_type_path(@mark_type), method: :delete %>
+<% end %>
+<% cache(@mark_type) do %>
+<%= @mark_type.path %>
+<% end %>

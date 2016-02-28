@@ -1,0 +1,10 @@
+options:
+  html_filter: true
+  no_styles: true
+  safe_links_only: false
+  models:
+    Event: date
+    Person: name
+    CaseFile: name
+  
+extensions: {}

@@ -1,0 +1,7 @@
+<%= div_for(item, class: (item.default ? 'default' : nil)) do %>
+<% cache(item) do %>
+<%= item.name %>
+<% end %>
+<% end %>
+
+

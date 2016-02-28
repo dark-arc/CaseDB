@@ -1,0 +1,5 @@
+en:
+  time:
+    formats:
+      events: '%d %B %Y %H:%M (%Z)'
+      formal: '%d %B %Y at %H:%M (%Z)'

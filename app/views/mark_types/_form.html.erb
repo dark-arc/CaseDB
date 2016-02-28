@@ -1,0 +1,13 @@
+<%= render 'error', :errors => @mark_type.errors %>
+
+<%= nested_form_for @mark_type do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :parent_id %>
+<%= f.collection_select :parent_id,
+    MarkType.all, :id, :path %>
+
+<%= f.submit %>
+<%  end %>

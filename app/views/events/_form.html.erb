@@ -5,10 +5,14 @@
 	<%= f.text_area :body %>
 	
 	<%= f.label :date %>
-	<%= f.text_field :date, class: "datepicker" %>
+	<%= f.datetime_field :date %>
 	
 	<%= f.label :case_file_id %>
 	<%= f.collection_select :case_file_id, CaseFile.all, :id, :name, :include_blank => true %>
+
+	<%= f.label :location_id %>
+	<%= f.collection_select :location_id, Location.all, :id, :name, :include_blank => true %>
+
 	<%= content_tag :h2, t('.linkedPeople') %>
 		<%= f.fields_for :event_people do |e| %>
 		<%= render 'event_people', :e => e %>
