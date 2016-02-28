@@ -38,7 +38,7 @@ class CaseFile < ActiveRecord::Base
       super.nil?
     super
   end
-  
+
   EventPerson.categories.each do |type|
     has_many type[0].pluralize.to_sym,
              -> { where 'event_people.category' => type[0].to_sym },
