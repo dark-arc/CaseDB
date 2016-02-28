@@ -10,6 +10,7 @@ gem 'sass-rails'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'nested_form'
+gem 'jquery-ui-rails'
 gem 'uglifier'
 # Server
 gem 'puma'
@@ -20,12 +21,7 @@ gem 'pg', group: :production
 gem 'rails_markdown', github: 'dark-arc/rails_markdown'
 gem 'awesome_nested_set'
 gem 'static_model', github: 'quirkey/static_model'
-source 'https://rails-assets.org' do
-  # Javascript assets
-  gem 'rails-assets-select2'
-  gem 'rails-assets-datetimepicker'
-end
-gem 'kaminari' # Pagination
+gem 'kaminari' 
 # Auth
 gem 'cancancan',
     git: 'https://github.com/CanCanCommunity/cancancan.git',
