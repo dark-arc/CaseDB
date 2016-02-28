@@ -1,0 +1,17 @@
+<%= render 'error', :errors => @location.errors %>
+
+<%= nested_form_for @location do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :parent_id %>
+<%= f.collection_select :parent_id,
+    Location.all, :id, :path %>
+
+    <%= f.label :level %>
+    <%= f.select(:level,
+	Location.levels.keys.map {
+	|g| [g.titleize,g]}) %>
+
+<%= f.submit %>
+<% end %>

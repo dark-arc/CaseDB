@@ -1,0 +1,9 @@
+<%= content_for :title, @location.name %>
+<% content_for :sidebar do %>
+<%= link_to t('.newChild'), new_child_location_path(@location) %>
+<%= link_to t('.edit'), edit_location_path(@location) %>
+<%= link_to t('.delete'), anatomy_path(@location), method: :delete %>
+<% end %>
+<% cache(@location) do %>
+<%= @location.path %>
+<% end %>

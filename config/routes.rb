@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :case_files
   resources :events
-  resources :links
+  resources :locations
   resources :people do
     resources :marks
   end
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :anatomies
   resources :mark_types
   
+  # Auth
   resources :users 
   resources :session, only: [:new,:create,:destroy]
-
 end

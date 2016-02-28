@@ -17,6 +17,9 @@ class Event < ActiveRecord::Base
   # murderer's list of victims.
   has_many :people,
            through: :event_people
+  # @!attribute [rw] location
+  # The location in which this event occured
+  has_many :location
   # @!attribute [rw] body
   # A description of the event. The body should not rely on a
   # "previous" event as it will be shown in multiple places so the
