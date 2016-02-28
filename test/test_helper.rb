@@ -2,6 +2,8 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 module ActiveSupport
+  ActiveRecord::Migration.maintain_test_schema! if
+    defined?(ActiveRecord::Migration)
   # Methods in this class will be available to all test cases.
   class TestCase
     # Setup all fixtures in test/fixtures/*.yml for all tests in
