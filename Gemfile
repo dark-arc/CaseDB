@@ -10,7 +10,6 @@ gem 'sass-rails'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'nested_form'
-gem 'jquery-ui-rails'
 gem 'uglifier'
 # Server
 gem 'puma'
