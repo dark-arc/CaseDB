@@ -4,7 +4,7 @@
 <%= f.label :username %>
 <%= f.text_field :username %>
 <%= f.label :email %>
-<%= f.text_field :email %>
+<%= f.email_field :email %>
 
 <%= f.label :theme %>
 <%= f.select :theme, options_for_select(User.themes, @user.theme) %>
