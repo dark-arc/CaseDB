@@ -85,13 +85,6 @@ GIT
       thor (>= 0.18.1, < 2.0)
 
 GIT
-  remote: git@github.com:circleci/minitest-ci.git
-  revision: 9ab0f71b0c3d683c3dcb94ba053358e04f134d8d
-  specs:
-    minitest-ci (3.0.4.pre)
-      minitest (~> 5.0, >= 5.0.6)
-
-GIT
   remote: https://github.com/CanCanCommunity/cancancan.git
   revision: 4f12858e50f720d4f426c1a62a722533583e5dee
   branch: develop
@@ -219,7 +212,6 @@ DEPENDENCIES
   journey!
   jquery-rails
   kaminari
-  minitest-ci!
   nested_form
   nokogiri
   pg

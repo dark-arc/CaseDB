@@ -20,7 +20,7 @@ gem 'pg', group: :production
 gem 'rails_markdown', github: 'dark-arc/rails_markdown'
 gem 'awesome_nested_set'
 gem 'static_model', github: 'quirkey/static_model'
-gem 'kaminari' 
+gem 'kaminari'
 # Auth
 gem 'cancancan',
     git: 'https://github.com/CanCanCommunity/cancancan.git',
