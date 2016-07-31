@@ -5,7 +5,7 @@ class PeopleController < ApplicationController
   end
 
   def create
-    if @person.save!
+    if @person.save
       redirect_to @person
     else
       render 'new'
