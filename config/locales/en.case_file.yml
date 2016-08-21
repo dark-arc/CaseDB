@@ -1,0 +1,5 @@
+en:
+  case_files:
+    show:
+      new: "Add Event"
+      edit: "Edit Case"
