@@ -5,7 +5,7 @@
 #
 # @see Person
 class Alias < ActiveRecord::Base
-  belongs_to :person, touch: true
+  belongs_to :person, inverse_of: :aliases, touch: true
   scope :default_name, lambda {
     where(default: true)
   }
@@ -21,8 +21,6 @@ class Alias < ActiveRecord::Base
             uniqueness: {
               scope: [:person]
             }
-  validates :person,
-            presence: true
 
   def check_defaults
     return unless default_changed?
