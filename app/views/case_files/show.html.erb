@@ -1,5 +1,10 @@
 <% content_for :title, @case_file.name %>
-<% content_for :sidebar, link_to(t('.new'), new_event_path(event: {case_file_id: @case_file}))  %>
+
+<% content_for :sidebar do %>
+   <%= link_to(t('.new'), new_event_path(event: {case_file_id: @case_file})) %>
+   <%= link_to(t('.edit'), edit_event_path) %>
+<% end %>
+   
 <%= content_tag :h2, t('.brief') %>
 <% cache(@case_file) do %>
 <%= markdown @case_file.brief %>

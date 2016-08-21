@@ -2,6 +2,11 @@
 
 <%= content_for :title, @user.username %>
 
+<% content_for(:sidebar) do %>
+<%= link_to t('.edit'), edit_user_path(@user) %>
+<%= link_to t('.logout'), session_path(1), method: :delete %>
+<% end %>
+
 <%= content_tag :div, class: [:email,:information] do %>
 <%= content_tag :span, t(:emailAddress), class: :label %>
 <%= content_tag :span, @user.email %>
