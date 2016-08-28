@@ -4,7 +4,7 @@ en:
       new: "New Case"
     show:
       brief: "Case Brief"
-      story: "Story"
+      story: "Timeline"
   events:
     index:
       new: "New Event"
